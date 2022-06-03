@@ -1,0 +1,89 @@
+@prefix browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix l: <https://slovník.gov.cz/legislativní/sbírka/90/1995/pojem/> .
+@prefix a: <https://slovník.gov.cz/agendový/psp/pojem/> .
+
+#####################################
+# Configurations
+#####################################
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/parliaments> a browser:Configuration ;
+  dct:title "Poslanecké sněmovny"@cs,
+    "Parliaments"@en;
+  dct:description "Prozkoumejte poslance parlamentů různých zemí - aktuálně podporované jsou Spojené království a Česká republika. Poslance můžete prozkoumávat jak z pohledu údajů dostupných z jejich národních parlamentů, tak z pohledu faktografických údajů ve Wikidatech."@cs,
+    "Explore members of parliaments of different countries - currently supported: United Kingdom and Czechia. You can explore MEPs either from the point of view of data available from their national parliaments or from the point of view of facts about them in Wikidata."@en;
+  browser:hasVisualStyleSheet <https://linked.opendata.cz/resource/knowledge-graph-browser/parliaments/style-sheet>;
+  browser:startingNode <http://www.wikidata.org/entity/Q2382175>, <http://www.wikidata.org/entity/Q180589>;
+  browser:hasViewSet <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/psp/tisk>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/psp/poslanec>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/ukparliament/government-position>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/ukparliament/member>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/people-by-groups/group>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/people-by-groups/person>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/personalities/work>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/personalities/award>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/personalities/discovery> .
+
+#####################################
+# ViewSets
+#####################################
+
+#####################################
+# Views
+#####################################
+  
+#####################################
+# Queries
+#####################################
+
+#####################################
+# Datasets
+#####################################
+
+#####################################
+# View vocabularies
+#####################################
+  
+#####################################
+# Visual styles
+#####################################
+  
+<https://linked.opendata.cz/resource/knowledge-graph-browser/parliaments/style-sheet> a browser:VisualStyleSheet ;
+  browser:hasVisualStyle <https://linked.opendata.cz/resource/knowledge-graph-browser/ukparliament/style/governmentposition>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/ukparliament/style/member>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/ukparliament/style/hasposition>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/psp/style/slovník.gov.cz/legislativní/sbírka/90/1995/pojem/sněmovní-tisk>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/psp/style/slovník.gov.cz/legislativní/sbírka/90/1995/pojem/sněmovní-tisk/vládní-návrh-zákona>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/psp/style/slovník.gov.cz/legislativní/sbírka/90/1995/pojem/sněmovní-tisk/návrh-zákona>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/psp/style/slovník.gov.cz/legislativní/sbírka/90/1995/pojem/sněmovní-tisk/státní-rozpočet>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/psp/style/slovník.gov.cz/legislativní/sbírka/90/1995/pojem/sněmovní-tisk/tisk-jiného-druhu>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/psp/style/slovník.gov.cz/legislativní/sbírka/90/1995/pojem/sněmovní-tisk/přijatý-tisk>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/psp/style/slovník.gov.cz/legislativní/sbírka/90/1995/pojem/sněmovní-tisk/nepřijatý-tisk>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/psp/style/slovník.gov.cz/legislativní/sbírka/90/1995/pojem/sněmovní-tisk/neukončený-tisk>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/psp/style/slovník.gov.cz/agendový/psp/pojem/osoba>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/psp/style/psp/navrhuje>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/psp/style/psp/má-zpravodaje-tisku>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/psp/style/psp/společně-předložil-tisk-s>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/personalities/style/groupOfPeople>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/personalities/style/broader>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/personalities/style/belongsTo>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/personalities/style/personality>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/personalities/style/work>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/personalities/style/award>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/personalities/style/discovery>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/personalities/style/father>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/personalities/style/mother>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/personalities/style/spouse>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/personalities/style/sibling>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/personalities/style/author>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/personalities/style/discoverer>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/personalities/style/receivedAward>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/personalities/style/actor>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/personalities/style/director>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/personalities/style/screenwriter>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/personalities/style/producer>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/psp/style/node>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/psp/style/edge> .
