@@ -11,7 +11,7 @@
 #####################################
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/wikidata/scientists-with-facets-dev> a browser:Configuration ;
-  dct:title "Scientists with facets - dev"@en;
+  dct:title "changed title"@en;
   dct:description "This configuration serves for development purposes."@en;
   browser:hasVisualStyleSheet <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/scientists/style-sheet>;
   browser:startingNode <http://www.wikidata.org/entity/Q937>,
