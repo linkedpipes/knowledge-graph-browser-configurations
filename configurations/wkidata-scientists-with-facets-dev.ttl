@@ -1,0 +1,24 @@
+@prefix browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/> .
+@prefix av: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/scientists/> .
+
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+#####################################
+# Configurations
+#####################################
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/wikidata/scientists-with-facets-dev> a browser:Configuration ;
+  dct:title "Scientists with facets - dev"@en;
+  dct:description "This configuration serves for development purposes."@en;
+  browser:hasVisualStyleSheet <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/scientists/style-sheet>;
+  browser:startingNode <http://www.wikidata.org/entity/Q937>,
+    <http://www.wikidata.org/entity/Q7186>,
+    <http://www.wikidata.org/entity/Q1035> ;
+  browser:resourceIriPattern "^http://www\\.wikidata\\.org/entity/Q[1-9][0-9]*$";
+  browser:hasViewSet
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/scientists/scientist>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/scientists/institution>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/scientists/country> .
