@@ -11,7 +11,7 @@
 #####################################
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/wikidata/scientists-with-facets-dev> a browser:Configuration ;
-  dct:title "changed title"@en;
+  dct:title "Scientists with facets - dev"@en;
   dct:description "This configuration serves for development purposes."@en;
   browser:hasVisualStyleSheet <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/scientists/style-sheet>;
   browser:startingNode <http://www.wikidata.org/entity/Q937>,
@@ -21,4 +21,48 @@
   browser:hasViewSet
     <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/scientists/scientist>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/scientists/institution>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/scientists/country> .
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/scientists/country>;
+  browser:hasFacet <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/born-in-country-label>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/born-in-country>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/number-of-siblings>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/number-of-awards> .
+
+#####################################
+# Facets
+#####################################
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/facet/born-in-country-label-dev> a browser:Facet ;
+  dct:title "Born in country label - dev"@en;
+  browser:facetType "label";
+  dct:description "Facet to filter people based on the country they were born in."@en;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata>;
+  browser:facetQueryFindLabels """
+    PREFIX wd: <http://www.wikidata.org/entity/>
+    PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+    SELECT ?countryLabel
+    WHERE 
+    {
+      VALUES ?person {wd:Q7186 wd:Q150989} 
+      
+      ?person wdt:P19/wdt:P17 ?country.
+      
+      SERVICE wikibase:label {
+            bd:serviceParam wikibase:language "en" .     # or "cs"
+        }  
+    }
+    """;
+  browser:facetQueryFilter """
+    PREFIX wd: <http://www.wikidata.org/entity/>
+    PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+    CONSTRUCT {
+      ?node a rdfs:Resource.
+      } WHERE {
+        VALUES ?node {wd:Q7186 wd:Q150989} 
+        VALUES ?targetNode {"France"@en}     # or {"Francie"@cs}
+      
+        ?node wdt:P19/wdt:P17/rdfs:label ?targetNode
+    }
+    """ .
