@@ -31,7 +31,7 @@
 # Facets
 #####################################
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/facet/born-in-country-label-dev> a browser:Facet ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/facet/born-in-country-label> a browser:Facet ;
   dct:title "Born in country label - dev"@en;
   browser:facetType "label";
   dct:description "Facet to filter people based on the country they were born in."@en;
