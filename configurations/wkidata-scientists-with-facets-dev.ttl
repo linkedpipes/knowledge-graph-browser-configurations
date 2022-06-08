@@ -36,35 +36,15 @@
   browser:facetType "label";
   dct:description "Facet to filter people based on the country they were born in."@en;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata>;
-  browser:facetQueryFindLabels """
-    PREFIX wd: <http://www.wikidata.org/entity/>
-    PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-  
-    CONSTRUCT {
-      ?country a rdfs:Resource.
-      }
-    WHERE 
-    {
-      VALUES ?person {wd:Q7186 wd:Q150989} 
-      
-      ?person wdt:P19/wdt:P17 ?country.
-      
-      SERVICE wikibase:label {
-            bd:serviceParam wikibase:language "en" .     # or "cs"
-        }  
-    }
-    """;
-  browser:facetQueryFilter """
+  browser:facetQuery """
     PREFIX wd: <http://www.wikidata.org/entity/>
     PREFIX wdt: <http://www.wikidata.org/prop/direct/>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
+    PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+    
     CONSTRUCT {
-      ?node a rdfs:Resource.
-      } WHERE {
-        VALUES ?node {wd:Q7186 wd:Q150989} 
-        VALUES ?targetNode {"France"@en}     # or {"Francie"@cs}
-      
-        ?node wdt:P19/wdt:P17/rdfs:label ?targetNode
+      ?node browser:queryPath ?targetNode.
+    } WHERE {
+      ?node wdt:P19/wdt:P17 ?targetNode.
     }
-    """ .
+    """.
