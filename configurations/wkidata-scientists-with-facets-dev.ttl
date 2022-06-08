@@ -39,8 +39,10 @@
   browser:facetQueryFindLabels """
     PREFIX wd: <http://www.wikidata.org/entity/>
     PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-
-    SELECT ?countryLabel
+  
+    CONSTRUCT {
+      ?country a rdfs:Resource.
+      }
     WHERE 
     {
       VALUES ?person {wd:Q7186 wd:Q150989} 
