@@ -23,9 +23,9 @@
     <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/scientists/institution>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/scientists/country>;
   browser:hasFacet <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/born-in-country-label>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/born-in-country-population>.
-    # <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/number-of-siblings>,
-    # <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/number-of-awards> .
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/born-in-country-population>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/number-of-siblings>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/number-of-awards> .
 
 #####################################
 # Facets
@@ -37,15 +37,17 @@
   dct:description "Facet to filter people based on the country they were born in."@en;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata>;
   browser:facetQuery """
-    PREFIX wd: <http://www.wikidata.org/entity/>
     PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
     
     CONSTRUCT {
-      ?node browser:queryPath ?targetNode.
+      ?node browser:queryPath ?targetNodeLabel.
     } WHERE {
       ?node wdt:P19/wdt:P17 ?targetNode.
+      
+      SERVICE wikibase:label {
+            bd:serviceParam wikibase:language "en" .
+        } 
     }
     """.
 
@@ -55,9 +57,7 @@
   dct:description "Facet to filter people based on the population of the country they were born in."@en;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata>;
   browser:facetQuery """
-	PREFIX wd: <http://www.wikidata.org/entity/>
 	PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-	PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 	PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 
 	CONSTRUCT {
@@ -67,3 +67,51 @@
 	  #FILTER
 	}
     """.
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/facet/number-of-siblings> a browser:Facet ;
+  dct:title "Number of siblings"@en;
+  browser:facetType "numeric";
+  dct:description "Facet to filter people based on how many siblings they have."@en;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata>;
+  browser:facetQuery """
+    PREFIX wd: <http://www.wikidata.org/entity/>
+    PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+    PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+
+    CONSTRUCT {
+        ?node browser:queryPath ?targetNode.
+    } WHERE {
+    {
+        SELECT ?node (COUNT(?sibling) AS ?targetNode)
+        WHERE {
+            ?node wdt:P3373 ?sibling.
+        }
+        GROUP BY ?node
+        #HAVING
+    }
+    }
+    """.  
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/facet/number-of-awards> a browser:Facet ;
+  dct:title "Number of awards"@en;
+  browser:facetType "numeric";
+  dct:description "Facet to filter people based on how many awards they have been given."@en;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata>;
+  browser:facetQuery """
+    PREFIX wd: <http://www.wikidata.org/entity/>
+    PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+    PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+
+    CONSTRUCT {
+        ?node browser:queryPath ?targetNode.
+    } WHERE {
+    {
+        SELECT ?node (COUNT(?award) AS ?targetNode)
+        WHERE {
+            ?node wdt:P166 ?award.
+        }
+        GROUP BY ?node
+        #HAVING
+    }
+    }
+    """. 
