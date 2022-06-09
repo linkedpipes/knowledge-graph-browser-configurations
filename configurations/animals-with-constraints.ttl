@@ -1,0 +1,44 @@
+@prefix browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/> .
+@prefix wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animals/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix l: <https://slovník.gov.cz/legislativní/sbírka/90/1995/pojem/> .
+@prefix a: <https://slovník.gov.cz/agendový/wikidata/animals/pojem/> .
+
+#####################################
+# Configurations
+#
+# Configuration is the entry point which defines the behavior of the visual browser.
+# It consists of one or more view sets.
+#####################################
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/wikidata/animals-with-constraints> a browser:Configuration ;
+  dct:title "Taxonomy of animals and plants with layout constraints"@en ;
+  dct:description "Classification of all organisms, plants and animals, into taxa."@en ;
+  browser:hasVisualStyleSheet <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals/style-sheet>;
+  browser:hasLayoutContraints <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals-with-constraints/layout-constraints>;
+  browser:startingNode <http://www.wikidata.org/entity/Q7377>,
+   <http://www.wikidata.org/entity/Q192154>;
+  browser:resourceIriPattern "^http://www\\.wikidata\\.org/entity/Q[1-9][0-9]*$";
+  browser:hasViewSet <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animals/taxon> .
+
+
+#####################################
+# Layout Constraints
+# A layout constraint is a constraint which can be applied on a node.
+# For example: set a constant position of a node of a certain type relative to nodes of other types.
+#####################################
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals-with-constraints/layout-constraints> a browser:LayoutConstraints ;
+  browser:hasConstraint <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals-with-constraints/layout-constraints/relative-placement/taxon-species> ,
+                        <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals-with-constraints/layout-constraints/relative-placement/taxon-genus> .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals-with-constraints/layout-constraints/relative-placement/taxon-species> a browser:RelativePlacementLayoutConstraint ;
+  browser:left ".taxon" ;
+  browser:right ".species" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals-with-constraints/layout-constraints/relative-placement/taxon-genus> a browser:RelativePlacementLayoutConstraint ;
+  browser:top ".taxon" ;
+  browser:bottom ".genus" .
