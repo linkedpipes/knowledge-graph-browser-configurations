@@ -23,7 +23,7 @@
     <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/scientists/institution>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/scientists/country>;
   browser:hasFacet <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/born-in-country-label>.
-    # <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/born-in-country-population>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/born-in-country-population>,
     # <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/number-of-siblings>,
     # <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/number-of-awards> .
 
@@ -32,7 +32,7 @@
 #####################################
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/born-in-country-label> a browser:Facet ;
-  dct:title "Born in country label - dev"@en;
+  dct:title "Born in country label"@en;
   browser:facetType "label";
   dct:description "Facet to filter people based on the country they were born in."@en;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata>;
@@ -47,4 +47,23 @@
     } WHERE {
       ?node wdt:P19/wdt:P17 ?targetNode.
     }
+    """.
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/facet/born-in-country-population> a browser:Facet ;
+  dct:title "Born in country population"@en;
+  browser:facetType "numeric";
+  dct:description "Facet to filter people based on the population of the country they were born in."@en;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata>;
+  browser:facetQuery """
+	PREFIX wd: <http://www.wikidata.org/entity/>
+	PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+	PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+	PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+
+	CONSTRUCT {
+	  ?node browser:queryPath ?targetNode.
+	} WHERE {
+	  ?node wdt:P19/wdt:P17/wdt:P1082 ?targetNode.
+	  #FILTER
+	}
     """.
