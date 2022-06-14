@@ -39,15 +39,14 @@
   browser:facetQuery """
     PREFIX wdt: <http://www.wikidata.org/prop/direct/>
     PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
-    
+
     CONSTRUCT {
-      ?node browser:queryPath ?targetNodeLabel.
-    } WHERE {
-      ?node wdt:P19/wdt:P17 ?targetNode.
-      
-      SERVICE wikibase:label {
-            bd:serviceParam wikibase:language "en" .
-        } 
+      ?node browser:queryPath ?targetNode.
+    } WHERE { 
+
+      ?node wdt:P19/wdt:P17/rdfs:label ?targetNode.
+
+      FILTER (LANG(?targetNode) = "en")
     }
     """.
 
