@@ -23,6 +23,7 @@
     <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/scientists/institution>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/scientists/country>;
   browser:hasFacet <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/born-in-country-label>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/given-name>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/born-in-country-population>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/number-of-siblings>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/number-of-awards> .
@@ -45,6 +46,25 @@
     } WHERE { 
 
       ?node wdt:P19/wdt:P17/rdfs:label ?targetNode.
+
+      FILTER (LANG(?targetNode) = "en")
+    }
+    """.
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/facet/given-name> a browser:Facet ;
+  dct:title "First name"@en;
+  browser:facetType "label";
+  dct:description "Facet to filter people based on their given names."@en;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata>;
+  browser:facetQuery """
+    PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+    PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+
+    CONSTRUCT {
+      ?node browser:queryPath ?targetNode.
+    } WHERE { 
+     
+      ?node wdt:P735/rdfs:label ?targetNode.
 
       FILTER (LANG(?targetNode) = "en")
     }
