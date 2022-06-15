@@ -62,8 +62,8 @@
 	CONSTRUCT {
 	  ?node browser:queryPath ?targetNode.
 	} WHERE {
+    #INSERTNODES
 	  ?node wdt:P19/wdt:P17/wdt:P1082 ?targetNode.
-	  #FILTER
 	}
     """.
 
@@ -83,10 +83,10 @@
     {
         SELECT ?node (COUNT(?sibling) AS ?targetNode)
         WHERE {
+            #INSERTNODES
             ?node wdt:P3373 ?sibling.
         }
         GROUP BY ?node
-        #HAVING
     }
     }
     """.  
@@ -107,10 +107,10 @@
     {
         SELECT ?node (COUNT(?award) AS ?targetNode)
         WHERE {
+            #INSERTNODES
             ?node wdt:P166 ?award.
         }
         GROUP BY ?node
-        #HAVING
     }
     }
     """. 
