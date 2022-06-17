@@ -44,7 +44,7 @@
     CONSTRUCT {
       ?node browser:queryPath ?targetNode.
     } WHERE { 
-
+      #INSERTNODES
       ?node wdt:P19/wdt:P17/rdfs:label ?targetNode.
 
       FILTER (LANG(?targetNode) = "en")
@@ -63,7 +63,7 @@
     CONSTRUCT {
       ?node browser:queryPath ?targetNode.
     } WHERE { 
-     
+      #INSERTNODES
       ?node wdt:P735/rdfs:label ?targetNode.
 
       FILTER (LANG(?targetNode) = "en")
