@@ -22,7 +22,7 @@
 #####################################
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/eurovoc-with-constraints/layout-constraints> a browser:LayoutConstraints ;
-  <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/eurovoc-with-constraints/layout-constraints/relative-placement/scheme-concept> .
+  browser:hasConstraint <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/eurovoc-with-constraints/layout-constraints/relative-placement/scheme-concept> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/eurovoc-with-constraints/layout-constraints/relative-placement/scheme-concept> a browser:RelativePlacementLayoutConstraint ;
   browser:left ".scheme" ;
