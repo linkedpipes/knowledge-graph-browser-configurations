@@ -29,7 +29,7 @@
   browser:hasCondition """PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX schema: <http://schema.org/>
 ASK {
-  ?předmět skos:provider ?node .
+  ?předmět schema:provider ?node .
 }""" ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uk/témata> .
 
