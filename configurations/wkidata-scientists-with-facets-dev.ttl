@@ -26,14 +26,15 @@
     <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/given-name>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/born-in-country-population>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/number-of-siblings>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/number-of-awards> .
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/number-of-awards>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/date-of-birth> .
 
 #####################################
 # Facets
 #####################################
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/born-in-country-label> a browser:Facet ;
-  dct:title "Born in country label"@en;
+  dct:title "Born in country"@en;
   browser:facetType "label";
   dct:description "Facet to filter people based on the country they were born in."@en;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata>;
@@ -71,7 +72,7 @@
     """.
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/born-in-country-population> a browser:Facet ;
-  dct:title "Born in country population"@en;
+  dct:title "Born in country with population"@en;
   browser:facetType "numeric";
   dct:description "Facet to filter people based on the population of the country they were born in."@en;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata>;
@@ -132,5 +133,22 @@
         }
         GROUP BY ?node
     }
+    }
+    """. 
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/facet/date-of-birth> a browser:Facet ;
+  dct:title "Date of birth"@en;
+  browser:facetType "label";
+  dct:description "Facet to filter people based on their date of birth."@en;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata>;
+  browser:facetQuery """
+    PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+    PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+
+    CONSTRUCT {
+      ?node browser:queryPath ?targetNode.
+    } WHERE { 
+      #INSERTNODES
+      ?node wdt:P569 ?targetNode.
     }
     """. 
