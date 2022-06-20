@@ -14,7 +14,8 @@
   dct:title "Konfigurace procházení témat pěstovaných na Univerzitě Karlově"@cs ;
   browser:hasVisualStyleSheet <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata/style-sheet>;
   browser:startingNode <https://cu.opendata.cz/resource/prvek-organizační-struktury/116>;
-  browser:hasViewSet <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uk/témata/pracoviště> .
+  browser:hasViewSet <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uk/témata/pracoviště>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uk/témata/téma> .
 
 #####################################
 # ViewSets
@@ -23,13 +24,25 @@
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uk/témata/pracoviště> a browser:ViewSet ;
   dct:title "Pohledy na pracoviště"@cs ;
   browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/podřazená-pracoviště>, 
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/nadřazená-pracoviště> ; #,
-    #<https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/témata/pracoviště> ;
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/nadřazená-pracoviště> ,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/témata/pracoviště> ;
   browser:hasDefaultView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/témata/témata-na-pracovišti> ;
   browser:hasCondition """PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX schema: <http://schema.org/>
 ASK {
   ?node skos:inScheme <https://cu.opendata.cz/resource/organizační-struktura> .
+}""" ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uk/témata> .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uk/témata/téma> a browser:ViewSet ;
+  dct:title "Pohledy na témata"@cs ;
+  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/témata/téma> ;
+  browser:hasDefaultView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/témata/téma> ;
+  browser:hasCondition """PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX schema: <http://schema.org/>
+ASK {
+  ?keyword a schema:DefinedTerm .
+  ?subject schema:keywords ?keyword .
 }""" ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uk/témata> .
 
@@ -45,11 +58,25 @@ ASK {
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/uk/pracoviště> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/nadřazená-pracoviště> a browser:View ;
-  dct:title "Naddřazená pracoviště"@cs ;
+  dct:title "Nadřazená pracoviště"@cs ;
   dct:description "Pohled na pracoviště zobrazující nadřazené pracoviště."@cs ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/uk/nadřazená-pracoviště> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/uk/pracoviště> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/uk/pracoviště> .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/témata/pracoviště> a browser:View ;
+  dct:title "Témata pracoviště"@cs ;
+  dct:description "Pohled na pracoviště zobrazující témata, kterými se pracoviště zabývá."@cs ;
+  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/uk/témata/pracoviště> ;
+  browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/uk/pracoviště> ;
+  browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/uk/pracoviště> .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/témata/téma> a browser:View ;
+  dct:title "Pracoviště s tématem"@cs ;
+  dct:description "Pohled na téma zobrazující pracoviště, která se tématem zabývají."@cs ;
+  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/uk/témata/téma> ;
+  browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/uk/témata/téma> ;
+  browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/uk/témata/téma> .
     
 #####################################
 # Queries
@@ -95,6 +122,47 @@ CONSTRUCT {
   FILTER (LANG(?pracovištěLabel) = "cs")
 }""" .
 
+<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/uk/témata/pracoviště> a browser:ExpansionQuery ;
+  dct:title "Témata pracoviště" ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uk/témata> ;
+  browser:query """PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX schema: <http://schema.org/>
+PREFIX buk: <https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/>
+PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+
+CONSTRUCT {
+  ?node buk:zabývá-se-tématem ?keyword .
+  ?keyword dct:title ?keywordTitle ;
+    browser:class "tema" .
+
+  buk:zabývá-se-tématem browser:class "zabyvaSeTematem" .
+} WHERE {
+  ?předmět schema:provider ?node ;
+    schema:keywords ?keyword .
+  ?keyword dct:title ?keywordTitle .
+  FILTER (LANG(?keywordTitle) = "cs")
+}""" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/uk/témata/téma> a browser:ExpansionQuery ;
+  dct:title "Pracoviště tématu" ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uk/témata> ;
+  browser:query """PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX schema: <http://schema.org/>
+PREFIX buk: <https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/>
+PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+
+CONSTRUCT {
+  ?pracoviště buk:zabývá-se-tématem ?node .
+  ?pracoviště skos:prefLabel ?pracovištěLabel ;
+    browser:class "pracoviste" .
+
+  buk:zabývá-se-tématem browser:class "zabyvaSeTematem" .
+} WHERE {
+  ?předmět schema:provider ?pracoviště ;
+    schema:keywords ?node .
+  ?pracoviště skos:prefLabel ?pracovištěLabel .
+  FILTER (LANG(?pracovištěLabel) = "cs")
+}""" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/uk/pracoviště> a browser:PreviewQuery ;
   dct:title "Náhled na pracoviště" ;
@@ -124,6 +192,35 @@ CONSTRUCT {
   FILTER (LANG(?label) = "cs")
 }""" .
 
+<https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/uk/témata/téma> a browser:PreviewQuery ;
+  dct:title "Náhled na téma" ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uk/pracoviště> ;
+  browser:query """PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX schema: <http://schema.org/>
+PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+
+CONSTRUCT {
+  ?node a schema:DefinedTerm ;
+    dct:title ?label ;
+    browser:class "tema" .
+} WHERE {
+  ?node dct:title ?label .
+  FILTER (LANG(?label) = "cs")
+}""" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/uk/témata/téma> a browser:DetailQuery ;
+  dct:title "Základní detail pracoviště" ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uk/pracoviště> ;
+  browser:query """PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+
+CONSTRUCT {
+  ?node dct:title ?label .
+} WHERE {
+  ?node dct:title ?label .
+  FILTER (LANG(?label) = "cs")
+}""" .
+
 #####################################
 # Datasets
 #####################################
@@ -149,6 +246,12 @@ CONSTRUCT {
   rdfs:range skos:Concept ;
   rdfs:subPropertyOf skos:broader .
 
+<zabývá-se-tématem> a owl:ObjectProperty ;
+  rdfs:label "zabývá se tématem"@cs ;
+  rdfs:comment "Téma, kterému se věnuje pracoviště Univerzity Karlovy."@cs ;
+  rdfs:domain skos:Concept ;
+  rdfs:range schema:DefinedTerm .
+
 #####################################
 # Visual styles
 #####################################
@@ -156,6 +259,7 @@ CONSTRUCT {
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata/style-sheet> a browser:VisualStyleSheet ;
   browser:hasVisualStyle
     <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/pracoviště>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/téma>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/www.w3.org/2004/02/skos/core/broader>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/node>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/edge> .  
@@ -169,6 +273,16 @@ CONSTRUCT {
   browser:width "60px" ;
   browser:height "32px" ;
   browser:hasSelector ".pracoviste" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/téma> a browser:VisualStyle ;
+  browser:background-color "#addeff" ;
+  browser:border-color "#006eb8" ;
+  browser:color "#006eb8" ;
+  browser:text-wrap "wrap";
+  browser:text-max-width "56px";
+  browser:width "60px" ;
+  browser:height "32px" ;
+  browser:hasSelector ".tema" .
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/www.w3.org/2004/02/skos/core/broader> a browser:VisualStyle ;
   browser:line-color "#9ff5d5" ;
