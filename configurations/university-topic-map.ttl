@@ -66,7 +66,7 @@ PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
   ?pracoviště buk:nadřazené-pracoviště ?node ;
     skos:prefLabel ?pracovištěLabel ;
-    browser:class "pracoviště" .
+    browser:class "pracoviste" .
 
   buk:nadřazené-pracoviště browser:class "nadřazené" .
 } WHERE {
@@ -86,7 +86,7 @@ PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
   ?node buk:nadřazené-pracoviště ?pracoviště .
   ?pracoviště skos:prefLabel ?pracovištěLabel ;
-    browser:class "pracoviště" .
+    browser:class "pracoviste" .
 
   buk:nadřazené-pracoviště browser:class "nadřazené" .
 } WHERE {
@@ -105,7 +105,7 @@ PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
   ?node a skos:Concept ;
     skos:prefLabel ?label ;
-    browser:class "pracoviště" .
+    browser:class "pracoviste" .
 } WHERE {
   ?node skos:prefLabel ?label .
   FILTER (LANG(?label) = "cs")
@@ -164,12 +164,11 @@ CONSTRUCT {
   browser:background-color "#f5b7bb" ;
   browser:border-color "#a82a33" ;
   browser:color "#a82a33" ;
-  browser:text-outline-color "#f5b7bb" ;
   browser:text-wrap "wrap";
   browser:text-max-width "56px";
   browser:width "60px" ;
   browser:height "32px" ;
-  browser:hasSelector ".pracoviště" .
+  browser:hasSelector ".pracoviste" .
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/www.w3.org/2004/02/skos/core/broader> a browser:VisualStyle ;
   browser:line-color "#9ff5d5" ;
@@ -178,7 +177,6 @@ CONSTRUCT {
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/node> a browser:VisualStyle ;
   browser:border-width "2px" ;
-  browser:text-outline-width "1px" ;
   browser:text-wrap "ellipsis";
   browser:text-max-width "98px";
   browser:shape "round-rectangle" ;
