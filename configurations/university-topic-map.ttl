@@ -29,14 +29,7 @@
   browser:hasCondition """PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX schema: <http://schema.org/>
 ASK {
-  {
-    ?předmět schema:provider ?node .
-  }
-  UNION
-  {
-    ?předmět schema:provider ?pracoviště .
-    ?pracoviště skos:broader+ ?node .
-  }
+  ?node skos:inScheme <https://cu.opendata.cz/resource/organizační-struktura> .
 }""" ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uk/témata> .
 
@@ -97,8 +90,8 @@ CONSTRUCT {
 
   buk:nadřazené-pracoviště browser:class "nadřazené" .
 } WHERE {
-  ?pracoviště skos:broader ?node ;
-    skos:prefLabel ?pracovištěLabel .
+  ?node skos:broader ?pracoviště .
+  ?pracoviště skos:prefLabel ?pracovištěLabel .
   FILTER (LANG(?pracovištěLabel) = "cs")
 }""" .
 
