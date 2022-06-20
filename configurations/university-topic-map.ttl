@@ -140,7 +140,6 @@ CONSTRUCT {
   ?předmět schema:provider ?node ;
     schema:keywords ?keyword .
   ?keyword dct:title ?keywordTitle .
-  FILTER (LANG(?keywordTitle) = "cs")
 }""" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/uk/témata/téma> a browser:ExpansionQuery ;
