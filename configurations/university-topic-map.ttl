@@ -16,7 +16,29 @@
   browser:hasVisualStyleSheet <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata/style-sheet>;
   browser:startingNode <https://cu.opendata.cz/resource/prvek-organizační-struktury/116>;
   browser:hasViewSet <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uk/témata/pracoviště>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uk/témata/téma> .
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uk/témata/téma> ;
+  browser:autocomplete <https://raw.githubusercontent.com/linkedpipes/knowledge-graph-browser-website/main/configurations/university-topic-map-autocomplete.json> ;
+  browser:autocompleteDefinition <https://linked.opendata.cz/resource/knowledge-graph-browser/node-index/uk/témata> .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/node-index/uk/témata> a browser:AutocompleteDefinition ;
+  browser:query """PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX schema: <http://schema.org/>
+
+SELECT ?id ?label ?type
+WHERE {
+  {
+    ?id a schema:DefinedTerm ;
+      dct:title ?label .
+    BIND (<https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/Téma> AS ?type)
+  } UNION {
+    ?id skos:inScheme <https://cu.opendata.cz/resource/organizační-struktura> ;
+      skos:prefLabel ?label ;
+      skos:broader+ <https://cu.opendata.cz/resource/prvek-organizační-struktury/2> .
+    BIND(<https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/Pracoviště> AS ?type)
+  }
+}""" ;
+browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uk/témata> .
 
 #####################################
 # ViewSets
