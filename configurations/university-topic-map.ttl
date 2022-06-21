@@ -172,6 +172,7 @@ CONSTRUCT {
   dct:title "Náhled na pracoviště" ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uk/pracoviště> ;
   browser:query """PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX buk: <https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 
 CONSTRUCT {
@@ -201,6 +202,7 @@ CONSTRUCT {
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uk/pracoviště> ;
   browser:query """PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX schema: <http://schema.org/>
+PREFIX buk: <https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 
 CONSTRUCT {
