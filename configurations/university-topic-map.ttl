@@ -95,7 +95,7 @@ CONSTRUCT {
     skos:prefLabel ?pracovištěLabel ;
     browser:class "pracoviste" .
 
-  buk:nadřazené-pracoviště browser:class "nadřazené" .
+  buk:nadřazené-pracoviště browser:class "broader" .
 } WHERE {
   ?pracoviště skos:broader ?node ;
     skos:prefLabel ?pracovištěLabel .
@@ -115,7 +115,7 @@ CONSTRUCT {
   ?pracoviště skos:prefLabel ?pracovištěLabel ;
     browser:class "pracoviste" .
 
-  buk:nadřazené-pracoviště browser:class "nadřazené" .
+  buk:nadřazené-pracoviště browser:class "broader" .
 } WHERE {
   ?node skos:broader ?pracoviště .
   ?pracoviště skos:prefLabel ?pracovištěLabel .
@@ -258,33 +258,39 @@ CONSTRUCT {
     <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/pracoviště>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/téma>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/www.w3.org/2004/02/skos/core/broader>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/zabývá-se-tématem>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/node>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/edge> .  
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/pracoviště> a browser:VisualStyle ;
-  browser:background-color "#f5b7bb" ;
-  browser:border-color "#a82a33" ;
-  browser:color "#a82a33" ;
+  browser:background-color "#ECE0D5" ;
+  browser:border-color "#9B6F46" ;
+  browser:color "#9B6F46" ;
   browser:text-wrap "wrap";
-  browser:text-max-width "56px";
-  browser:width "60px" ;
-  browser:height "32px" ;
+  browser:text-max-width "100px";
+  browser:width "120px" ;
+  browser:height "40px" ;
   browser:hasSelector ".pracoviste" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/téma> a browser:VisualStyle ;
-  browser:background-color "#addeff" ;
-  browser:border-color "#006eb8" ;
-  browser:color "#006eb8" ;
+  browser:background-color "#C3E2E9" ;
+  browser:border-color "#327786" ;
+  browser:color "#327786" ;
   browser:text-wrap "wrap";
-  browser:text-max-width "56px";
-  browser:width "60px" ;
-  browser:height "32px" ;
+  browser:text-max-width "100px";
+  browser:width "120px" ;
+  browser:height "40px" ;
   browser:hasSelector ".tema" .
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/www.w3.org/2004/02/skos/core/broader> a browser:VisualStyle ;
-  browser:line-color "#9ff5d5" ;
+  browser:line-color "#E7EAEE" ;
   browser:line-style "solid" ;
   browser:hasSelector ".broader" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/zabývá-se-tématem> a browser:VisualStyle ;
+  browser:line-color "#F1F8F2" ;
+  browser:line-style "solid" ;
+  browser:hasSelector ".zabyvaSeTematem" .
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/node> a browser:VisualStyle ;
   browser:border-width "2px" ;
@@ -297,7 +303,7 @@ CONSTRUCT {
   browser:padding "2px" ;
   browser:text-halign "center" ;
   browser:text-valign "center" ;
-  browser:font-size "8px" ;
+  browser:font-size "10px" ;
   browser:background-color "#A9A5A7" ;
   browser:border-color "#544B50" ;
   browser:color "black" ;
@@ -305,6 +311,7 @@ CONSTRUCT {
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/edge> a browser:VisualStyle ;
   browser:width "1px" ;
+  browser:font-size "8px" ;
   browser:line-color "black" ;
   browser:line-style "solid" ;
   browser:curve-style "straight" ;
