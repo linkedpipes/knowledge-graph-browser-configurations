@@ -285,11 +285,13 @@ CONSTRUCT {
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/www.w3.org/2004/02/skos/core/broader> a browser:VisualStyle ;
   browser:line-color "#E7EAEE" ;
   browser:line-style "solid" ;
+  browser:color "#CFD5DD" ;
   browser:hasSelector ".broader" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/zabývá-se-tématem> a browser:VisualStyle ;
   browser:line-color "#F1F8F2" ;
   browser:line-style "solid" ;
+  browser:color "#BBDDC0" ;
   browser:hasSelector ".zabyvaSeTematem" .
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/node> a browser:VisualStyle ;
@@ -311,7 +313,7 @@ CONSTRUCT {
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/edge> a browser:VisualStyle ;
   browser:width "1px" ;
-  browser:font-size "8px" ;
+  browser:font-size "6px" ;
   browser:line-color "black" ;
   browser:line-style "solid" ;
   browser:curve-style "straight" ;
