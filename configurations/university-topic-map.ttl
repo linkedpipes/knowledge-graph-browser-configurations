@@ -48,7 +48,8 @@ browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/
   dct:title "Pohledy na pracoviště"@cs ;
   browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/podřazená-pracoviště>, 
     <https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/nadřazená-pracoviště> ,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/témata/pracoviště> ;
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/témata/témata-pracoviště> ,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/témata/sdílená-témata-pracoviště> ;
   browser:hasDefaultView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/témata/témata-na-pracovišti> ;
   browser:hasCondition """PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX schema: <http://schema.org/>
@@ -87,10 +88,17 @@ ASK {
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/uk/pracoviště> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/uk/pracoviště> .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/témata/pracoviště> a browser:View ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/témata/témata-pracoviště> a browser:View ;
   dct:title "Témata pracoviště"@cs ;
   dct:description "Pohled na pracoviště zobrazující témata, kterými se pracoviště zabývá."@cs ;
-  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/uk/témata/pracoviště> ;
+  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/uk/témata/témata-pracoviště> ;
+  browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/uk/pracoviště> ;
+  browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/uk/pracoviště> .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/témata/sdílená-témata-pracoviště> a browser:View ;
+  dct:title "Sdílená témata pracoviště"@cs ;
+  dct:description "Pohled na pracoviště zobrazující jeho témata, kterými se zabývá i jiné pracoviště."@cs ;
+  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/uk/témata/sdílená-témata-pracoviště> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/uk/pracoviště> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/uk/pracoviště> .
 
@@ -147,7 +155,7 @@ CONSTRUCT {
   FILTER (LANG(?pracovištěLabel) = "cs")
 }""" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/uk/témata/pracoviště> a browser:ExpansionQuery ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/uk/témata/témata-pracoviště> a browser:ExpansionQuery ;
   dct:title "Témata pracoviště" ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uk/témata> ;
   browser:query """PREFIX dct: <http://purl.org/dc/terms/>
@@ -166,6 +174,33 @@ CONSTRUCT {
   ?předmět schema:provider ?node ;
     schema:keywords ?keyword .
   ?keyword dct:title ?keywordTitle .
+}""" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/uk/témata/sdílená-témata-pracoviště> a browser:ExpansionQuery ;
+  dct:title "Sdílená témata pracoviště" ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uk/témata> ;
+  browser:query """PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX schema: <http://schema.org/>
+PREFIX buk: <https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/>
+PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+
+CONSTRUCT {
+  ?node buk:zabývá-se-tématem ?keyword .
+  ?keyword a buk:Téma ;
+    dct:title ?keywordTitle ;
+    browser:class "tema" .
+
+  buk:zabývá-se-tématem browser:class "zabyvaSeTematem" .
+} WHERE {
+  ?předmět schema:provider ?node ;
+    schema:keywords ?keyword .
+  ?keyword dct:title ?keywordTitle .
+
+  FILTER EXISTS {
+    ?předmětX schema:provider ?pracoviště ;
+      schema:keywords ?keyword .
+    FILTER (?pracoviště!=?node)
+  }
 }""" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/uk/témata/téma> a browser:ExpansionQuery ;
