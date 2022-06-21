@@ -5,6 +5,7 @@
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix schema: <http://schema.org/> .
 
 #####################################
 # Configurations
@@ -174,7 +175,7 @@ CONSTRUCT {
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 
 CONSTRUCT {
-  ?node a buk:Pracoviště ; ;
+  ?node a buk:Pracoviště ;
     skos:prefLabel ?label ;
     browser:class "pracoviste" .
 } WHERE {
