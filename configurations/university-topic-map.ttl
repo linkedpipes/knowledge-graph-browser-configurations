@@ -91,7 +91,8 @@ PREFIX buk: <https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 
 CONSTRUCT {
-  ?pracoviště buk:nadřazené-pracoviště ?node ;
+  ?pracoviště a buk:Pracoviště ;
+    buk:nadřazené-pracoviště ?node ;
     skos:prefLabel ?pracovištěLabel ;
     browser:class "pracoviste" .
 
@@ -112,7 +113,8 @@ PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 
 CONSTRUCT {
   ?node buk:nadřazené-pracoviště ?pracoviště .
-  ?pracoviště skos:prefLabel ?pracovištěLabel ;
+  ?pracoviště a buk:Pracoviště ;
+    skos:prefLabel ?pracovištěLabel ;
     browser:class "pracoviste" .
 
   buk:nadřazené-pracoviště browser:class "broader" .
@@ -132,7 +134,8 @@ PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 
 CONSTRUCT {
   ?node buk:zabývá-se-tématem ?keyword .
-  ?keyword dct:title ?keywordTitle ;
+  ?keyword a buk:Téma ;
+    dct:title ?keywordTitle ;
     browser:class "tema" .
 
   buk:zabývá-se-tématem browser:class "zabyvaSeTematem" .
@@ -152,7 +155,8 @@ PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 
 CONSTRUCT {
   ?pracoviště buk:zabývá-se-tématem ?node .
-  ?pracoviště skos:prefLabel ?pracovištěLabel ;
+  ?pracoviště a buk:Pracoviště ;
+    skos:prefLabel ?pracovištěLabel ;
     browser:class "pracoviste" .
 
   buk:zabývá-se-tématem browser:class "zabyvaSeTematem" .
@@ -170,7 +174,7 @@ CONSTRUCT {
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 
 CONSTRUCT {
-  ?node a skos:Concept ;
+  ?node a buk:Pracoviště ; ;
     skos:prefLabel ?label ;
     browser:class "pracoviste" .
 } WHERE {
@@ -199,7 +203,7 @@ PREFIX schema: <http://schema.org/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 
 CONSTRUCT {
-  ?node a schema:DefinedTerm ;
+  ?node a buk:Téma ;
     dct:title ?label ;
     browser:class "tema" .
 } WHERE {
@@ -235,6 +239,17 @@ CONSTRUCT {
 #####################################
 # View vocabularies
 #####################################
+
+<https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/Pracoviště> a owl:Class ;
+  rdfs:label "Pracoviště"@cs ;
+  rdfs:comment "Pracoviště v organizační struktuře Univerzity Karlovy."@cs ;
+  rdfs:subClassOf skos:Concept .
+
+<https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/Téma> a owl:Class ;
+  rdfs:label "Téma"@cs ;
+  rdfs:comment "Téma pěstované na Univerzitě Karlově."@cs ;
+  rdfs:subClassOf schema:DefinedTerm .
+
 
 <https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/nadřazené-pracoviště> a owl:ObjectProperty ;
   rdfs:label "nadřazené pracoviště"@cs ;
