@@ -41,8 +41,8 @@ ASK {
   browser:hasCondition """PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX schema: <http://schema.org/>
 ASK {
-  ?keyword a schema:DefinedTerm .
-  ?subject schema:keywords ?keyword .
+  ?node a schema:DefinedTerm .
+  ?subject schema:keywords ?node .
 }""" ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uk/témata> .
 
@@ -204,7 +204,6 @@ CONSTRUCT {
     browser:class "tema" .
 } WHERE {
   ?node dct:title ?label .
-  FILTER (LANG(?label) = "cs")
 }""" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/uk/témata/téma> a browser:DetailQuery ;
@@ -217,7 +216,6 @@ CONSTRUCT {
   ?node dct:title ?label .
 } WHERE {
   ?node dct:title ?label .
-  FILTER (LANG(?label) = "cs")
 }""" .
 
 #####################################
