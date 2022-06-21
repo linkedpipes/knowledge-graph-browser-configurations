@@ -243,7 +243,7 @@ CONSTRUCT {
   rdfs:range skos:Concept ;
   rdfs:subPropertyOf skos:broader .
 
-<zabývá-se-tématem> a owl:ObjectProperty ;
+<https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/zabývá-se-tématem> a owl:ObjectProperty ;
   rdfs:label "zabývá se tématem"@cs ;
   rdfs:comment "Téma, kterému se věnuje pracoviště Univerzity Karlovy."@cs ;
   rdfs:domain skos:Concept ;
