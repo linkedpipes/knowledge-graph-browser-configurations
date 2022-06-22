@@ -125,7 +125,7 @@ CONSTRUCT {
   ?pracoviště a buk:Pracoviště ;
     buk:nadřazené-pracoviště ?node ;
     skos:prefLabel ?pracovištěLabel ;
-    browser:class "pracoviste", ?fakultaClass, ?pracovisteClass .
+    browser:class "pracoviste", ?fakultaClass, ?pracovištěClass .
 
   buk:nadřazené-pracoviště browser:class "broader" .
 } WHERE {
