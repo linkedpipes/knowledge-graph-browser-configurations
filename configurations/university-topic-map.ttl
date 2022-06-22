@@ -825,6 +825,7 @@ CONSTRUCT {
   browser:line-color "#FFFFFF" ;
   browser:line-style "solid" ;
   browser:color "#FFFFFF" ;
+  browser:target-arrow-shape: "none" ;
   browser:hasSelector ".zabyvaSeTematem" .
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/node> a browser:VisualStyle ;
