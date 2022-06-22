@@ -281,13 +281,13 @@ CONSTRUCT {
   FILTER (LANG(?label) = "cs")
 
   OPTIONAL {
-    ?pracoviště skos:broader <https://cu.opendata.cz/resource/prvek-organizační-struktury/101> ;
+    ?node skos:broader <https://cu.opendata.cz/resource/prvek-organizační-struktury/101> ;
       skos:notation ?pracovištěID .
     BIND(CONCAT("fakulta", STR(?pracovištěID)) AS ?fakultaClass)
   }
 
   OPTIONAL {
-    ?pracoviště skos:broader+ ?fakulta .
+    ?node skos:broader+ ?fakulta .
     ?fakulta skos:broader <https://cu.opendata.cz/resource/prvek-organizační-struktury/101> ;
       skos:notation ?fakultaID .
     BIND(CONCAT("pracoviste", STR(?fakultaID)) AS ?pracovištěClass)
