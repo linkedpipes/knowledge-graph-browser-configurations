@@ -281,7 +281,7 @@ PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
   ?node a buk:Pracoviště ;
     skos:prefLabel ?label ;
-    browser:class "pracoviste", ?fakultaClass, ?pracovištěClass .
+    browser:class ?class, ?fakultaClass, ?pracovištěClass .
 } WHERE {
   ?node skos:prefLabel ?label .
   FILTER (LANG(?label) = "cs")
@@ -298,6 +298,8 @@ CONSTRUCT {
       skos:notation ?fakultaID .
     BIND(CONCAT("pracoviste", STR(?fakultaID)) AS ?pracovištěClass)
   }
+
+  BIND(COALESCE(?fakultaClass, ?pracovištěClass, "pracoviste") AS ?class)
 }""" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/uk/pracoviště> a browser:DetailQuery ;
