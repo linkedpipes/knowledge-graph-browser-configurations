@@ -259,7 +259,7 @@ CONSTRUCT {
     browser:class ?pracovištěClass .
 
   buk:zabývá-se-tématem browser:class "zabyvaSeTematem" .
-  buk:nadřazené-pracoviště browser:class "broader" .  
+  ?pNadrazenePracoviste browser:class "broader" .  
 } WHERE {
   ?předmět schema:provider ?pracoviště ;
     schema:keywords ?node .
@@ -288,6 +288,8 @@ CONSTRUCT {
     ?mezipracoviště2 skos:broader* ?fakulta ;
       skos:prefLabel ?mezipracoviště2Label .
     ?fakulta skos:broader <https://cu.opendata.cz/resource/prvek-organizační-struktury/101> .
+
+    BIND(buk:nadřazené-pracoviště AS ?pNadrazenePracoviste)
   }
 }""" .
 
