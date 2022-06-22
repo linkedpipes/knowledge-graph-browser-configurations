@@ -364,9 +364,9 @@ CONSTRUCT {
   browser:hasSelector ".broader" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/zabývá-se-tématem> a browser:VisualStyle ;
-  browser:line-color "#F1F8F2" ;
+  browser:line-color "#FFFFFF" ;
   browser:line-style "solid" ;
-  browser:color "#BBDDC0" ;
+  browser:color "#FFFFFF" ;
   browser:hasSelector ".zabyvaSeTematem" .
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/node> a browser:VisualStyle ;
