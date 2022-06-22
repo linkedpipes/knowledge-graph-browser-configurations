@@ -543,8 +543,8 @@ CONSTRUCT {
   browser:hasSelector ".pracoviste114" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/pvf/fakulta> a browser:VisualStyle ;
-  browser:background-color "#005cb2" ;
-  browser:border-color "#005cb2" ;
+  browser:background-color "#5d99c6" ;
+  browser:border-color "#5d99c6" ;
   browser:color "#ffffff" ;
   browser:text-wrap "wrap";
   browser:text-max-width "100px";
@@ -553,9 +553,9 @@ CONSTRUCT {
   browser:hasSelector ".fakulta115" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/pvf/pracoviště> a browser:VisualStyle ;
-  browser:background-color "#bbdefb" ;
-  browser:border-color "#005cb2" ;
-  browser:color "#005cb2" ;
+  browser:background-color "#90caf9" ;
+  browser:border-color "#5d99c6" ;
+  browser:color "#e3f2fd" ;
   browser:text-wrap "wrap";
   browser:text-max-width "100px";
   browser:width "120px" ;
