@@ -279,8 +279,6 @@ CONSTRUCT {
     BIND(CONCAT("pracoviste", STR(?fakultaID)) AS ?pracovištěClass)
   }
 
-  BIND(COALESCE(?fakultaClass, ?pracovištěClass, "pracoviste") AS ?class)
-
   OPTIONAL {
     ?pracoviště skos:broader* ?mezipracoviště1 .
     ?mezipracoviště1 skos:broader ?mezipracoviště2 ;
@@ -291,6 +289,8 @@ CONSTRUCT {
 
     BIND(buk:nadřazené-pracoviště AS ?pNadrazenePracoviste)
   }
+
+  BIND(COALESCE(?fakultaClass, ?pracovištěClass, "pracoviste") AS ?class)
 }""" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/uk/pracoviště> a browser:PreviewQuery ;
