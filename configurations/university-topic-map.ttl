@@ -575,7 +575,7 @@ CONSTRUCT {
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/mff/pracoviště> a browser:VisualStyle ;
   browser:background-color "#0288d1" ;
   browser:border-color "#005b9f" ;
-  browser:color "#006db3" ;
+  browser:color "#e1f5fe" ;
   browser:text-wrap "wrap";
   browser:text-max-width "100px";
   browser:width "120px" ;
