@@ -248,7 +248,18 @@ CONSTRUCT {
     skos:prefLabel ?pracovištěLabel ;
     browser:class ?class, ?fakultaClass, ?pracovištěClass .
 
+  ?mezipracoviště1 a buk:Pracoviště ;
+    skos:prefLabel ?mezipracoviště1Label ;
+    browser:class ?pracovištěClass .
+
+  ?mezipracoviště1 buk:nadřazené-pracoviště ?mezipracoviště2 .
+
+  ?mezipracoviště2 a buk:Pracoviště ;
+    skos:prefLabel ?mezipracoviště2Label ;
+    browser:class ?pracovištěClass .
+
   buk:zabývá-se-tématem browser:class "zabyvaSeTematem" .
+  buk:nadřazené-pracoviště browser:class "broader" .  
 } WHERE {
   ?předmět schema:provider ?pracoviště ;
     schema:keywords ?node .
@@ -269,6 +280,15 @@ CONSTRUCT {
   }
 
   BIND(COALESCE(?fakultaClass, ?pracovištěClass, "pracoviste") AS ?class)
+
+  OPTIONAL {
+    ?pracoviště skos:broader* ?mezipracoviště1 .
+    ?mezipracoviště1 skos:broader ?mezipracoviště2 ;
+      skos:prefLabel ?mezipracoviště1Label .
+    ?mezipracoviště2 skos:broader* ?fakulta ;
+      skos:prefLabel ?mezipracoviště2Label .
+    ?fakulta skos:broader <https://cu.opendata.cz/resource/prvek-organizační-struktury/101> .
+  }
 }""" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/uk/pracoviště> a browser:PreviewQuery ;
