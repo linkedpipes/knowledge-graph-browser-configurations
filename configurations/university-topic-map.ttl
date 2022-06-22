@@ -125,7 +125,7 @@ CONSTRUCT {
   ?pracoviště a buk:Pracoviště ;
     buk:nadřazené-pracoviště ?node ;
     skos:prefLabel ?pracovištěLabel ;
-    browser:class "pracoviste", ?fakultaClass, ?pracovištěClass .
+    browser:class ?class, ?fakultaClass, ?pracovištěClass .
 
   buk:nadřazené-pracoviště browser:class "broader" .
 } WHERE {
@@ -146,6 +146,8 @@ CONSTRUCT {
     BIND(CONCAT("pracoviste", STR(?fakultaID)) AS ?pracovištěClass)
   }
 
+  BIND(COALESCE(?fakultaClass, ?pracovištěClass, "pracoviste") AS ?class)
+ 
 }""" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/uk/nadřazená-pracoviště> a browser:ExpansionQuery ;
@@ -160,7 +162,7 @@ CONSTRUCT {
   ?node buk:nadřazené-pracoviště ?pracoviště .
   ?pracoviště a buk:Pracoviště ;
     skos:prefLabel ?pracovištěLabel ;
-    browser:class "pracoviste", ?fakultaClass, ?pracovištěClass .
+    browser:class ?class, ?fakultaClass, ?pracovištěClass .
 
   buk:nadřazené-pracoviště browser:class "broader" .
 } WHERE {
@@ -180,6 +182,8 @@ CONSTRUCT {
       skos:notation ?fakultaID .
     BIND(CONCAT("pracoviste", STR(?fakultaID)) AS ?pracovištěClass)
   }
+
+  BIND(COALESCE(?fakultaClass, ?pracovištěClass, "pracoviste") AS ?class)
 }""" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/uk/témata/témata-pracoviště> a browser:ExpansionQuery ;
@@ -242,7 +246,7 @@ CONSTRUCT {
   ?pracoviště buk:zabývá-se-tématem ?node .
   ?pracoviště a buk:Pracoviště ;
     skos:prefLabel ?pracovištěLabel ;
-    browser:class "pracoviste", ?fakultaClass, ?pracovištěClass .
+    browser:class ?class, ?fakultaClass, ?pracovištěClass .
 
   buk:zabývá-se-tématem browser:class "zabyvaSeTematem" .
 } WHERE {
@@ -263,6 +267,8 @@ CONSTRUCT {
       skos:notation ?fakultaID .
     BIND(CONCAT("pracoviste", STR(?fakultaID)) AS ?pracovištěClass)
   }
+
+  BIND(COALESCE(?fakultaClass, ?pracovištěClass, "pracoviste") AS ?class)
 }""" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/uk/pracoviště> a browser:PreviewQuery ;
