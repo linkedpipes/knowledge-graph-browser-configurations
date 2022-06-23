@@ -246,17 +246,12 @@ CONSTRUCT {
   ?pracoviště buk:zabývá-se-tématem ?node .
   ?pracoviště a buk:Pracoviště ;
     skos:prefLabel ?pracovištěLabel ;
-    browser:class ?class, ?fakultaClass, ?pracovištěClass .
+    skos:broader ?fakulta ;
+    browser:class ?class, ?pracovištěClass .
 
-  ?mezipracoviště1 a buk:Pracoviště ;
-    skos:prefLabel ?mezipracoviště1Label ;
-    browser:class ?pracovištěClass .
-
-  ?mezipracoviště1 buk:nadřazené-pracoviště ?mezipracoviště2 .
-
-  ?mezipracoviště2 a buk:Pracoviště ;
-    skos:prefLabel ?mezipracoviště2Label ;
-    browser:class ?pracovištěClass .
+  ?fakulta a buk:Pracoviště ;
+    skos:prefLabel ?fakultaLabel ;
+    browser:class ?fakultaClass .
 
   buk:zabývá-se-tématem browser:class "zabyvaSeTematem" .
   ?pNadrazenePracoviste browser:class "broader" .  
@@ -269,28 +264,19 @@ CONSTRUCT {
   OPTIONAL {
     ?pracoviště skos:broader <https://cu.opendata.cz/resource/prvek-organizační-struktury/101> ;
       skos:notation ?pracovištěID .
-    BIND(CONCAT("fakulta", STR(?pracovištěID)) AS ?fakultaClass)
+    BIND(CONCAT("fakulta", STR(?pracovištěID)) AS ?pracovištěClass)
   }
 
   OPTIONAL {
     ?pracoviště skos:broader+ ?fakulta .
     ?fakulta skos:broader <https://cu.opendata.cz/resource/prvek-organizační-struktury/101> ;
-      skos:notation ?fakultaID .
+      skos:notation ?fakultaID ;
+      skos:prefLabel ?fakultaLabel .
     BIND(CONCAT("pracoviste", STR(?fakultaID)) AS ?pracovištěClass)
+    BIND(CONCAT("fakulta", STR(?fakultaID)) AS ?fakultaClass)
   }
 
-  OPTIONAL {
-    ?pracoviště skos:broader* ?mezipracoviště1 .
-    ?mezipracoviště1 skos:broader ?mezipracoviště2 ;
-      skos:prefLabel ?mezipracoviště1Label .
-    ?mezipracoviště2 skos:broader* ?fakulta ;
-      skos:prefLabel ?mezipracoviště2Label .
-    ?fakulta skos:broader <https://cu.opendata.cz/resource/prvek-organizační-struktury/101> .
-
-    BIND(buk:nadřazené-pracoviště AS ?pNadrazenePracoviste)
-  }
-
-  BIND(COALESCE(?fakultaClass, ?pracovištěClass, "pracoviste") AS ?class)
+  BIND(COALESCE(?pracovištěClass, "pracoviste") AS ?class)
 }""" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/uk/pracoviště> a browser:PreviewQuery ;
