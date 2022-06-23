@@ -359,7 +359,7 @@ CONSTRUCT {
     SELECT ?node (COUNT(DISTINCT(?pracoviště)) AS ?početPracovišť) (COUNT(DISTINCT(?předmět)) AS ?početPředmětů) (GROUP_CONCAT(?název ; separator=" - " ) AS ?názvyPředmětů)
     WHERE {
       ?předmět schema:provider ?pracoviště ;
-         dct:title ?název
+         dct:title ?název .
         schema:keywords ?node .
     }
   }
