@@ -360,6 +360,7 @@ CONSTRUCT {
     WHERE {
       ?předmět schema:provider ?pracoviště ;
         dct:title ?název ;
+        schema:courseCode ?code ;
         schema:keywords ?node .
       FILTER (LANG(?název)="cs")
       BIND(CONCAT(STR(?název), " (", STR(?code), ")") AS ?labelPředmětu)
