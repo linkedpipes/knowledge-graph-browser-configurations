@@ -806,13 +806,14 @@ CONSTRUCT {
   browser:hasSelector ".pracoviste120" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/téma> a browser:VisualStyle ;
-  browser:background-color "#C3E2E9" ;
-  browser:border-color "#327786" ;
-  browser:color "#327786" ;
+  browser:shape "ellipse" ;
+  browser:background-color "#FFFFFF" ;
+  browser:border-color "#000000" ;
+  browser:color "#000000" ;
   browser:text-wrap "wrap";
-  browser:text-max-width "100px";
-  browser:width "120px" ;
-  browser:height "40px" ;
+  browser:text-max-width "80px";
+  browser:width "90px" ;
+  browser:height "90px" ;
   browser:hasSelector ".tema" .
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/www.w3.org/2004/02/skos/core/broader> a browser:VisualStyle ;
