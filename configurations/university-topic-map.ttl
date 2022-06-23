@@ -341,15 +341,26 @@ CONSTRUCT {
 }""" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/uk/témata/téma> a browser:DetailQuery ;
-  dct:title "Základní detail pracoviště" ;
+  dct:title "Základní detail tématu" ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uk/pracoviště> ;
   browser:query """PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX schema: <http://schema.org/>
+PREFIX buk: <https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 
 CONSTRUCT {
-  ?node dct:title ?label .
+  ?node dct:title ?label ;
+    buk:počet-pracovišť ?početPracovišť ;
+    buk:počet-předmětů ?početPředmětů .
 } WHERE {
   ?node dct:title ?label .
+  {
+    SELECT ?node (COUNT(DISTINCT(?pracoviště)) AS ?početPracovišť) (COUNT(DISTINCT(?předmět)) AS ?početPředmětů)
+    WHERE {
+      ?předmět schema:provider ?pracoviště ;
+        schema:keywords ?node .
+    }
+  }
 }""" .
 
 #####################################
@@ -393,6 +404,16 @@ CONSTRUCT {
   rdfs:comment "Téma, kterému se věnuje pracoviště Univerzity Karlovy."@cs ;
   rdfs:domain skos:Concept ;
   rdfs:range schema:DefinedTerm .
+
+<https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/počet-pracovišť> a owl:DatatypeProperty ;
+  rdfs:label "počet pracovišť"@cs ;
+  rdfs:domain skos:Concept ;
+  rdfs:range rdfs:Literal .
+
+<https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/počet-předmětů> a owl:DatatypeProperty ;
+  rdfs:label "počet předmětů"@cs ;
+  rdfs:domain skos:Concept ;
+  rdfs:range rdfs:Literal .
 
 #####################################
 # Visual styles
