@@ -351,13 +351,15 @@ PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
   ?node dct:title ?label ;
     buk:počet-pracovišť ?početPracovišť ;
+    buk:názvy-předmětů ?názvyPředmětů ;
     buk:počet-předmětů ?početPředmětů .
 } WHERE {
   ?node dct:title ?label .
   {
-    SELECT ?node (COUNT(DISTINCT(?pracoviště)) AS ?početPracovišť) (COUNT(DISTINCT(?předmět)) AS ?početPředmětů)
+    SELECT ?node (COUNT(DISTINCT(?pracoviště)) AS ?početPracovišť) (COUNT(DISTINCT(?předmět)) AS ?početPředmětů) (GROUP_CONCAT(?název ; separator=" - " ) AS ?názvyPředmětů)
     WHERE {
       ?předmět schema:provider ?pracoviště ;
+         dct:title ?název
         schema:keywords ?node .
     }
   }
@@ -412,6 +414,11 @@ CONSTRUCT {
 
 <https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/počet-předmětů> a owl:DatatypeProperty ;
   rdfs:label "počet předmětů"@cs ;
+  rdfs:domain skos:Concept ;
+  rdfs:range rdfs:Literal .
+
+<https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/názvy-předmětů> a owl:DatatypeProperty ;
+  rdfs:label "názvy předmětů"@cs ;
   rdfs:domain skos:Concept ;
   rdfs:range rdfs:Literal .
 
