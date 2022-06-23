@@ -246,7 +246,7 @@ CONSTRUCT {
   ?pracoviště buk:zabývá-se-tématem ?node .
   ?pracoviště a buk:Pracoviště ;
     skos:prefLabel ?pracovištěLabel ;
-    skos:broader ?fakulta ;
+    buk:nadřazené-pracoviště ?fakulta ;
     browser:class ?class, ?pracovištěClass .
 
   ?fakulta a buk:Pracoviště ;
@@ -274,6 +274,7 @@ CONSTRUCT {
       skos:prefLabel ?fakultaLabel .
     BIND(CONCAT("pracoviste", STR(?fakultaID)) AS ?pracovištěClass)
     BIND(CONCAT("fakulta", STR(?fakultaID)) AS ?fakultaClass)
+    BIND(buk:nadřazené-pracoviště AS ?pNadrazenePracoviste)
   }
 
   BIND(COALESCE(?pracovištěClass, "pracoviste") AS ?class)
