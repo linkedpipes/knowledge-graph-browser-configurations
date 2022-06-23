@@ -356,7 +356,7 @@ CONSTRUCT {
 } WHERE {
   ?node dct:title ?label .
   {
-    SELECT ?node (COUNT(DISTINCT(?pracoviště)) AS ?početPracovišť) (COUNT(DISTINCT(?předmět)) AS ?početPředmětů) (GROUP_CONCAT(DISTINCT ?název ; separator="<br>" ) AS ?názvyPředmětů)
+    SELECT ?node (COUNT(DISTINCT(?pracoviště)) AS ?početPracovišť) (COUNT(DISTINCT(?předmět)) AS ?početPředmětů) (GROUP_CONCAT(DISTINCT ?název ; separator=" - " ) AS ?názvyPředmětů)
     WHERE {
       ?předmět schema:provider ?pracoviště ;
         dct:title ?název ;
