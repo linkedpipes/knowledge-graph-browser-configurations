@@ -12,7 +12,7 @@
 #####################################
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/uk/témata> a browser:Configuration ;
-  dct:title "Konfigurace procházení témat pěstovaných na Univerzitě Karlově"@cs ;
+  dct:title "Procházení témat pěstovaných na Univerzitě Karlově"@cs, "Browsing topics cultivated at Charles University"@en ;
   browser:hasVisualStyleSheet <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata/style-sheet>;
   browser:startingNode <https://cu.opendata.cz/resource/prvek-organizační-struktury/116>;
   browser:hasViewSet <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uk/témata/pracoviště>,
