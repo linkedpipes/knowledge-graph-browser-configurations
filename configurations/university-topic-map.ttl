@@ -345,18 +345,19 @@ CONSTRUCT {
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uk/pracoviště> ;
   browser:query """PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX schema: <http://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX buk: <https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 
 CONSTRUCT {
   ?node dct:title ?label ;
     buk:počet-pracovišť ?početPracovišť ;
-    buk:názvy-předmětů ?názvyPředmětů ;
-    buk:počet-předmětů ?početPředmětů .
+    buk:počet-předmětů ?početPředmětů ;
+    ?pFakulta ?názvyPředmětů .
 } WHERE {
   ?node dct:title ?label .
   {
-    SELECT ?node (COUNT(DISTINCT(?pracoviště)) AS ?početPracovišť) (COUNT(DISTINCT(?předmět)) AS ?početPředmětů) (GROUP_CONCAT(DISTINCT ?labelPředmětu ; separator=" - " ) AS ?názvyPředmětů)
+    SELECT ?node ?pFakulta (GROUP_CONCAT(DISTINCT ?labelPředmětu ; separator=" - " ) AS ?názvyPředmětů)
     WHERE {
       ?předmět schema:provider ?pracoviště ;
         dct:title ?název ;
@@ -364,8 +365,23 @@ CONSTRUCT {
         schema:keywords ?node .
       FILTER (LANG(?název)="cs")
       BIND(CONCAT(STR(?název), " (", STR(?code), ")") AS ?labelPředmětu)
+
+      ?pracoviště skos:broader+ ?fakulta .
+      ?fakulta skos:broader <https://cu.opendata.cz/resource/prvek-organizační-struktury/101> ;
+         skos:notation ?fakultaID .
+      BIND(IRI(CONCAT("https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/názvy-předmětů-", STR(?fakultaID))) AS ?pFakulta)
+    }
+    GROUP BY ?node ?pFakulta
+  }
+
+    {
+    SELECT ?node (COUNT(DISTINCT(?pracoviště)) AS ?početPracovišť) (COUNT(DISTINCT(?předmět)) AS ?početPředmětů)
+    WHERE {
+      ?předmět schema:provider ?pracoviště ;
+        schema:keywords ?node .
     }
   }
+
 }""" .
 
 #####################################
@@ -422,6 +438,91 @@ CONSTRUCT {
 
 <https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/názvy-předmětů> a owl:DatatypeProperty ;
   rdfs:label "názvy předmětů"@cs ;
+  rdfs:domain skos:Concept ;
+  rdfs:range rdfs:Literal .
+
+<https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/názvy-předmětů-104> a owl:DatatypeProperty ;
+  rdfs:label "KTF"@cs ;
+  rdfs:domain skos:Concept ;
+  rdfs:range rdfs:Literal .
+
+<https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/názvy-předmětů-105> a owl:DatatypeProperty ;
+  rdfs:label "ETF"@cs ;
+  rdfs:domain skos:Concept ;
+  rdfs:range rdfs:Literal .
+
+<https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/názvy-předmětů-106> a owl:DatatypeProperty ;
+  rdfs:label "HTF"@cs ;
+  rdfs:domain skos:Concept ;
+  rdfs:range rdfs:Literal .
+
+<https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/názvy-předmětů-107> a owl:DatatypeProperty ;
+  rdfs:label "PF"@cs ;
+  rdfs:domain skos:Concept ;
+  rdfs:range rdfs:Literal .
+
+<https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/názvy-předmětů-114> a owl:DatatypeProperty ;
+  rdfs:label "FF"@cs ;
+  rdfs:domain skos:Concept ;
+  rdfs:range rdfs:Literal .
+
+<https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/názvy-předmětů-115> a owl:DatatypeProperty ;
+  rdfs:label "PřF"@cs ;
+  rdfs:domain skos:Concept ;
+  rdfs:range rdfs:Literal .
+
+<https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/názvy-předmětů-116> a owl:DatatypeProperty ;
+  rdfs:label "MFF"@cs ;
+  rdfs:domain skos:Concept ;
+  rdfs:range rdfs:Literal .
+
+<https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/názvy-předmětů-108> a owl:DatatypeProperty ;
+  rdfs:label "1.LF"@cs ;
+  rdfs:domain skos:Concept ;
+  rdfs:range rdfs:Literal .
+
+<https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/názvy-předmětů-109> a owl:DatatypeProperty ;
+  rdfs:label "2.LF"@cs ;
+  rdfs:domain skos:Concept ;
+  rdfs:range rdfs:Literal .
+
+<https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/názvy-předmětů-110> a owl:DatatypeProperty ;
+  rdfs:label "3.LF"@cs ;
+  rdfs:domain skos:Concept ;
+  rdfs:range rdfs:Literal .
+
+<https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/názvy-předmětů-111> a owl:DatatypeProperty ;
+  rdfs:label "LFPl"@cs ;
+  rdfs:domain skos:Concept ;
+  rdfs:range rdfs:Literal .
+
+<https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/názvy-předmětů-112> a owl:DatatypeProperty ;
+  rdfs:label "LFHK"@cs ;
+  rdfs:domain skos:Concept ;
+  rdfs:range rdfs:Literal .
+
+<https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/názvy-předmětů-113> a owl:DatatypeProperty ;
+  rdfs:label "FaFHK"@cs ;
+  rdfs:domain skos:Concept ;
+  rdfs:range rdfs:Literal .
+
+<https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/názvy-předmětů-117> a owl:DatatypeProperty ;
+  rdfs:label "PedF"@cs ;
+  rdfs:domain skos:Concept ;
+  rdfs:range rdfs:Literal .
+
+<https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/názvy-předmětů-118> a owl:DatatypeProperty ;
+  rdfs:label "FSV"@cs ;
+  rdfs:domain skos:Concept ;
+  rdfs:range rdfs:Literal .
+
+<https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/názvy-předmětů-119> a owl:DatatypeProperty ;
+  rdfs:label "FTSV"@cs ;
+  rdfs:domain skos:Concept ;
+  rdfs:range rdfs:Literal .
+
+<https://linked.opendata.cz/ontology/knowledge-graph-browser/uk/názvy-předmětů-120> a owl:DatatypeProperty ;
+  rdfs:label "FHS"@cs ;
   rdfs:domain skos:Concept ;
   rdfs:range rdfs:Literal .
 
