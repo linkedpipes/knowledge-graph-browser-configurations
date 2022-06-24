@@ -17,11 +17,11 @@
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/meta-configuration/charles-university> a browser:MetaConfiguration ;
   dct:title
-    "Charles University"@en,
-    "Univerzita Karlova"@cs ;
+    "Charles Explorer"@en,
+    "Charles Explorer"@cs ;
   dct:description
-    "Explore organizational structure of Charles University and topics of its units."@en,
-    "Objevujte organizační strukturu Univerzity Karlovy a témata jednotlivých pracovišť."@cs ;
+    "Explore topics cultivated at the departments of Charles University"@en,
+    "Objevujte témata pěstovaná na pracovištích Univerzity Karlovy."@cs ;
   browser:image "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Charles-University-symbol-4.svg/253px-Charles-University-symbol-4.svg.png" ;
   browser:hasConfiguration
     <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/uk/témata> .
