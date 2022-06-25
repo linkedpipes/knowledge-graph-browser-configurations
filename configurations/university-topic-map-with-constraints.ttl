@@ -1,0 +1,46 @@
+@prefix browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+#####################################
+# Configurations
+#####################################
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/uk/témata-s-omezeními> a browser:Configuration ;
+  dct:title "Konfigurace procházení témat pěstovaných na Univerzitě Karlově (s omezeními)"@cs ;
+  browser:hasVisualStyleSheet <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata/style-sheet>;
+  browser:startingNode <https://cu.opendata.cz/resource/prvek-organizační-struktury/116>;
+  browser:hasLayoutContraints <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints> ;
+  browser:hasViewSet <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uk/témata/pracoviště> .
+
+
+#####################################
+# Layout Constraints
+# A layout constraint is a constraint which can be applied on a node.
+# For example: set a constant position of a node of a certain type relative to nodes of other types.
+# Examples of constraint pairs: left/right, top/bottom.
+#####################################
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints> a browser:LayoutConstraints ;
+  browser:hasConstraint <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/relative-placement/pracoviste-tema> ,
+  <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/types-to-cluster> ,
+  <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/parent-child-relation> .
+
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/relative-placement/pracoviste-tema> a browser:RelativePlacementLayoutConstraint ;
+  browser:left ".Pracoviště" ;
+  browser:right ".Téma" .
+
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/types-to-cluster> a browser:TypesToClusterLayoutConstraint ;
+  browser:typeToCluster ".Pracoviště" ,
+                        ".Téma" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/parent-child-relation> a browser:ParentChildLayoutConstraint ;
+  browser:parent ".podřazená" ;
+  browser:child ".nadřazená" .
+
