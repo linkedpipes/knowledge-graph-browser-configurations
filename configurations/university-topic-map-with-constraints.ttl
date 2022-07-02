@@ -26,21 +26,24 @@
 #####################################
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints> a browser:LayoutConstraints ;
-  browser:hasConstraint <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/relative-placement/pracoviste-tema> ,
-  <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/types-to-cluster> ,
-  <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/parent-child-relation> .
+  browser:hasConstraint <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/relative-placement/groups> ,
+  <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/classes-to-cluster> ,
+  <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/parent-child-relation> ,
+  <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/child-parent-relation> .
 
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/relative-placement/pracoviste-tema> a browser:RelativePlacementLayoutConstraint ;
-  browser:left ".Pracoviště" ;
-  browser:right ".Téma" .
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/relative-placement/groups> a browser:RelativePlacementLayoutConstraint ;
+  browser:groupingSelector ".tema" ,
+                        ".pracoviste" .
 
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/types-to-cluster> a browser:TypesToClusterLayoutConstraint ;
-  browser:typeToCluster ".Pracoviště" ,
-                        ".Téma" .
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/classes-to-cluster> a browser:ClassToClusterLayoutConstraint ;
+  browser:clusteringSelector ".pracoviste" ,
+                        ".tema" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/child-parent-relation> a browser:ChildParentLayoutConstraint ;
+  browser:hierarchyEdgeSelector ".broader" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/parent-child-relation> a browser:ParentChildLayoutConstraint ;
-  browser:parent ".podřazená" ;
-  browser:child ".nadřazená" .
+  browser:hierarchyEdgeSelector ".narrower" .
 
