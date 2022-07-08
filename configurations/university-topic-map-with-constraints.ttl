@@ -26,92 +26,53 @@
 #####################################
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints> a browser:LayoutConstraints ;
-  browser:hasConstraint <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/relative-placement/groups> ,
-  <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/classes-to-cluster> ,
-  <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/parent-child-relation> ,
-  <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/child-parent-relation> .
+  browser:hasConstraint <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/visual-groups/pracoviste> ,
+                        <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/visual-groups/tema> ,
+                        <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/visual-groups-to-cluster/pracoviste> ,
+                        <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/visual-groups-to-cluster/tema> ,
+                        <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/classes-to-cluster-together/fakulty> ,
+                        <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/pracoviste/child-parent-relation> ,
+                        <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/tema/child-parent-relation> ,
+                        <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/pracoviste/parent-child-relation> .
 
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/relative-placement/groups> a browser:RelativePlacementLayoutConstraint ;
-  browser:groupingSelector ".pracoviste",
-                        ".fakulta104",
-                        ".pracoviste104",
-                        ".fakulta105",
-                        ".pracoviste105",
-                        ".fakulta106",
-                        ".pracoviste106",
-                        ".fakulta107",
-                        ".pracoviste107",
-                        ".fakulta114",
-                        ".pracoviste114",
-                        ".fakulta115",
-                        ".pracoviste115",
-                        ".fakulta116",
-                        ".pracoviste116",
-                        ".fakulta108",
-                        ".pracoviste108",
-                        ".fakulta109",
-                        ".pracoviste109",
-                        ".fakulta110",
-                        ".pracoviste110",
-                        ".fakulta111",
-                        ".pracoviste111",
-                        ".fakulta112",
-                        ".pracoviste112",
-                        ".fakulta113",
-                        ".pracoviste113",
-                        ".fakulta117",
-                        ".pracoviste117",
-                        ".fakulta118",
-                        ".pracoviste118",
-                        ".fakulta119",
-                        ".pracoviste119",
-                        ".fakulta120",
-                        ".pracoviste120",
-                        ".tema" .
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/visual-groups/pracoviste> a browser:VisualGroupLayoutConstraint ;
+  browser:groupingSelector ".pracovisteVisualGroup" .
 
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/visual-groups/tema> a browser:VisualGroupLayoutConstraint ;
+  browser:groupingSelector ".tema" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/classes-to-cluster> a browser:ClassToClusterLayoutConstraint ;
-  browser:clusteringSelector ".pracoviste",
-                        ".fakulta104",
-                        ".pracoviste104",
-                        ".fakulta105",
-                        ".pracoviste105",
-                        ".fakulta106",
-                        ".pracoviste106",
-                        ".fakulta107",
-                        ".pracoviste107",
-                        ".fakulta114",
-                        ".pracoviste114",
-                        ".fakulta115",
-                        ".pracoviste115",
-                        ".fakulta116",
-                        ".pracoviste116",
-                        ".fakulta108",
-                        ".pracoviste108",
-                        ".fakulta109",
-                        ".pracoviste109",
-                        ".fakulta110",
-                        ".pracoviste110",
-                        ".fakulta111",
-                        ".pracoviste111",
-                        ".fakulta112",
-                        ".pracoviste112",
-                        ".fakulta113",
-                        ".pracoviste113",
-                        ".fakulta117",
-                        ".pracoviste117",
-                        ".fakulta118",
-                        ".pracoviste118",
-                        ".fakulta119",
-                        ".pracoviste119",
-                        ".fakulta120",
-                        ".pracoviste120",
-                        ".tema" .
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/visual-groups-to-cluster/pracoviste> a browser:VisualGroupToClusterLayoutConstraint ;
+  browser:clusteringSelector ".pracovisteVisualGroup" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/child-parent-relation> a browser:ChildParentLayoutConstraint ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/visual-groups-to-cluster/tema> a browser:VisualGroupToClusterLayoutConstraint ;
+  browser:clusteringSelector ".tema" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/classes-to-cluster-together/fakulty> a browser:ClassesToClusterTogetherLayoutConstraint ;
+  browser:clusteringSelector ".fakulta104" ,
+                              ".fakulta105" ,
+                              ".fakulta106" ,
+                              ".fakulta107" ,
+                              ".fakulta108" ,
+                              ".fakulta109" ,
+                              ".fakulta110" ,
+                              ".fakulta111" ,
+                              ".fakulta112" ,
+                              ".fakulta113" ,
+                              ".fakulta114" ,
+                              ".fakulta115" ,
+                              ".fakulta116" ,
+                              ".fakulta117" ,
+                              ".fakulta118" ,
+                              ".fakulta119" ,
+                              ".fakulta120"  .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/pracoviste/child-parent-relation> a browser:ChildParentLayoutConstraint ;
   browser:hierarchyEdgeSelector ".broader" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/parent-child-relation> a browser:ParentChildLayoutConstraint ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/tema/child-parent-relation> a browser:ChildParentLayoutConstraint ;
+  browser:hierarchyEdgeSelector ".broader" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/pracoviste/parent-child-relation> a browser:ParentChildLayoutConstraint ;
   browser:hierarchyEdgeSelector ".narrower" .
 

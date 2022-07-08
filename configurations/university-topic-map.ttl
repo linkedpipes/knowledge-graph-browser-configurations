@@ -125,7 +125,7 @@ CONSTRUCT {
   ?pracoviště a buk:Pracoviště ;
     buk:nadřazené-pracoviště ?node ;
     skos:prefLabel ?pracovištěLabel ;
-    browser:class ?class, ?fakultaClass, ?pracovištěClass .
+    browser:class ?class, ?fakultaClass, ?pracovištěClass, ?groupClass .
 
   buk:nadřazené-pracoviště browser:class "broader" .
 } WHERE {
@@ -147,6 +147,7 @@ CONSTRUCT {
   }
 
   BIND(COALESCE(?fakultaClass, ?pracovištěClass, "pracoviste") AS ?class)
+  BIND("pracovisteVisualGroup" AS ?groupClass)
  
 }""" .
 
@@ -162,7 +163,7 @@ CONSTRUCT {
   ?node buk:nadřazené-pracoviště ?pracoviště .
   ?pracoviště a buk:Pracoviště ;
     skos:prefLabel ?pracovištěLabel ;
-    browser:class ?class, ?fakultaClass, ?pracovištěClass .
+    browser:class ?class, ?fakultaClass, ?pracovištěClass, ?groupClass .
 
   buk:nadřazené-pracoviště browser:class "broader" .
 } WHERE {
@@ -184,6 +185,7 @@ CONSTRUCT {
   }
 
   BIND(COALESCE(?fakultaClass, ?pracovištěClass, "pracoviste") AS ?class)
+  BIND("pracovisteVisualGroup" AS ?groupClass)
 }""" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/uk/témata/témata-pracoviště> a browser:ExpansionQuery ;
@@ -247,11 +249,11 @@ CONSTRUCT {
   ?pracoviště a buk:Pracoviště ;
     skos:prefLabel ?pracovištěLabel ;
     buk:nadřazené-pracoviště ?fakulta ;
-    browser:class ?class, ?pracovištěClass .
+    browser:class ?class, ?pracovištěClass, ?groupClass .
 
   ?fakulta a buk:Pracoviště ;
     skos:prefLabel ?fakultaLabel ;
-    browser:class ?fakultaClass .
+    browser:class ?fakultaClass, ?groupClass .
 
   buk:zabývá-se-tématem browser:class "zabyvaSeTematem" .
   ?pNadrazenePracoviste browser:class "broader" .  
@@ -278,6 +280,7 @@ CONSTRUCT {
   }
 
   BIND(COALESCE(?pracovištěClass, "pracoviste") AS ?class)
+  BIND("pracovisteVisualGroup" AS ?groupClass)
 }""" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/uk/pracoviště> a browser:PreviewQuery ;
@@ -290,7 +293,7 @@ PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
   ?node a buk:Pracoviště ;
     skos:prefLabel ?label ;
-    browser:class ?class, ?fakultaClass, ?pracovištěClass .
+    browser:class ?class, ?fakultaClass, ?pracovištěClass, ?groupClass .
 } WHERE {
   ?node skos:prefLabel ?label .
   FILTER (LANG(?label) = "cs")
@@ -309,6 +312,7 @@ CONSTRUCT {
   }
 
   BIND(COALESCE(?fakultaClass, ?pracovištěClass, "pracoviste") AS ?class)
+  BIND("pracovisteVisualGroup" AS ?groupClass)
 }""" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/uk/pracoviště> a browser:DetailQuery ;
