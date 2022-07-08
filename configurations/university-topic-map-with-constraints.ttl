@@ -28,8 +28,8 @@
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints> a browser:LayoutConstraints ;
   browser:hasConstraint <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/visual-groups/pracoviste> ,
                         <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/visual-groups/tema> ,
-                        <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/visual-groups-to-cluster/pracoviste> ,
-                        <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/visual-groups-to-cluster/tema> ,
+                        <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/hierarchy-groups-to-cluster/pracoviste> ,
+                        <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/hierarchy-groups-to-cluster/tema> ,
                         <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/classes-to-cluster-together/fakulty> ,
                         <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/child-parent-relation/pracoviste> ,
                         <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/child-parent-relation/tema> ,
@@ -42,10 +42,10 @@
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/visual-groups/tema> a browser:VisualGroupLayoutConstraint ;
   browser:groupingSelector ".tema" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/visual-groups-to-cluster/pracoviste> a browser:VisualGroupToClusterLayoutConstraint ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/hierarchy-groups-to-cluster/pracoviste> a browser:HierarchyGroupToClusterLayoutConstraint ;
   browser:clusteringSelector ".pracovisteVisualGroup" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/visual-groups-to-cluster/tema> a browser:VisualGroupToClusterLayoutConstraint ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/hierarchy-groups-to-cluster/tema> a browser:HierarchyGroupToClusterLayoutConstraint ;
   browser:clusteringSelector ".tema" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/classes-to-cluster-together/fakulty> a browser:ClassesToClusterTogetherLayoutConstraint ;
