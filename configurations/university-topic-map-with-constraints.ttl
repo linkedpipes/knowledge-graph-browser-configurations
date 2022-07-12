@@ -65,7 +65,8 @@
                               ".fakulta117" ,
                               ".fakulta118" ,
                               ".fakulta119" ,
-                              ".fakulta120"  .
+                              ".fakulta120" ,
+                              ".pracovisteVisualGroup" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/child-parent-relation/pracoviste> a browser:ChildParentLayoutConstraint ;
   browser:hierarchyEdgeSelector ".broader" .
