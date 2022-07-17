@@ -24,7 +24,8 @@
     "Objevujte témata pěstovaná na pracovištích Univerzity Karlovy."@cs ;
   browser:image "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Charles-University-symbol-4.svg/253px-Charles-University-symbol-4.svg.png" ;
   browser:hasConfiguration
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/uk/témata> .
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/uk/témata> ,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/uk/témata-s-omezeními> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/meta-configuration/czech-government> a browser:MetaConfiguration ;
   dct:title
