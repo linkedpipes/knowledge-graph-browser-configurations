@@ -69,11 +69,14 @@
                               ".pracovisteVisualGroup" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/child-parent-relation/pracoviste> a browser:ChildParentLayoutConstraint ;
+  browser:parentNodeSelector ".pracovisteVisualGroup" ;
   browser:hierarchyEdgeSelector ".broader" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/child-parent-relation/tema> a browser:ChildParentLayoutConstraint ;
+  browser:parentNodeSelector ".tema" ;
   browser:hierarchyEdgeSelector ".broader" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/parent-child-relation/pracoviste> a browser:ParentChildLayoutConstraint ;
+  browser:parentNodeSelector ".pracovisteVisualGroup" ;
   browser:hierarchyEdgeSelector ".narrower" .
 
