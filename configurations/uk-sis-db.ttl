@@ -17,6 +17,7 @@
   dct:title "UK SIS DB"@cs;
   browser:autocomplete <https://raw.githubusercontent.com/linkedpipes/knowledge-graph-browser-website/main/configurations/uksisdb-autocomplete.json> ;
   browser:hasVisualStyleSheet <https://linked.opendata.cz/resource/knowledge-graph-browser/uksisdb/style-sheet>;
+  browser:startingNode <https://vocabulary.cuni.cz/sis/db/pojem/osoba>;
   browser:hasViewSet <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uksisdb/entity>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uksisdb/attribute>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uksisdb/relation> .
@@ -176,7 +177,7 @@ CONSTRUCT {
   rdfs:domain browser:class "domain" .
 
 } WHERE {
-  ?attr rdfs:domain ?node
+  ?attr rdfs:domain ?node ;
     rdfs:label ?attrLabel .
 }""" .
 
@@ -201,6 +202,7 @@ CONSTRUCT {
   browser:query """PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+PREFIX browser-uksisdb: <https://linked.opendata.cz/ontology/knowledge-graph-browser/uksisdb/>
 
 CONSTRUCT {
   ?node rdfs:label ?label ;
@@ -285,6 +287,7 @@ CONSTRUCT {
   browser:query """PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+PREFIX browser-uksisdb: <https://linked.opendata.cz/ontology/knowledge-graph-browser/uksisdb/>
 
 CONSTRUCT {
   ?node rdfs:label ?label ;
@@ -347,6 +350,7 @@ CONSTRUCT {
   browser:query """PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+PREFIX browser-uksisdb: <https://linked.opendata.cz/ontology/knowledge-graph-browser/uksisdb/>
 
 CONSTRUCT {
   ?node rdfs:label ?label ;
@@ -407,7 +411,7 @@ browser-uksisdb:numberOfInwardsRelations a owl:DatatypeProperty ;
   browser:shape "round-rectangle" ;
   browser:height "24px" ;
   browser:font-size "12px" ;
-  browser:hasSelector ".object" .
+  browser:hasSelector ".entity" .
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uksisdb/style/attribute> a browser:VisualStyle ;
   browser:shape "ellipse" ;
