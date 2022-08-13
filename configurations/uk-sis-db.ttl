@@ -15,7 +15,7 @@
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/uksisdb> a browser:Configuration ;
   dct:title "UK SIS DB"@cs;
-  browser:autocomplete <https://raw.githubusercontent.com/linkedpipes/knowledge-graph-browser-website/main/configurations/uksisdb-autocomplete.json> ;
+  browser:autocomplete <https://raw.githubusercontent.com/linkedpipes/knowledge-graph-browser-website/main/configurations/uk-sis-db-autocomplete.json> ;
   browser:hasVisualStyleSheet <https://linked.opendata.cz/resource/knowledge-graph-browser/uksisdb/style-sheet>;
   browser:startingNode <https://vocabulary.cuni.cz/sis/db/pojem/osoba>;
   browser:hasViewSet <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uksisdb/entity>,
