@@ -125,7 +125,8 @@ CONSTRUCT {
     browser:class "entity" .
   
 } WHERE {
-  ?outRel rdfs:domain ?node ;
+  ?outRel a owl:ObjectProperty ;
+    rdfs:domain ?node ;
     rdfs:range ?rngElem ;
     rdfs:label ?outRelLabel .
 
@@ -154,7 +155,8 @@ CONSTRUCT {
     browser:class "entity" .
   
 } WHERE {
-  ?inRel rdfs:range ?node ;
+  ?inRel a owl:ObjectProperty ;
+    rdfs:range ?node ;
     rdfs:domain ?domElem ;
     rdfs:label ?inRelLabel .
 
@@ -177,7 +179,8 @@ CONSTRUCT {
   rdfs:domain browser:class "domain" .
 
 } WHERE {
-  ?attr rdfs:domain ?node ;
+  ?attr a owl:DatatypeProperty ;
+    rdfs:domain ?node ;
     rdfs:label ?attrLabel .
 }""" .
 
@@ -257,7 +260,7 @@ CONSTRUCT {
     rdfs:label ?entityLabel ;
     browser:class "entity" .
 
-  ?attr rdfs:domain ?node .
+  ?node rdfs:domain ?entity .
 
   rdfs:domain browser:class "domain" .
   
