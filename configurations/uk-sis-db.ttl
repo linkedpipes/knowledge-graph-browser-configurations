@@ -1,0 +1,464 @@
+@prefix browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/> .
+@prefix browser-uksisdb: <https://linked.opendata.cz/ontology/knowledge-graph-browser/uksisdb/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix l: <https://slovník.gov.cz/legislativní/sbírka/90/1995/pojem/> .
+@prefix a: <https://slovník.gov.cz/agendový/uksisdb/pojem/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#####################################
+# Configurations
+#####################################
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/uksisdb> a browser:Configuration ;
+  dct:title "UK SIS DB"@cs;
+  browser:autocomplete <https://raw.githubusercontent.com/linkedpipes/knowledge-graph-browser-website/main/configurations/uksisdb-autocomplete.json> ;
+  browser:hasVisualStyleSheet <https://linked.opendata.cz/resource/knowledge-graph-browser/uksisdb/style-sheet>;
+  browser:hasViewSet <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uksisdb/entity>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uksisdb/attribute>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uksisdb/relation> .
+
+#####################################
+# ViewSets
+#####################################
+  
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uksisdb/entity> a browser:ViewSet ;
+  dct:title "Pohledy na entitu"@cs ;
+  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/uksisdb/entity/has-attributes> ,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view/uksisdb/entity/has-out-relations> ,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view/uksisdb/entity/has-in-relations> ;
+  browser:hasDefaultView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/uksisdb/entity/has-attributes> ;
+  browser:hasCondition """PREFIX owl: <http://www.w3.org/2002/07/owl#>
+ASK {  
+  {
+    ?node a owl:Class .
+  }
+}""" ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uksisdb> .
+  
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uksisdb/attribute> a browser:ViewSet ;
+  dct:title "Pohledy na atribut"@cs ;
+  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/uksisdb/attribute/entity> ;
+  browser:hasDefaultView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/uksisdb/attribute/entity> ;
+  browser:hasCondition """PREFIX owl: <http://www.w3.org/2002/07/owl#>
+ASK {  
+  ?node a owl:DatatypeProperty .
+}""" ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uksisdb> .
+  
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uksisdb/relation> a browser:ViewSet ;
+  dct:title "Pohledy na vztah"@cs ;
+  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/uksisdb/relation/entity> ;
+  browser:hasDefaultView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/uksisdb/relation/entity> ;
+  browser:hasCondition """PREFIX owl: <http://www.w3.org/2002/07/owl#>
+ASK {  
+  ?node a owl:ObjectProperty .
+}""" ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uksisdb> .
+  
+#####################################
+# Views
+#####################################
+  
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view/uksisdb/entity/has-attributes> a browser:View ;
+  dct:title "Entita s atributy"@cs ;
+  dct:description "Pohled na entitu a její atributy"@cs ;
+  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/entity/has-attributes> ;
+  browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/entity> ;
+  browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/entity> .
+  
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view/uksisdb/entity/has-out-relations> a browser:View ;
+  dct:title "Zdrojová entita"@cs ;
+  dct:description "Pohled na entitu se vztahy, které z ní vedou."@cs ;
+  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/entity/has-out-relations> ;
+  browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/entity> ;
+  browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/entity> .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view/uksisdb/entity/has-in-relations> a browser:View ;
+  dct:title "Cílová entita"@cs ;
+  dct:description "Pohled na entitu se vztahy, které do ní vedou."@cs ;
+  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/entity/has-in-relations> ;
+  browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/entity> ;
+  browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/entity> .
+          
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view/uksisdb/attribute/entity> a browser:View ;
+  dct:title "Atribut"@cs ;
+  dct:description "Pohled na atribut a entitu, ke které je přiřazen."@cs ;
+  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/attribute/entity> ;
+  browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/attribute> ;
+  browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/attribute> .
+        
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view/uksisdb/relation/entity> a browser:View ;
+  dct:title "Vztah"@cs ;
+  dct:description "Pohled na vztah a entity, které propojuje."@cs ;
+  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/relation/entity> ;
+  browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/relation> ;
+  browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/relation> .
+  
+#####################################
+# Queries
+#####################################
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/entity/has-out-relations> a browser:ExpansionQuery ;
+  dct:title "Vztahy z"@cs ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uksisdb> ;
+  browser:query """PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+
+CONSTRUCT {
+  ?outRel a owl:ObjectProperty ;
+    rdfs:domain ?node ;
+    rdfs:range ?rngElem ;
+    rdfs:label ?outRelLabel ;
+    browser:class "relation" .
+
+  rdfs:domain browser:class "domain" .
+  rdfs:range browser:class "range" .
+
+  ?rngElem a owl:Class ;
+    rdfs:label ?rngLabel ;
+    browser:class "entity" .
+  
+} WHERE {
+  ?outRel rdfs:domain ?node ;
+    rdfs:range ?rngElem ;
+    rdfs:label ?outRelLabel .
+
+  ?rngElem rdfs:label ?rngLabel .
+}""" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/entity/has-in-relations> a browser:ExpansionQuery ;
+  dct:title "Vztahy do"@cs ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uksisdb> ;
+  browser:query """PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+
+CONSTRUCT {
+  ?inRel a owl:ObjectProperty ;
+    rdfs:domain ?domElem ;
+    rdfs:range ?node ;
+    rdfs:label ?inRelLabel ;
+    browser:class "relation" .
+
+  rdfs:domain browser:class "domain" .
+  rdfs:range browser:class "range" .
+
+  ?domElem a owl:Class ;
+    rdfs:label ?domLabel ;
+    browser:class "entity" .
+  
+} WHERE {
+  ?inRel rdfs:range ?node ;
+    rdfs:domain ?domElem ;
+    rdfs:label ?inRelLabel .
+
+  ?domElem rdfs:label ?domLabel .
+}""" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/entity/has-attributes> a browser:ExpansionQuery ;
+  dct:title "Atributy"@cs ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uksisdb> ;
+  browser:query """PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+
+CONSTRUCT {
+  ?attr a owl:DatatypeProperty ;
+    rdfs:domain ?node ;
+    rdfs:label ?attrLabel ;
+    browser:class "attribute" .
+
+  rdfs:domain browser:class "domain" .
+
+} WHERE {
+  ?attr rdfs:domain ?node
+    rdfs:label ?attrLabel .
+}""" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/entity> a browser:PreviewQuery ;
+  dct:title "Základní náhled na entitu"@cs ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uksisdb> ;
+  browser:query """PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+
+CONSTRUCT {
+  ?node a owl:Class ;
+    rdfs:label ?label ;
+    browser:class "entity" .
+} WHERE {
+  ?node rdfs:label ?label .
+}""" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/entity> a browser:DetailQuery ;
+  dct:title "Základní detail entity"@cs ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uksisdb> ;
+  browser:query """PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+
+CONSTRUCT {
+  ?node rdfs:label ?label ;
+    rdfs:comment ?comment ;
+    browser-uksisdb:numberOfAttributes ?numberOfAttributes ;
+    browser-uksisdb:numberOfOutwardsRelations ?numberOfOutwardsRelations ;
+    browser-uksisdb:numberOfInwardsRelations ?numberOfInwardsRelations .
+} WHERE {
+  ?node rdfs:label ?label .
+
+  OPTIONAL {
+    ?node rdfs:comment ?comment .
+  }
+
+  OPTIONAL {
+    SELECT ?node (COUNT(DISTINCT ?attribute) AS ?numberOfAttributes)
+    WHERE {
+      ?attribute a owl:DatatypeProperty .
+      ?attribute rdfs:domain ?node .
+    }
+    GROUP BY ?node
+  }
+
+  OPTIONAL {
+    SELECT ?node (COUNT(DISTINCT ?relation) AS ?numberOfOutwardsRelations)
+    WHERE {
+      ?relation a owl:ObjectProperty .
+      ?relation rdfs:domain ?node .
+    }
+    GROUP BY ?node
+  }
+
+  OPTIONAL {
+    SELECT ?node (COUNT(DISTINCT ?relation) AS ?numberOfInwardsRelations)
+    WHERE {
+      ?relation a owl:ObjectProperty .
+      ?relation rdfs:range ?node .
+    }
+    GROUP BY ?node
+  }
+}""" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/attribute/entity> a browser:ExpansionQuery ;
+  dct:title "Entita atributu"@cs ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uksisdb> ;
+  browser:query """PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+
+CONSTRUCT {
+  ?entity a owl:Class ;
+    rdfs:label ?entityLabel ;
+    browser:class "entity" .
+
+  ?attr rdfs:domain ?node .
+
+  rdfs:domain browser:class "domain" .
+  
+} WHERE {
+  ?node rdfs:domain ?entity .
+  ?entity rdfs:label ?entityLabel .
+}""" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/attribute> a browser:PreviewQuery ;
+  dct:title "Základní náhled na atribut"@cs ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uksisdb> ;
+  browser:query """PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+
+CONSTRUCT {
+  ?node a owl:DatatypeProperty ;
+    rdfs:label ?label ;
+    browser:class "attribute" .
+} WHERE {
+  ?node rdfs:label ?label .
+}""" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/attribute> a browser:DetailQuery ;
+  dct:title "Základní detail atributu"@cs ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uksisdb> ;
+  browser:query """PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+
+CONSTRUCT {
+  ?node rdfs:label ?label ;
+    rdfs:comment ?comment .
+} WHERE {
+  ?node rdfs:label ?label .
+
+  OPTIONAL {
+    ?node rdfs:comment ?comment .
+  }
+}""" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/relation/entity> a browser:ExpansionQuery ;
+  dct:title "Entity propojené vztahem"@cs ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uksisdb> ;
+  browser:query """PREFIX z: <https://slovník.gov.cz/základní/pojem/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+
+CONSTRUCT {
+  ?node rdfs:domain ?domElem .
+  rdfs:domain browser:class "domain" .
+  ?domElem a owl:Class ;
+    rdfs:label ?domLabel ;
+    browser:class "entity" .
+  
+  ?node rdfs:range ?rngElem .
+  rdfs:range browser:class "range" .
+    
+  ?rngElem a owl:Class ;
+    rdfs:label ?rngLabel ;
+    browser:class "entity" .
+} WHERE {  
+    ?node rdfs:domain ?domElem ;
+      rdfs:range ?rngElem .
+    
+    ?domElem rdfs:label ?domLabel .
+    ?rngElem rdfs:label ?rngLabel .
+}""" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/relation> a browser:PreviewQuery ;
+  dct:title "Základí náhled na vztah"@cs ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uksisdb> ;
+  browser:query """PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+
+CONSTRUCT {
+  ?node a owl:ObjectProperty ;
+    rdfs:label ?label ;
+    browser:class "relation" .
+} WHERE {
+  ?node rdfs:label ?label .
+}""" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/relation> a browser:DetailQuery ;
+  dct:title "Základní detail vztahu"@cs ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uksisdb> ;
+  browser:query """PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+
+CONSTRUCT {
+  ?node rdfs:label ?label ;
+    rdfs:comment ?comment .
+} WHERE {
+  ?node rdfs:label ?label .
+
+  OPTIONAL {
+    ?node rdfs:comment ?comment .
+  }
+}""" .
+
+#####################################
+# Datasets
+#####################################
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/uksisdb> a void:Dataset ;
+  dct:title "UK SPARQL endpoint" ;
+  void:sparqlEndpoint <https://cu.opendata.cz/sparql> ;
+  browser:accept "text/turtle" .
+
+#####################################
+# View vocabularies
+#####################################
+    
+browser-uksisdb:numberOfAttributes a owl:DatatypeProperty ;
+  rdfs:label "počet atributů"@cs ;
+  rdfs:comment "Počet atributů přiřazených entitě."@cs ;
+  rdfs:domain skos:Concept ;
+  rdfs:range rdfs:Literal .
+  
+browser-uksisdb:numberOfOutwardsRelations a owl:DatatypeProperty ;
+  rdfs:label "počet vztahů (doména)"@cs ;
+  rdfs:comment "Počet vztahů, které mají tuto entitu jako svojí doménu."@cs ;
+  rdfs:domain skos:Concept ;
+  rdfs:range rdfs:Literal .
+  
+browser-uksisdb:numberOfInwardsRelations a owl:DatatypeProperty ;
+  rdfs:label "počet vztahů (obor hodnot)"@cs ;
+  rdfs:comment "Počet vztahů, které mají tuto entitu jako svůj obor hodnot."@cs ;
+  rdfs:domain skos:Concept ;
+  rdfs:range rdfs:Literal .
+  
+#####################################
+# Visual styles
+#####################################
+  
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uksisdb/style-sheet> a browser:VisualStyleSheet ;
+  browser:hasVisualStyle <https://linked.opendata.cz/resource/knowledge-graph-browser/uksisdb/style/entity>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/uksisdb/style/attribute>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/uksisdb/style/relation>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/uksisdb/style/node>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/uksisdb/style/rdfs/domain>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/uksisdb/style/rdfs/range>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/uksisdb/style/edge> .
+    
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uksisdb/style/entity> a browser:VisualStyle ;
+  browser:shape "round-rectangle" ;
+  browser:height "24px" ;
+  browser:font-size "12px" ;
+  browser:hasSelector ".object" .
+  
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uksisdb/style/attribute> a browser:VisualStyle ;
+  browser:shape "ellipse" ;
+  browser:height "20px" ;
+  browser:text-wrap "wrap";
+  browser:text-max-widts "192px";
+  browser:font-size "10px" ;
+  browser:hasSelector ".attribute" .
+  
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uksisdb/style/relation> a browser:VisualStyle ;
+  browser:shape "diamond" ;
+  browser:height "20px" ;
+  browser:text-wrap "wrap";
+  browser:text-max-widts "192px";
+  browser:font-size "10px" ;
+  browser:hasSelector ".relation" .
+  
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uksisdb/style/node> a browser:VisualStyle ;
+  browser:border-width "1px" ;
+  browser:text-wrap "wrap";
+  browser:text-max-width "180px";
+  browser:label "data(label)" ;
+  browser:width "label" ;
+  browser:height "label" ;
+  browser:padding "5px" ;
+  browser:text-halign "center" ;
+  browser:text-valign "center" ;
+  browser:background-color "white" ;
+  browser:border-color "black" ;
+  browser:color "black" ;
+  browser:shape "rectangle" ;
+  browser:hasSelector "node" .
+  
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uksisdb/style/rdfs/domain> a browser:VisualStyle ;
+  browser:source-arrow-shape "none" ;
+  browser:source-arrow-color "#303633" ;
+  browser:label "" ;
+  browser:hasSelector ".domain" .
+  
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uksisdb/style/rdfs/range> a browser:VisualStyle ;
+  browser:target-arrow-shape "vee" ;
+  browser:target-arrow-color "#303633" ;
+  browser:label "" ;
+  browser:hasSelector ".range" .
+  
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uksisdb/style/edge> a browser:VisualStyle ;
+  browser:font-size "6px" ;
+  browser:line-color "#303633" ;
+  browser:line-style "solid" ;
+  browser:curve-style "straight" ;
+  browser:width "1px" ;
+  browser:source-arrow-shape "none" ;
+  browser:target-arrow-shape "none" ;
+  browser:hasSelector "edge" .
