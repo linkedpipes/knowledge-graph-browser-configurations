@@ -14,7 +14,7 @@
   dct:title "Konfigurace procházení témat pěstovaných na Univerzitě Karlově (s omezeními)"@cs, "Browsing topics cultivated at Charles University (with constraints)"@en ;
   browser:hasVisualStyleSheet <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata/style-sheet>;
   browser:startingNode <https://cu.opendata.cz/resource/prvek-organizační-struktury/116>;
-  browser:hasLayoutContraints <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints> ;
+  browser:hasLayoutConstraintSet <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints> ;
   browser:hasViewSet <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uk/témata/pracoviště> .
 
 
@@ -25,7 +25,7 @@
 # Examples of constraint pairs: left/right, top/bottom.
 #####################################
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints> a browser:LayoutConstraints ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints> a browser:LayoutConstraintSet ;
   browser:hasConstraint <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/visual-groups/tema> ,
                         <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/hierarchy-groups-to-cluster/pracoviste> ,
                         <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/hierarchy-groups-to-cluster/tema> ,
