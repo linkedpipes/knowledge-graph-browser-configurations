@@ -11,11 +11,13 @@
 #####################################
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/uk/témata-s-omezeními> a browser:Configuration ;
-  dct:title "Konfigurace procházení témat pěstovaných na Univerzitě Karlově (s omezeními)"@cs, "Browsing topics cultivated at Charles University (with constraints)"@en ;
+  dct:title "Procházení témat pěstovaných na Univerzitě Karlově (s omezeními)"@cs, "Browsing topics cultivated at Charles University (with constraints)"@en ;
   browser:hasVisualStyleSheet <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata/style-sheet>;
   browser:startingNode <https://cu.opendata.cz/resource/prvek-organizační-struktury/116>;
-  browser:hasLayoutConstraintSet <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints> ;
-  browser:hasViewSet <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uk/témata/pracoviště> .
+  browser:hasViewSet <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uk/témata/pracoviště>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uk/témata/téma> ;
+  browser:autocomplete <https://raw.githubusercontent.com/linkedpipes/knowledge-graph-browser-website/main/configurations/university-topic-map-autocomplete.json> ;
+  browser:autocompleteDefinition <https://linked.opendata.cz/resource/knowledge-graph-browser/node-index/uk/témata> .
 
 
 #####################################
@@ -35,7 +37,7 @@
                         <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/parent-child-relation/pracoviste> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/visual-groups/tema> a browser:VisualGroupLayoutConstraint ;
-  browser:groupingSelector ".tema" .
+  browser:clusteringSelector ".tema" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints/hierarchical-groups-to-cluster/pracoviste> a browser:HierarchicalGroupToClusterLayoutConstraint ;
   browser:clusteringSelector ".pracovisteVisualGroup" .
