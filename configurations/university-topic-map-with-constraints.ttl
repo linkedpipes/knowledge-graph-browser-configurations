@@ -17,6 +17,7 @@
   browser:hasViewSet <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uk/témata/pracoviště>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uk/témata/téma> ;
   browser:autocomplete <https://raw.githubusercontent.com/linkedpipes/knowledge-graph-browser-website/main/configurations/university-topic-map-autocomplete.json> ;
+  browser:hasLayoutConstraintSet <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata-s-omezeními/layout-constraints> ;
   browser:autocompleteDefinition <https://linked.opendata.cz/resource/knowledge-graph-browser/node-index/uk/témata> .
 
 
