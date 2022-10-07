@@ -23,10 +23,10 @@
     <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/scientists/institution>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/scientists/country>;
   browser:hasFacet <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/born-in-country-label>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/given-name>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/born-in-country-population>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/number-of-siblings>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/number-of-awards>.
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/given-name>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/number-of-awards>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/number-of-siblings>.
 
 #####################################
 # Facets
