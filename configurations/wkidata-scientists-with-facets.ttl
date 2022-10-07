@@ -7,12 +7,12 @@
 @prefix void: <http://rdfs.org/ns/void#> .
 
 #####################################
-# Configurations
+# Configuration
 #####################################
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/wikidata/scientists-with-facets-dev> a browser:Configuration ;
-  dct:title "Scientists with facets - dev"@en;
-  dct:description "This configuration serves for development purposes."@en;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/wikidata/scientists-with-facets> a browser:Configuration ;
+  dct:title "Scientists with facets"@en;
+  dct:description "Discover famous scientists and relationships between them while being able to filter by defined facets."@en;
   browser:hasVisualStyleSheet <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/scientists/style-sheet>;
   browser:startingNode <http://www.wikidata.org/entity/Q937>,
     <http://www.wikidata.org/entity/Q7186>,
@@ -26,8 +26,7 @@
     <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/given-name>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/born-in-country-population>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/number-of-siblings>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/number-of-awards>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/date-of-birth> .
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/facet/number-of-awards>.
 
 #####################################
 # Facets
@@ -133,22 +132,5 @@
         }
         GROUP BY ?node
     }
-    }
-    """. 
-
-<https://linked.opendata.cz/resource/knowledge-graph-browser/facet/date-of-birth> a browser:Facet ;
-  dct:title "Date of birth"@en;
-  browser:facetType "label";
-  dct:description "Facet to filter people based on their date of birth."@en;
-  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata>;
-  browser:facetQuery """
-    PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-    PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
-
-    CONSTRUCT {
-      ?node browser:queryPath ?targetNode.
-    } WHERE { 
-      #INSERTNODES
-      ?node wdt:P569 ?targetNode.
     }
     """. 
