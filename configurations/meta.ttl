@@ -9,10 +9,23 @@
     "List of all supported cofigurations of the knowledge graph browser."@en,
     "Seznam všech podporovaných konfigurací knowledge graph browseru."@cs ;
   browser:hasMetaConficuration
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/meta-configuration/charles-university>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/meta-configuration/czech-government>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/meta-configuration/encyclopedia>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/meta-configuration/scientists>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/meta-configuration/controlled-vocabularies> .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/meta-configuration/charles-university> a browser:MetaConfiguration ;
+  dct:title
+    "Charles Explorer"@en,
+    "Charles Explorer"@cs ;
+  dct:description
+    "Explore topics cultivated at the departments of Charles University"@en,
+    "Objevujte témata pěstovaná na pracovištích Univerzity Karlovy."@cs ;
+  browser:image "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Charles-University-symbol-4.svg/253px-Charles-University-symbol-4.svg.png" ;
+  browser:hasConfiguration
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/uk/témata> ,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/uk/témata-s-omezeními> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/meta-configuration/czech-government> a browser:MetaConfiguration ;
   dct:title
