@@ -60,8 +60,4 @@
                               ".fakulta116" ,
                               ".fakulta117" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-expansion-set/uk/témata-s-omezeními/pracoviste> a browser:HierarchicalExpansionSet ;
-  browser:hasHierarchicalExpansion  <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/uk/podřazená-pracoviště> ,
-                                    <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/uk/nadřazená-pracoviště> .
-
 
