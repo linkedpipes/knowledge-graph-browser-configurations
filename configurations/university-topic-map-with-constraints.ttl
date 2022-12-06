@@ -73,14 +73,3 @@
 <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/parent-child-relation/uk/témata-s-omezeními/pracoviste> a browser:ParentChildLayoutConstraint ;
   browser:parentNodeSelector ".pracovisteVisualGroup" ;
   browser:hierarchicalEdgeSelector ".narrower" .
-
-
-#####################################
-# Hierarchical Queries 
-#####################################
-
-<https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/podřazená-pracoviště> a browser:View ;
-  dct:description "Hierarchický pohled na pracoviště zobrazující podřazená pracoviště."@cs .
-
-<https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/nadřazená-pracoviště> a browser:View ;
-  dct:description "Hierarchický pohled na pracoviště zobrazující nadřazené pracoviště."@cs .

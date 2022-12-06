@@ -76,14 +76,14 @@ ASK {
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/podřazená-pracoviště> a browser:View ;
   dct:title "Podřazená pracoviště"@cs ;
-  dct:description "Pohled na pracoviště zobrazující podřazená pracoviště."@cs ;
+  dct:description "Hierarchický pohled na pracoviště zobrazující podřazená pracoviště."@cs ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/uk/podřazená-pracoviště> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/uk/pracoviště> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/uk/pracoviště> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/nadřazená-pracoviště> a browser:View ;
   dct:title "Nadřazená pracoviště"@cs ;
-  dct:description "Pohled na pracoviště zobrazující nadřazené pracoviště."@cs ;
+  dct:description "Hierarchický pohled na pracoviště zobrazující nadřazené pracoviště."@cs ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/uk/nadřazená-pracoviště> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/uk/pracoviště> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/uk/pracoviště> .
