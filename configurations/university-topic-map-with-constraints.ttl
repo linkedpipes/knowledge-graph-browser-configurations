@@ -79,22 +79,8 @@
 # Hierarchical Queries 
 #####################################
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/uk/podřazená-pracoviště> a browser:ExpansionQuery ;
-  dct:description "Hierarchické rozšíření zobrazující podřazená pracoviště."@cs ,
-                  "Hierarchical expansion showing subordinate workplaces."@en .
-  
-<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/uk/nadřazená-pracoviště> a browser:ExpansionQuery ;
-  dct:description "Hierarchické rozšíření zobrazující nadřazená pracoviště."@cs , 
-                  "Hierarchical expansion showing superior workplaces."@en .
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/podřazená-pracoviště> a browser:View ;
+  dct:description "Hierarchický pohled na pracoviště zobrazující podřazená pracoviště."@cs .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/uk/témata/témata-pracoviště> a browser:ExpansionQuery ;
-  dct:description "Nehierarchické rozšíření zobrazující témata pracoviště."@cs ,
-                  "Non-hierarchical expansion showing workplace topics."@en .
-
-<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/uk/témata/sdílená-témata-pracoviště> a browser:ExpansionQuery ;
-  dct:description "Nehierarchické rozšíření zobrazující sdílená témata pracoviště."@cs ,
-                  "Non-hierarchical expansion showing shared workplace topics."@en .
-
-<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/uk/témata/téma> a browser:ExpansionQuery ;
-  dct:description "Nehierarchické rozšíření zobrazující pracoviště tématu."@cs ,
-                  "Non-hierarchical expansion showing the theme's workplace."@en .
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/nadřazená-pracoviště> a browser:View ;
+  dct:description "Hierarchický pohled na pracoviště zobrazující nadřazené pracoviště."@cs .
