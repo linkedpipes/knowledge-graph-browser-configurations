@@ -1,0 +1,67 @@
+@prefix browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+#####################################
+# Configurations
+#####################################
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/uk/subjects-with-constraints-test> a browser:Configuration ;
+  dct:title "Procházení témat pěstovaných na Univerzitě Karlově (test)"@cs, "Browsing topics cultivated at Charles University (test)"@en ;
+  browser:hasVisualStyleSheet <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/témata/style-sheet>;
+  browser:startingNode <https://cu.opendata.cz/resource/prvek-organizační-struktury/116>;
+  browser:hasViewSet <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uk/témata/pracoviště>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uk/témata/téma> ;
+  browser:autocomplete <https://raw.githubusercontent.com/linkedpipes/knowledge-graph-browser-website/main/configurations/university-topic-map-autocomplete.json> ;
+  browser:hasLayoutConstraintSet <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/uk/subjects-with-constraints-test> ;
+  browser:autocompleteDefinition <https://linked.opendata.cz/resource/knowledge-graph-browser/node-index/uk/témata> .
+
+
+#####################################
+# Layout Constraints
+# A layout constraint is a constraint which can be applied on a node.
+# For example: set a constant position of a node of a certain type relative to nodes of other types.
+# Examples of constraint pairs: left/right, top/bottom.
+#####################################
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/uk/subjects-with-constraints-test> a browser:LayoutConstraintSet ;
+  browser:hasConstraint <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/visual-groups/uk/subjects-with-constraints-test/tema> ,
+                        <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-groups-to-cluster/uk/subjects-with-constraints-test/pracoviste> ,
+                        <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-groups-to-cluster/uk/subjects-with-constraints-test/tema> ,
+                        <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/classes-to-cluster-together/uk/subjects-with-constraints-test/fakulty> ,
+                        <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-expansion-set/uk/subjects-with-constraints-test/pracoviste> .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/visual-groups/uk/subjects-with-constraints-test/tema> a browser:VisualGroupLayoutConstraint ;
+  browser:clusteringSelector ".tema" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-groups-to-cluster/uk/subjects-with-constraints-test/pracoviste> a browser:HierarchicalGroupToClusterLayoutConstraint ;
+  browser:clusteringSelector ".pracovisteVisualGroup" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-groups-to-cluster/uk/subjects-with-constraints-test/tema> a browser:HierarchicalGroupToClusterLayoutConstraint ;
+  browser:clusteringSelector ".tema" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/classes-to-cluster-together/uk/subjects-with-constraints-test/fakulty> a browser:ClassesToClusterTogetherLayoutConstraint ;
+  browser:clusteringSelector ".fakulta104" ,
+                              ".fakulta105" ,
+                              ".fakulta106" ,
+                              ".fakulta107" ,
+                              ".fakulta108" ,
+                              ".fakulta109" ,
+                              ".fakulta110" ,
+                              ".fakulta111" ,
+                              ".fakulta112" ,
+                              ".fakulta113" ,
+                              ".fakulta114" ,
+                              ".fakulta115" ,
+                              ".fakulta116" ,
+                              ".fakulta117" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-expansion-set/uk/subjects-with-constraints-test/pracoviste> a browser:HierarchicalExpansionSet ;
+  browser:hasHierarchicalExpansion  <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/uk/podřazená-pracoviště> ,
+                                    <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/uk/nadřazená-pracoviště> .
+
+
