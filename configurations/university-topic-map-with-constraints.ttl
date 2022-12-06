@@ -33,7 +33,9 @@
                         <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-groups-to-cluster/uk/témata-s-omezeními/pracoviste> ,
                         <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-groups-to-cluster/uk/témata-s-omezeními/tema> ,
                         <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/classes-to-cluster-together/uk/témata-s-omezeními/fakulty> ,
-                        <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-expansion-set/uk/témata-s-omezeními/pracoviste> .
+                        <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/child-parent-relation/uk/témata-s-omezeními/pracoviste> ,
+                        <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/child-parent-relation/uk/témata-s-omezeními/tema> ,
+                        <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/parent-child-relation/uk/témata-s-omezeními/pracoviste> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/visual-groups/uk/témata-s-omezeními/tema> a browser:VisualGroupLayoutConstraint ;
   browser:clusteringSelector ".tema" .
@@ -60,4 +62,15 @@
                               ".fakulta116" ,
                               ".fakulta117" .
 
+<https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/child-parent-relation/uk/témata-s-omezeními/pracoviste> a browser:ChildParentLayoutConstraint ;
+  browser:childNodeSelector ".pracovisteVisualGroup" ;
+  browser:hierarchicalEdgeSelector ".broader" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/child-parent-relation/uk/témata-s-omezeními/tema> a browser:ChildParentLayoutConstraint ;
+  browser:childNodeSelector ".tema" ;
+  browser:hierarchicalEdgeSelector ".broader" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/parent-child-relation/uk/témata-s-omezeními/pracoviste> a browser:ParentChildLayoutConstraint ;
+  browser:parentNodeSelector ".pracovisteVisualGroup" ;
+  browser:hierarchicalEdgeSelector ".narrower" .
 
