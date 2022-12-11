@@ -61,7 +61,7 @@ ASK {
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/uk/témata/téma> a browser:ViewSet ;
   dct:title "Pohledy na témata"@cs ;
   browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/témata/téma> ,
-                  <https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/témata/téma-corrected> .
+                  <https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/témata/téma-corrected> ;
   browser:hasDefaultView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/uk/témata/téma> ;
   browser:hasCondition """PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX schema: <http://schema.org/>
