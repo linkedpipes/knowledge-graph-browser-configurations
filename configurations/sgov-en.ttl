@@ -68,51 +68,51 @@ ASK {
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov-en/object/has-attributes> a browser:View ;
   dct:title "Attributes"@en ;
-  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/object/has-attributes> ;
-  browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/object> ;
-  browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/object> .
+  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/sgov-en/object/has-attributes> ;
+  browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/sgov-en/object> ;
+  browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/sgov-en/object> .
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov-en/object/has-out-relations> a browser:View ;
   dct:title "Relationships from"@en ;
-  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/object/has-out-relations> ;
-  browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/object> ;
-  browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/object> .
+  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/sgov-en/object/has-out-relations> ;
+  browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/sgov-en/object> ;
+  browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/sgov-en/object> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov-en/object/has-in-relations> a browser:View ;
   dct:title "Relationships to"@en ;
-  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/object/has-in-relations> ;
-  browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/object> ;
-  browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/object> .
+  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/sgov-en/object/has-in-relations> ;
+  browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/sgov-en/object> ;
+  browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/sgov-en/object> .
     
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov-en/object/specializes> a browser:View ;
   dct:title "Specializes"@en ;
-  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/object/specializes> ;
-  browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/object> ;
-  browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/object> .
+  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/sgov-en/object/specializes> ;
+  browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/sgov-en/object> ;
+  browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/sgov-en/object> .
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov-en/object/generalizes> a browser:View ;
   dct:title "Generalizes"@en ;
-  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/object/generalizes> ;
-  browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/object> ;
-  browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/object> .
+  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/sgov-en/object/generalizes> ;
+  browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/sgov-en/object> ;
+  browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/sgov-en/object> .
       
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov-en/attribute/object> a browser:View ;
   dct:title "Entity of the attribute"@en ;
-  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/attribute/object> ;
-  browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/attribute> ;
-  browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/attribute> .
+  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/sgov-en/attribute/object> ;
+  browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/sgov-en/attribute> ;
+  browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/sgov-en/attribute> .
         
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov-en/relation/object> a browser:View ;
   dct:title "Related entities"@en ;
-  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/relation/object> ;
-  browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/relation> ;
-  browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/relation> .
+  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/sgov-en/relation/object> ;
+  browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/sgov-en/relation> ;
+  browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/sgov-en/relation> .
   
 #####################################
 # Queries
 #####################################
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/object/has-out-relations> a browser:ExpansionQuery ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/sgov-en/object/has-out-relations> a browser:ExpansionQuery ;
   dct:title "Vztahy z"@cs ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/sgov> ;
   browser:query """PREFIX z: <https://slovník.gov.cz/základní/pojem/>
@@ -165,7 +165,7 @@ CONSTRUCT {
 
 }""" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/object/has-in-relations> a browser:ExpansionQuery ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/sgov-en/object/has-in-relations> a browser:ExpansionQuery ;
   dct:title "Vztahy do"@cs ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/sgov> ;
   browser:query """PREFIX z: <https://slovník.gov.cz/základní/pojem/>
@@ -218,7 +218,7 @@ CONSTRUCT {
 
 }""" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/object/has-attributes> a browser:ExpansionQuery ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/sgov-en/object/has-attributes> a browser:ExpansionQuery ;
   dct:title "Atributy"@cs ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/sgov> ;
   browser:query """PREFIX z: <https://slovník.gov.cz/základní/pojem/>
@@ -254,7 +254,7 @@ CONSTRUCT {
   FILTER (LANG(?attributeLabel) = "en")
 }""" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/object/specializes> a browser:ExpansionQuery ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/sgov-en/object/specializes> a browser:ExpansionQuery ;
   dct:title "Specializuje"@cs ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/sgov> ;
   browser:query """PREFIX z: <https://slovník.gov.cz/základní/pojem/>
@@ -278,7 +278,7 @@ CONSTRUCT {
   FILTER (LANG(?parentLabel) = "en")
 }""" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/object/generalizes> a browser:ExpansionQuery ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/sgov-en/object/generalizes> a browser:ExpansionQuery ;
   dct:title "Generalizuje"@cs ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/sgov> ;
   browser:query """PREFIX z: <https://slovník.gov.cz/základní/pojem/>
@@ -302,7 +302,7 @@ CONSTRUCT {
   FILTER (LANG(?childLabel) = "en")
 }""" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/object> a browser:PreviewQuery ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/sgov-en/object> a browser:PreviewQuery ;
   dct:title "Základní náhled na objekt"@cs ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/sgov> ;
   browser:query """PREFIX z: <https://slovník.gov.cz/základní/pojem/>
@@ -322,7 +322,7 @@ CONSTRUCT {
   BIND(REPLACE(STR(?glossary), "^https:\\\\/\\\\/slovník.gov.cz\\\\/legislativní\\\\/sbírka\\\\/([0-9]+)\\\\/([0-9]+)\\\\/.+$", "lsgov$1$2") AS ?lglossClass)
 }""" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/object> a browser:DetailQuery ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/sgov-en/object> a browser:DetailQuery ;
   dct:title "Základní detail objektu"@cs ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/sgov> ;
   browser:query """PREFIX z: <https://slovník.gov.cz/základní/pojem/>
@@ -422,7 +422,7 @@ CONSTRUCT {
   }
 }""" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/attribute/object> a browser:ExpansionQuery ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/sgov-en/attribute/object> a browser:ExpansionQuery ;
   dct:title "Prvek atributu"@cs ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/sgov> ;
   browser:query """PREFIX z: <https://slovník.gov.cz/základní/pojem/>
@@ -452,7 +452,7 @@ CONSTRUCT {
     BIND(REPLACE(STR(?glossary), "^https:\\\\/\\\\/slovník.gov.cz\\\\/legislativní\\\\/sbírka\\\\/([0-9]+)\\\\/([0-9]+)\\\\/.+$", "lsgov$1$2") AS ?lglossClass)
 }""" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/attribute> a browser:PreviewQuery ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/sgov-en/attribute> a browser:PreviewQuery ;
   dct:title "Základní náhled na atribut"@cs ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/sgov> ;
   browser:query """PREFIX z: <https://slovník.gov.cz/základní/pojem/>
@@ -472,7 +472,7 @@ CONSTRUCT {
   BIND(REPLACE(STR(?glossary), "^https:\\\\/\\\\/slovník.gov.cz\\\\/legislativní\\\\/sbírka\\\\/([0-9]+)\\\\/([0-9]+)\\\\/.+$", "lsgov$1$2") AS ?lglossClass) 
 }""" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/attribute> a browser:DetailQuery ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/sgov-en/attribute> a browser:DetailQuery ;
   dct:title "Základní detail atributu"@cs ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/sgov> ;
   browser:query """PREFIX z: <https://slovník.gov.cz/základní/pojem/>
@@ -513,7 +513,7 @@ CONSTRUCT {
   }
 }""" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/relation/object> a browser:ExpansionQuery ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/sgov-en/relation/object> a browser:ExpansionQuery ;
   dct:title "Asociované prvky"@cs ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/sgov> ;
   browser:query """PREFIX z: <https://slovník.gov.cz/základní/pojem/>
@@ -562,7 +562,7 @@ CONSTRUCT {
     BIND(REPLACE(STR(?rngGloss), "^https:\\\\/\\\\/slovník.gov.cz\\\\/legislativní\\\\/sbírka\\\\/([0-9]+)\\\\/([0-9]+)\\\\/.+$", "lsgov$1$2") AS ?rngLGlossClass)
 }""" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/relation> a browser:PreviewQuery ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/sgov-en/relation> a browser:PreviewQuery ;
   dct:title "Základí náhled na vztah"@cs ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/sgov> ;
   browser:query """PREFIX z: <https://slovník.gov.cz/základní/pojem/>
@@ -582,7 +582,7 @@ CONSTRUCT {
   BIND(REPLACE(STR(?glossary), "^https:\\\\/\\\\/slovník.gov.cz\\\\/legislativní\\\\/sbírka\\\\/([0-9]+)\\\\/([0-9]+)\\\\/.+$", "lsgov$1$2") AS ?lglossClass) 
 }""" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/relation> a browser:DetailQuery ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/sgov-en/relation> a browser:DetailQuery ;
   dct:title "Základní detail vztahu"@cs ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/sgov> ;
   browser:query """PREFIX z: <https://slovník.gov.cz/základní/pojem/>
