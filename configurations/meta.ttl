@@ -39,7 +39,8 @@
     <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/čsú-klasifikace>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/nkod>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/rpp>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/sgov> .
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/sgov>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/sgov-en> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/meta-configuration/encyclopedia> a browser:MetaConfiguration ;
   dct:title

@@ -1,5 +1,5 @@
 @prefix browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/> .
-@prefix browser-sgov: <https://linked.opendata.cz/ontology/knowledge-graph-browser/sgov/> .
+@prefix browser-sgov: <https://linked.opendata.cz/ontology/knowledge-graph-browser/sgov-en/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -13,28 +13,27 @@
 # Configurations
 #####################################
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/sgov> a browser:Configuration ;
-  dct:title "Semantic vocabulary (SGOV)"@en,
-    "Sémantický slovník (SGOV)"@cs;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/sgov-en> a browser:Configuration ;
+  dct:title "Semantic vocabulary (SGOV) in English"@en;
   browser:autocomplete <https://raw.githubusercontent.com/linkedpipes/knowledge-graph-browser-website/main/configurations/sgov-autocomplete.json> ;
-  browser:hasVisualStyleSheet <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style-sheet>;
+  browser:hasVisualStyleSheet <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style-sheet>;
   browser:resourceIriPattern "^https://slovník\\.gov\\.cz/";
-  browser:hasViewSet <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/sgov/object>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/sgov/attribute>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/sgov/relation> .
+  browser:hasViewSet <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/sgov-en/object>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/sgov-en/attribute>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/sgov-en/relation> .
 
 #####################################
 # ViewSets
 #####################################
   
-<https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/sgov/object> a browser:ViewSet ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/sgov-en/object> a browser:ViewSet ;
   dct:title "Pohledy na typ objektu"@cs ;
-  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov/object/specializes> ,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov/object/generalizes> ,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov/object/has-attributes> ,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov/object/has-out-relations> ,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov/object/has-in-relations> ;
-  browser:hasDefaultView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov/object/has-attributes> ;
+  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov-en/object/specializes> ,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov-en/object/generalizes> ,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov-en/object/has-attributes> ,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov-en/object/has-out-relations> ,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov-en/object/has-in-relations> ;
+  browser:hasDefaultView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov-en/object/has-attributes> ;
   browser:hasCondition """PREFIX z: <https://slovník.gov.cz/základní/pojem/>
 ASK {  
   {
@@ -43,20 +42,20 @@ ASK {
 }""" ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/sgov> .
   
-<https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/sgov/attribute> a browser:ViewSet ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/sgov-en/attribute> a browser:ViewSet ;
   dct:title "Pohledy na typ vlastnosti"@cs ;
-  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov/attribute/object> ;
-  browser:hasDefaultView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov/attribute/object> ;
+  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov-en/attribute/object> ;
+  browser:hasDefaultView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov-en/attribute/object> ;
   browser:hasCondition """PREFIX z: <https://slovník.gov.cz/základní/pojem/>
 ASK {  
   ?node a z:typ-vlastnosti .
 }""" ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/sgov> .
   
-<https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/sgov/relation> a browser:ViewSet ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/sgov-en/relation> a browser:ViewSet ;
   dct:title "Pohledy na typ vztahu"@cs ;
-  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov/relation/object> ;
-  browser:hasDefaultView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov/relation/object> ;
+  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov-en/relation/object> ;
+  browser:hasDefaultView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov-en/relation/object> ;
   browser:hasCondition """PREFIX z: <https://slovník.gov.cz/základní/pojem/>
 ASK {  
   ?node a z:typ-vztahu .
@@ -67,51 +66,44 @@ ASK {
 # Views
 #####################################
   
-<https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov/object/has-attributes> a browser:View ;
-  dct:title "Atributy"@cs ;
-  dct:description "Atributy objektu"@cs ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov-en/object/has-attributes> a browser:View ;
+  dct:title "Attributes"@en ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/object/has-attributes> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/object> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/object> .
   
-<https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov/object/has-out-relations> a browser:View ;
-  dct:title "Vztahy z"@cs ;
-  dct:description "Vztahy, kterých se objekt účastní jako doména."@cs ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov-en/object/has-out-relations> a browser:View ;
+  dct:title "Relationships from"@en ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/object/has-out-relations> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/object> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/object> .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov/object/has-in-relations> a browser:View ;
-  dct:title "Vztahy do"@cs ;
-  dct:description "Vztahy, kterých se objekt účastní jako obor hodnot."@cs ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov-en/object/has-in-relations> a browser:View ;
+  dct:title "Relationships to"@en ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/object/has-in-relations> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/object> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/object> .
     
-<https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov/object/specializes> a browser:View ;
-  dct:title "Specializuje"@cs ;
-  dct:description "Specializované objekty."@cs ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov-en/object/specializes> a browser:View ;
+  dct:title "Specializes"@en ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/object/specializes> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/object> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/object> .
   
-<https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov/object/generalizes> a browser:View ;
-  dct:title "Generalizuje"@cs ;
-  dct:description "Generalizované objekty."@cs ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov-en/object/generalizes> a browser:View ;
+  dct:title "Generalizes"@en ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/object/generalizes> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/object> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/object> .
       
-<https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov/attribute/object> a browser:View ;
-  dct:title "Prvek atributu"@cs ;
-  dct:description "Prvek, ke kterému atribut patří."@cs ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov-en/attribute/object> a browser:View ;
+  dct:title "Entity of the attribute"@en ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/attribute/object> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/attribute> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/attribute> .
         
-<https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov/relation/object> a browser:View ;
-  dct:title "Prvky, které se účastní typu vztahu"@cs ;
-  dct:description "A view of a relation type which shows only the object types associated with the trobe type."@en ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view/sgov-en/relation/object> a browser:View ;
+  dct:title "Related entities"@en ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/relation/object> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/relation> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/relation> .
@@ -152,7 +144,7 @@ CONSTRUCT {
     skos:prefLabel ?outRelLabel ;
     skos:inScheme ?outRelGlossary .
 
-  FILTER (LANG(?outRelLabel) = "cs")
+  FILTER (LANG(?outRelLabel) = "en")
 
   BIND("relation" AS ?outRelStyshClass)
   BIND(REPLACE(STR(?outRelGlossary), "^https:\\\\/\\\\/slovník.gov.cz\\\\/([a-z])[^\\\\/]+\\\\/.+$", "$1sgov") AS ?outRelGlossClass)
@@ -166,7 +158,7 @@ CONSTRUCT {
   ?rngElem skos:prefLabel ?rngLabel ;
     skos:inScheme ?rngGloss .
   
-  FILTER (LANG(?rngLabel) = "cs")
+  FILTER (LANG(?rngLabel) = "en")
   
   BIND(REPLACE(STR(?rngGloss), "^https:\\\\/\\\\/slovník.gov.cz\\\\/([a-z])[^\\\\/]+\\\\/.+$", "$1sgov") AS ?rngGlossClass)
   BIND(REPLACE(STR(?rngGloss), "^https:\\\\/\\\\/slovník.gov.cz\\\\/legislativní\\\\/sbírka\\\\/([0-9]+)\\\\/([0-9]+)\\\\/.+$", "lsgov$1$2") AS ?rngLGlossClass)
@@ -205,7 +197,7 @@ CONSTRUCT {
     skos:prefLabel ?inRelLabel ;
     skos:inScheme ?inRelGlossary .
 
-  FILTER (LANG(?inRelLabel) = "cs")
+  FILTER (LANG(?inRelLabel) = "en")
 
   BIND("relation" AS ?inRelStyshClass)
   BIND(REPLACE(STR(?inRelGlossary), "^https:\\\\/\\\\/slovník.gov.cz\\\\/([a-z])[^\\\\/]+\\\\/.+$", "$1sgov") AS ?inRelGlossClass)
@@ -219,7 +211,7 @@ CONSTRUCT {
   ?domElem skos:prefLabel ?domainLabel ;
     skos:inScheme ?domainGlossary .
 
-  FILTER (LANG(?domainLabel) = "cs")
+  FILTER (LANG(?domainLabel) = "en")
 
   BIND(REPLACE(STR(?domainGlossary), "^https:\\\\/\\\\/slovník.gov.cz\\\\/([a-z])[^\\\\/]+\\\\/.+$", "$1sgov") AS ?domainGlossClass)
   BIND(REPLACE(STR(?domainGlossary), "^https:\\\\/\\\\/slovník.gov.cz\\\\/legislativní\\\\/sbírka\\\\/([0-9]+)\\\\/([0-9]+)\\\\/.+$", "lsgov$1$2") AS ?domainLGlossClass)
@@ -259,7 +251,7 @@ CONSTRUCT {
 
   BIND(REPLACE(STR(?attributeGlossary), "^https:\\\\/\\\\/slovník.gov.cz\\\\/([a-z])[^\\\\/]+\\\\/.+$", "$1sgov") AS ?attributeGlossClass)
   BIND(REPLACE(STR(?attributeGlossary), "^https:\\\\/\\\\/slovník.gov.cz\\\\/legislativní\\\\/sbírka\\\\/([0-9]+)\\\\/([0-9]+)\\\\/.+$", "lsgov$1$2") AS ?attributeLGlossClass)
-  FILTER (LANG(?attributeLabel) = "cs")
+  FILTER (LANG(?attributeLabel) = "en")
 }""" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/object/specializes> a browser:ExpansionQuery ;
@@ -283,7 +275,7 @@ CONSTRUCT {
     skos:inScheme ?parentGlossary .
   BIND(REPLACE(STR(?parentGlossary), "^https:\\\\/\\\\/slovník.gov.cz\\\\/([a-z])[^\\\\/]+\\\\/.+$", "$1sgov") AS ?parentGlossClass)
   BIND(REPLACE(STR(?parentGlossary), "^https:\\\\/\\\\/slovník.gov.cz\\\\/legislativní\\\\/sbírka\\\\/([0-9]+)\\\\/([0-9]+)\\\\/.+$", "lsgov$1$2") AS ?parentLGlossClass)
-  FILTER (LANG(?parentLabel) = "cs")
+  FILTER (LANG(?parentLabel) = "en")
 }""" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/object/generalizes> a browser:ExpansionQuery ;
@@ -307,7 +299,7 @@ CONSTRUCT {
     skos:inScheme ?childGlossary .
   BIND(REPLACE(STR(?childGlossary), "^https:\\\\/\\\\/slovník.gov.cz\\\\/([a-z])[^\\\\/]+\\\\/.+$", "$1sgov") AS ?childGlossClass)
   BIND(REPLACE(STR(?childGlossary), "^https:\\\\/\\\\/slovník.gov.cz\\\\/legislativní\\\\/sbírka\\\\/([0-9]+)\\\\/([0-9]+)\\\\/.+$", "lsgov$1$2") AS ?childLGlossClass)
-  FILTER (LANG(?childLabel) = "cs")
+  FILTER (LANG(?childLabel) = "en")
 }""" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/object> a browser:PreviewQuery ;
@@ -325,7 +317,7 @@ CONSTRUCT {
 } WHERE {
   ?node skos:prefLabel ?label ;
     skos:inScheme ?glossary .
-  FILTER (LANG(?label) = "cs")
+  FILTER (LANG(?label) = "en")
   BIND(REPLACE(STR(?glossary), "^https:\\\\/\\\\/slovník.gov.cz\\\\/([a-z])[^\\\\/]+\\\\/.+$", "$1sgov") AS ?glossClass) 
   BIND(REPLACE(STR(?glossary), "^https:\\\\/\\\\/slovník.gov.cz\\\\/legislativní\\\\/sbírka\\\\/([0-9]+)\\\\/([0-9]+)\\\\/.+$", "lsgov$1$2") AS ?lglossClass)
 }""" .
@@ -339,7 +331,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX dce: <http://purl.org/dc/elements/1.1/>
 PREFIX dct: <http://purl.org/dc/terms/>
-PREFIX browser-sgov: <https://linked.opendata.cz/ontology/knowledge-graph-browser/sgov/>
+PREFIX browser-sgov: <https://linked.opendata.cz/ontology/knowledge-graph-browser/sgov-en/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 PREFIX fel: <http://onto.fel.cvut.cz/ontologies/slovník/agendový/popis-dat/pojem/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -357,16 +349,16 @@ CONSTRUCT {
 } WHERE {
   ?node skos:prefLabel ?label ;
     skos:inScheme ?glossary .
-  FILTER (LANG(?label) = "cs")
+  FILTER (LANG(?label) = "en")
     
   ?vocabulary a fel:slovník ;
     owl:imports ?glossary ;
     dct:title ?vocabularyLabel .
-  FILTER (LANG(?vocabularyLabel) = "cs")
+  FILTER (LANG(?vocabularyLabel) = "en")
     
   OPTIONAL {
     ?node skos:definition ?definition .
-    FILTER (LANG(?definition) = "cs")
+    FILTER (LANG(?definition) = "en")
   }
 
   OPTIONAL {
@@ -455,7 +447,7 @@ CONSTRUCT {
 
     ?element skos:prefLabel ?label ;
       skos:inScheme ?glossary .
-    FILTER (LANG(?label) = "cs")
+    FILTER (LANG(?label) = "en")
     BIND(REPLACE(STR(?glossary), "^https:\\\\/\\\\/slovník.gov.cz\\\\/([a-z])[^\\\\/]+\\\\/.+$", "$1sgov") AS ?glossClass)
     BIND(REPLACE(STR(?glossary), "^https:\\\\/\\\\/slovník.gov.cz\\\\/legislativní\\\\/sbírka\\\\/([0-9]+)\\\\/([0-9]+)\\\\/.+$", "lsgov$1$2") AS ?lglossClass)
 }""" .
@@ -475,7 +467,7 @@ CONSTRUCT {
 } WHERE {
   ?node skos:prefLabel ?label ;
     skos:inScheme ?glossary .
-  FILTER (LANG(?label) = "cs")
+  FILTER (LANG(?label) = "en")
   BIND(REPLACE(STR(?glossary), "^https:\\\\/\\\\/slovník.gov.cz\\\\/([a-z])[^\\\\/]+\\\\/.+$", "$1sgov") AS ?glossClass)
   BIND(REPLACE(STR(?glossary), "^https:\\\\/\\\\/slovník.gov.cz\\\\/legislativní\\\\/sbírka\\\\/([0-9]+)\\\\/([0-9]+)\\\\/.+$", "lsgov$1$2") AS ?lglossClass) 
 }""" .
@@ -489,7 +481,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX dce: <http://purl.org/dc/elements/1.1/>
 PREFIX dct: <http://purl.org/dc/terms/>
-PREFIX browser-sgov: <https://linked.opendata.cz/ontology/knowledge-graph-browser/sgov/>
+PREFIX browser-sgov: <https://linked.opendata.cz/ontology/knowledge-graph-browser/sgov-en/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 PREFIX fel: <http://onto.fel.cvut.cz/ontologies/slovník/agendový/popis-dat/pojem/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -502,16 +494,16 @@ CONSTRUCT {
 } WHERE {
   ?node skos:prefLabel ?label ;
     skos:inScheme ?glossary .
-  FILTER (LANG(?label) = "cs")
+  FILTER (LANG(?label) = "en")
     
   ?vocabulary a fel:slovník ;
     owl:imports ?glossary ;
     dct:title ?vocabularyLabel .
-    FILTER (LANG(?vocabularyLabel) = "cs")
+    FILTER (LANG(?vocabularyLabel) = "en")
     
   OPTIONAL {
     ?node skos:definition ?definition .
-    FILTER (LANG(?definition) = "cs")
+    FILTER (LANG(?definition) = "en")
   }
 
   OPTIONAL {
@@ -554,7 +546,7 @@ CONSTRUCT {
 
     ?domElem skos:prefLabel ?domainLabel ;
       skos:inScheme ?domainGlossary .
-    FILTER (LANG(?domainLabel) = "cs")
+    FILTER (LANG(?domainLabel) = "en")
     BIND(REPLACE(STR(?domainGlossary), "^https:\\\\/\\\\/slovník.gov.cz\\\\/([a-z])[^\\\\/]+\\\\/.+$", "$1sgov") AS ?domainGlossClass)
     BIND(REPLACE(STR(?domainGlossary), "^https:\\\\/\\\\/slovník.gov.cz\\\\/legislativní\\\\/sbírka\\\\/([0-9]+)\\\\/([0-9]+)\\\\/.+$", "lsgov$1$2") AS ?domainLGlossClass)
 
@@ -565,7 +557,7 @@ CONSTRUCT {
 
     ?rngElem skos:prefLabel ?rngLabel ;
       skos:inScheme ?rngGloss .
-    FILTER (LANG(?rngLabel) = "cs")
+    FILTER (LANG(?rngLabel) = "en")
     BIND(REPLACE(STR(?rngGloss), "^https:\\\\/\\\\/slovník.gov.cz\\\\/([a-z])[^\\\\/]+\\\\/.+$", "$1sgov") AS ?rngGlossClass)
     BIND(REPLACE(STR(?rngGloss), "^https:\\\\/\\\\/slovník.gov.cz\\\\/legislativní\\\\/sbírka\\\\/([0-9]+)\\\\/([0-9]+)\\\\/.+$", "lsgov$1$2") AS ?rngLGlossClass)
 }""" .
@@ -585,7 +577,7 @@ CONSTRUCT {
 } WHERE {
   ?node skos:prefLabel ?label ;
     skos:inScheme ?glossary .
-  FILTER (LANG(?label) = "cs")
+  FILTER (LANG(?label) = "en")
   BIND(REPLACE(STR(?glossary), "^https:\\\\/\\\\/slovník.gov.cz\\\\/([a-z])[^\\\\/]+\\\\/.+$", "$1sgov") AS ?glossClass)
   BIND(REPLACE(STR(?glossary), "^https:\\\\/\\\\/slovník.gov.cz\\\\/legislativní\\\\/sbírka\\\\/([0-9]+)\\\\/([0-9]+)\\\\/.+$", "lsgov$1$2") AS ?lglossClass) 
 }""" .
@@ -599,7 +591,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX dce: <http://purl.org/dc/elements/1.1/>
 PREFIX dct: <http://purl.org/dc/terms/>
-PREFIX browser-sgov: <https://linked.opendata.cz/ontology/knowledge-graph-browser/sgov/>
+PREFIX browser-sgov: <https://linked.opendata.cz/ontology/knowledge-graph-browser/sgov-en/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 PREFIX fel: <http://onto.fel.cvut.cz/ontologies/slovník/agendový/popis-dat/pojem/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -612,16 +604,16 @@ CONSTRUCT {
 } WHERE {
   ?node skos:prefLabel ?label ;
     skos:inScheme ?glossary .
-  FILTER (LANG(?label) = "cs")
+  FILTER (LANG(?label) = "en")
     
   ?vocabulary a fel:slovník ;
     owl:imports ?glossary ;
     dct:title ?vocabularyLabel .
-  FILTER (LANG(?vocabularyLabel) = "cs")
+  FILTER (LANG(?vocabularyLabel) = "en")
     
   OPTIONAL {
     ?node skos:definition ?definition .
-    FILTER (LANG(?definition) = "cs")
+    FILTER (LANG(?definition) = "en")
   }
 
   OPTIONAL {
@@ -645,44 +637,37 @@ CONSTRUCT {
 #####################################
     
 browser-sgov:vocabularyLabel a owl:DatatypeProperty ;
-  rdfs:label "slovník"@cs ;
-  rdfs:comment "Název slovníku, do kterého pojem patří."@cs ;
+  rdfs:label "vocabulary"@en ;
   rdfs:domain skos:Concept ;
   rdfs:range rdfs:Literal .
   
 browser-sgov:numberOfAttributes a owl:DatatypeProperty ;
-  rdfs:label "počet vlastností"@cs ;
-  rdfs:comment "Počet typů vlastností, které mají tento typ jako svojí doménu."@cs ;
+  rdfs:label "number of attributes"@en ;
   rdfs:domain skos:Concept ;
   rdfs:range rdfs:Literal .
   
 browser-sgov:numberOfOutwardsRelations a owl:DatatypeProperty ;
-  rdfs:label "počet typů vztahů (doména)"@cs ;
-  rdfs:comment "Počet typů vztahů, které mají tento typ jako svojí doménu."@cs ;
+  rdfs:label "number of relationships (domain)"@en ;
   rdfs:domain skos:Concept ;
   rdfs:range rdfs:Literal .
   
 browser-sgov:numberOfInwardsRelations a owl:DatatypeProperty ;
-  rdfs:label "počet typů vztahů (obor hodnot)"@cs ;
-  rdfs:comment "Počet typů vztahů, které mají tento typ jako svůj obor hodnot."@cs ;
+  rdfs:label "number of relationships (range)"@en ;
   rdfs:domain skos:Concept ;
   rdfs:range rdfs:Literal .
   
 browser-sgov:numberOfChildren a owl:DatatypeProperty ;
-  rdfs:label "počet specializací"@cs ;
-  rdfs:comment "Počet typů, které specializují tento typ."@cs ;
+  rdfs:label "number of specializations"@en ;
   rdfs:domain skos:Concept ;
   rdfs:range rdfs:Literal .
   
 browser-sgov:numberOfParents a owl:DatatypeProperty ;
-  rdfs:label "počet generalizací"@cs ;
-  rdfs:comment "Počet typů, které generalizují tento typ."@cs ;
+  rdfs:label "number of generalizations"@en ;
   rdfs:domain skos:Concept ;
   rdfs:range rdfs:Literal .
   
 browser-sgov:legal a owl:DatatypeProperty ;
-  rdfs:label "ustanovení"@cs ;
-  rdfs:comment "Ustanovení právního předpisu, které definuje nebo popisuje typ."@cs ;
+  rdfs:label "regulation"@en ;
   rdfs:domain skos:Concept ;
   rdfs:range xsd:anyURI .
   
@@ -690,45 +675,45 @@ browser-sgov:legal a owl:DatatypeProperty ;
 # Visual styles
 #####################################
   
-<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style-sheet> a browser:VisualStyleSheet ;
-  browser:hasVisualStyle <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/object>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/attribute>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/relation>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/type>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/zsgov>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/vsgov>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/lsgov>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/lsgov892012>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/lsgov902012>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/lsgov1112009>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/lsgov3042013>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/lsgov562001>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/lsgov3612000>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/lsgov1852001>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/asgov>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/gsgov>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/dsgov>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/node>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/rdfs/subClassOf>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/rdfs/domain>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/rdfs/range>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/edge> .
+<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style-sheet> a browser:VisualStyleSheet ;
+  browser:hasVisualStyle <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/object>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/attribute>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/relation>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/type>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/zsgov>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/vsgov>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/lsgov>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/lsgov892012>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/lsgov902012>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/lsgov1112009>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/lsgov3042013>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/lsgov562001>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/lsgov3612000>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/lsgov1852001>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/asgov>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/gsgov>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/dsgov>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/node>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/rdfs/subClassOf>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/rdfs/domain>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/rdfs/range>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/edge> .
     
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/type> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/type> a browser:VisualStyle ;
   browser:shape "rectangle" ;
   browser:width "60px" ;
   browser:height "30px" ;
   browser:font-size "10px" ;
   browser:hasSelector ".type" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/object> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/object> a browser:VisualStyle ;
   browser:shape "round-rectangle" ;
   browser:height "24px" ;
   browser:font-size "12px" ;
   browser:hasSelector ".object" .
   
-<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/attribute> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/attribute> a browser:VisualStyle ;
   browser:shape "ellipse" ;
   browser:height "20px" ;
   browser:text-wrap "wrap";
@@ -736,7 +721,7 @@ browser-sgov:legal a owl:DatatypeProperty ;
   browser:font-size "10px" ;
   browser:hasSelector ".attribute" .
   
-<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/relation> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/relation> a browser:VisualStyle ;
   browser:shape "diamond" ;
   browser:height "20px" ;
   browser:text-wrap "wrap";
@@ -744,60 +729,60 @@ browser-sgov:legal a owl:DatatypeProperty ;
   browser:font-size "10px" ;
   browser:hasSelector ".relation" .
   
-<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/zsgov> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/zsgov> a browser:VisualStyle ;
   browser:border-width "2px" ;
   browser:border-style "dotted" ;
   browser:hasSelector ".zsgov" .
   
-<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/vsgov> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/vsgov> a browser:VisualStyle ;
   browser:border-style "dashed" ;
   browser:hasSelector ".vsgov" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/lsgov> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/lsgov> a browser:VisualStyle ;
   browser:border-width "2px" ;
   browser:hasSelector ".lsgov" .
   
-<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/asgov> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/asgov> a browser:VisualStyle ;
   browser:border-width "1px" ;
   browser:hasSelector ".asgov" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/dsgov> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/dsgov> a browser:VisualStyle ;
   browser:border-width "1px" ;
   browser:font-family "courier" ;
   browser:hasSelector ".dsgov" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/gsgov> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/gsgov> a browser:VisualStyle ;
   browser:border-width "1px" ;
   browser:border-style "dashed" ;
   browser:font-family "courier" ;
   browser:hasSelector ".gsgov" .
 
 # občanský zákoník
-<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/lsgov892012> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/lsgov892012> a browser:VisualStyle ;
   browser:hasSelector ".lsgov892012" .
 
 # zákon o obchodních korporacích
-<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/lsgov902012> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/lsgov902012> a browser:VisualStyle ;
   browser:hasSelector ".lsgov902012" .
 
 # zákon o veřejných rejstřících
-<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/lsgov3042013> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/lsgov3042013> a browser:VisualStyle ;
   browser:hasSelector ".lsgov3042013" .
 
 # zákon o základních registrech
-<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/lsgov1112009> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/lsgov1112009> a browser:VisualStyle ;
   browser:hasSelector ".lsgov1112009" .
   
-<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/lsgov562001> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/lsgov562001> a browser:VisualStyle ;
   browser:hasSelector ".lsgov562001" .
   
-<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/lsgov3612000> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/lsgov3612000> a browser:VisualStyle ;
   browser:hasSelector ".lsgov3612000" .
   
-<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/lsgov1852001> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/lsgov1852001> a browser:VisualStyle ;
   browser:hasSelector ".lsgov1852001" .
   
-<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/node> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/node> a browser:VisualStyle ;
   browser:border-width "1px" ;
   browser:text-wrap "wrap";
   browser:text-max-width "180px";
@@ -813,7 +798,7 @@ browser-sgov:legal a owl:DatatypeProperty ;
   browser:shape "rectangle" ;
   browser:hasSelector "node" .
   
-<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/rdfs/subClassOf> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/rdfs/subClassOf> a browser:VisualStyle ;
   browser:target-arrow-shape "triangle" ;
   browser:target-arrow-fill "hollow" ;
   browser:target-arrow-color "#303633" ;
@@ -821,19 +806,19 @@ browser-sgov:legal a owl:DatatypeProperty ;
   browser:arrow-scale "2";
   browser:hasSelector ".sub-class-of" .
   
-<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/rdfs/domain> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/rdfs/domain> a browser:VisualStyle ;
   browser:source-arrow-shape "none" ;
   browser:source-arrow-color "#303633" ;
   browser:label "" ;
   browser:hasSelector ".domain" .
   
-<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/rdfs/range> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/rdfs/range> a browser:VisualStyle ;
   browser:target-arrow-shape "vee" ;
   browser:target-arrow-color "#303633" ;
   browser:label "" ;
   browser:hasSelector ".range" .
   
-<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov/style/edge> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/sgov-en/style/edge> a browser:VisualStyle ;
   browser:font-size "6px" ;
   browser:line-color "#303633" ;
   browser:line-style "solid" ;
