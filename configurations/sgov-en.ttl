@@ -354,7 +354,7 @@ CONSTRUCT {
   ?vocabulary a fel:slovník ;
     owl:imports ?glossary ;
     dct:title ?vocabularyLabel .
-  FILTER (LANG(?vocabularyLabel) = "en")
+  FILTER (LANG(?vocabularyLabel) = "cs")
     
   OPTIONAL {
     ?node skos:definition ?definition .
@@ -499,7 +499,7 @@ CONSTRUCT {
   ?vocabulary a fel:slovník ;
     owl:imports ?glossary ;
     dct:title ?vocabularyLabel .
-    FILTER (LANG(?vocabularyLabel) = "en")
+    FILTER (LANG(?vocabularyLabel) = "cs")
     
   OPTIONAL {
     ?node skos:definition ?definition .
@@ -609,7 +609,7 @@ CONSTRUCT {
   ?vocabulary a fel:slovník ;
     owl:imports ?glossary ;
     dct:title ?vocabularyLabel .
-  FILTER (LANG(?vocabularyLabel) = "en")
+  FILTER (LANG(?vocabularyLabel) = "cs")
     
   OPTIONAL {
     ?node skos:definition ?definition .
