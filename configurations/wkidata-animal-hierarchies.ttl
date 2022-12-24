@@ -234,34 +234,30 @@ CONSTRUCT {
 } WHERE {
 
   {
-    select distinct ?childTaxon ?childTaxonLabel ?childTaxonClass where {
-      {
-        ?childTaxon wdt:P105 wd:Q38348 ;
-                wdt:P171 ?node ;
-                rdfs:label ?childTaxonLabel .
-      }
-      UNION
-      {
-        ?childTaxon wdt:P105 wd:Q38348 ;
-                wdt:P171/wdt:P171 ?node ;
-                rdfs:label ?childTaxonLabel .
-      }
-      UNION
-      {
-        ?childTaxon wdt:P105 wd:Q38348 ;
-                wdt:P171/wdt:P171/wdt:P171 ?node ;
-                rdfs:label ?childTaxonLabel .
-      }
-
-      wd:Q38348 rdfs:label ?childTaxonClass .
-
-      filter (lang(?childTaxonLabel) = "en")
-      filter (lang(?childTaxonClass) = "en")
-
-      SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
-    }
-
+    ?childTaxon wdt:P105 wd:Q38348 ;
+            wdt:P171 ?node ;
+            rdfs:label ?childTaxonLabel .
   }
+  UNION
+  {
+    ?childTaxon wdt:P105 wd:Q38348 ;
+            wdt:P171/wdt:P171 ?node ;
+            rdfs:label ?childTaxonLabel .
+  }
+  UNION
+  {
+    ?childTaxon wdt:P105 wd:Q38348 ;
+            wdt:P171/wdt:P171/wdt:P171 ?node ;
+            rdfs:label ?childTaxonLabel .
+  }
+
+  wd:Q38348 rdfs:label ?childTaxonClass .
+
+  filter (lang(?childTaxonLabel) = "en")
+  filter (lang(?childTaxonClass) = "en")
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
 }""" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/phylum/broader> a browser:ExpansionQuery ;
@@ -492,9 +488,6 @@ CONSTRUCT {
       }
 
       wd:Q36602 rdfs:label ?childTaxonClass .
-
-      ?species wdt:P171* ?childTaxon ;
-          wdt:P105 wd:Q7432 .
 
       filter (lang(?childTaxonLabel) = "en")
       filter (lang(?childTaxonClass) = "en")
@@ -813,6 +806,7 @@ CONSTRUCT {
 
   ?taxonRank rdfs:label ?taxonRankLabel .
 
+  FILTER(lang(?nodeLabel) = "en")
   FILTER(lang(?taxonRankLabel) = "en")
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
@@ -848,6 +842,8 @@ CONSTRUCT {
   } UNION {
     ?node wdt:P18 ?p18 .
   }
+
+  FILTER(lang(?nodeLabel) = "en")
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
 
