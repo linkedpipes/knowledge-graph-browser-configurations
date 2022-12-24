@@ -835,7 +835,8 @@ CONSTRUCT {
     wdt:P181 ?p181 ;
     wdt:P18 ?p18 .
 } WHERE {
-  ?node rdfs:label ?nodeLabel .
+  ?node wdt:P31 wd:Q16521 ;
+        rdfs:label ?nodeLabel .
 
   {
     ?node wdt:P225 ?p225 .
