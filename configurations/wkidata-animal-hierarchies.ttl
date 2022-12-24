@@ -804,6 +804,7 @@ CONSTRUCT {
     browser:class "taxon", "animalVisualGroup", "?taxonRankLabel .
 } WHERE {
   ?node wdt:P105 ?taxonRank ;
+        wdt:P31 wd:Q16521 ;
         rdfs:label ?nodeLabel .
 
   ?taxonRank rdfs:label ?taxonRankLabel .
