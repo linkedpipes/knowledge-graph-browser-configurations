@@ -310,7 +310,7 @@ CONSTRUCT {
 } WHERE {
 
   {
-    select distinct ?childTaxon ?childTaxonLabel ?childTaxonClass where {
+    select distinct ?childTaxon ?childTaxonLabel ?childTaxonClass ?node where {
       {
         ?childTaxon wdt:P105 wd:Q37517 ;
                     wdt:P171 ?node ;
@@ -438,7 +438,7 @@ CONSTRUCT {
 } WHERE {
 
   {
-    select distinct ?childTaxon ?childTaxonLabel ?childTaxonClass where {
+    select distinct ?childTaxon ?childTaxonLabel ?childTaxonClass ?node where {
       {
         ?childTaxon wdt:P105 wd:Q36602 ;
                     wdt:P171 ?node ;
@@ -551,7 +551,7 @@ CONSTRUCT {
 } WHERE {
 
   {
-    select distinct ?childTaxon ?childTaxonLabel ?childTaxonClass where {
+    select distinct ?childTaxon ?childTaxonLabel ?childTaxonClass ?node where {
       {
         ?childTaxon wdt:P105 wd:Q35409 ;
                     wdt:P171 ?node ;
@@ -640,7 +640,7 @@ CONSTRUCT {
 } WHERE {
 
   {
-    select distinct ?childTaxon ?childTaxonLabel ?childTaxonClass where {
+    select distinct ?childTaxon ?childTaxonLabel ?childTaxonClass ?node where {
       {
         ?childTaxon wdt:P105 wd:Q34740 ;
                     wdt:P171 ?node ;
@@ -723,7 +723,7 @@ CONSTRUCT {
 } WHERE {
 
   {
-    select distinct ?childTaxon ?childTaxonLabel ?childTaxonClass where {
+    select distinct ?childTaxon ?childTaxonLabel ?childTaxonClass ?node where {
       {
         ?childTaxon wdt:P105 wd:Q7432 ;
                     wdt:P171 ?node ;
