@@ -805,7 +805,7 @@ PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
   ?node a wdab:taxon ;
     rdfs:label ?nodeLabel ;
-    browser:class "taxon", "animalVisualGroup", "?taxonRankLabel .
+    browser:class "taxon", "animalVisualGroup", ?taxonRankLabel .
 } WHERE {
   ?node wdt:P105 ?taxonRank ;
         wdt:P31 wd:Q16521 ;
