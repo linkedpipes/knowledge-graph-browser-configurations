@@ -47,7 +47,8 @@ PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 ASK {
   ?node wdt:P31 wd:Q16521 ;
-        wdt:P105 wd:Q36732 .
+        wdt:P105 wd:Q36732 ;
+        rdfs:label "animal"@en .
 }""" ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> .
 
@@ -804,9 +805,10 @@ PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
   ?node a wdab:taxon ;
     rdfs:label ?nodeLabel ;
-    browser:class "taxon", ?taxonClass .
+    browser:class "taxon", ?taxonRankLabel .
 } WHERE {
-  ?node wdt:P105 ?taxonRank .
+  ?node wdt:P105 ?taxonRank ;
+        rdfs:label ?nodeLabel .
 
   ?taxonRank rdfs:label ?taxonRankLabel .
 
@@ -835,7 +837,8 @@ CONSTRUCT {
     wdt:P181 ?p181 ;
     wdt:P18 ?p18 .
 } WHERE {
-  ?node wdt:P31 wd:Q16521 .
+  ?node wdt:P31 wd:Q16521 ;
+        rdfs:label ?nodeLabel .
 
   {
     ?node wdt:P225 ?p225 .
