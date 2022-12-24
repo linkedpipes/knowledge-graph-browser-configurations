@@ -52,7 +52,7 @@
   browser:image "https://upload.wikimedia.org/wikipedia/en/8/80/Wikipedia-logo-v2.svg" ;
   browser:hasConfiguration
     <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/wikidata/animals>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/wikidata/animals-and-plants-hierarchies>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/wikidata/animal-classification>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/wikidata/personalities>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/people-by-groups>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/ukparliament>,

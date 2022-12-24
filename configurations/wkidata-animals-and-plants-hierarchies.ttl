@@ -13,16 +13,17 @@
 #####################################
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/wikidata/animals-and-plants-hierarchies> a browser:Configuration ;
-  dct:title "Taxonomy of animals and plants"@en ;
-  dct:description "Simple classification of animals and plants including its habitat"@en ;
+  dct:title "Hierarchical classification of animals"@en ;
+  dct:description "Simple classification of animals including what do they eat and their habitat"@en ;
   browser:hasVisualStyleSheet <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals-and-plants-hierarchies/style-sheet>;
   browser:startingNode <http://www.wikidata.org/entity/Q7377>,
-   <http://www.wikidata.org/entity/Q192154>;
+   <http://www.wikidata.org/entity/Q729>;
   browser:resourceIriPattern "^http://www\\.wikidata\\.org/entity/Q[1-9][0-9]*$";
+  browser:hasLayoutConstraintSet <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/wikidata/animals-and-plants-hierarchies> ;
   browser:hasViewSet <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animals-and-plants-hierarchies/animal-kingdom> ,
                       <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animals-and-plants-hierarchies/plant-kingdom> ,
-                      <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animals-and-plants-hierarchies/class> ,
-                      <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animals-and-plants-hierarchies/genus> ,
+                      <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animals-and-plants-hierarchies/animal-class> ,
+                      <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animals-and-plants-hierarchies/plant-class> ,
                       <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animals-and-plants-hierarchies/species> .
 
 #####################################
@@ -63,10 +64,10 @@ ASK {
 }""" ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animals-and-plants-hierarchies/class> a browser:ViewSet ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animals-and-plants-hierarchies/animal-class> a browser:ViewSet ;
   dct:title "Views of classes"@en ;
-  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animals-and-plants-hierarchies/class/broader>, <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animals-and-plants-hierarchies/class/narrower> ;
-  browser:hasDefaultView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animals-and-plants-hierarchies/class/narrower> ;
+  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animals-and-plants-hierarchies/animal-class/broader>, <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animals-and-plants-hierarchies/animal-class/narrower> ;
+  browser:hasDefaultView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animals-and-plants-hierarchies/animal-class/narrower> ;
   browser:hasCondition """PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 ASK {
@@ -75,10 +76,10 @@ ASK {
 }""" ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animals-and-plants-hierarchies/genus> a browser:ViewSet ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animals-and-plants-hierarchies/plant-class> a browser:ViewSet ;
   dct:title "Views of classes"@en ;
-  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animals-and-plants-hierarchies/genus/broader>, <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animals-and-plants-hierarchies/genus/narrower> ;
-  browser:hasDefaultView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animals-and-plants-hierarchies/genus/narrower> ;
+  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animals-and-plants-hierarchies/plant-class/broader>, <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animals-and-plants-hierarchies/plant-class/narrower> ;
+  browser:hasDefaultView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animals-and-plants-hierarchies/plant-class/narrower> ;
   browser:hasCondition """PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 ASK {
@@ -116,32 +117,32 @@ ASK {
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animals-and-plants-hierarchies/taxon/basic> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animals-and-plants-hierarchies/plant-kingdom/narrower> a browser:View ;
-  dct:title "Genuses in the plant kingdom"@en ;
+  dct:title "Classes in the plant kingdom"@en ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animals-and-plants-hierarchies/plant-kingdom/narrower> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animals-and-plants-hierarchies/taxon/basic> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animals-and-plants-hierarchies/taxon/basic> .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animals-and-plants-hierarchies/class/broader> a browser:View ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animals-and-plants-hierarchies/animal-class/broader> a browser:View ;
   dct:title "Kingdom of a class"@en ;
-  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animals-and-plants-hierarchies/class/broader> ;
+  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animals-and-plants-hierarchies/animal-class/broader> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animals-and-plants-hierarchies/taxon/basic> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animals-and-plants-hierarchies/taxon/basic> .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animals-and-plants-hierarchies/class/narrower> a browser:View ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animals-and-plants-hierarchies/animal-class/narrower> a browser:View ;
   dct:title "Species of a class"@en ;
-  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animals-and-plants-hierarchies/class/narrower> ;
+  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animals-and-plants-hierarchies/animal-class/narrower> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animals-and-plants-hierarchies/taxon/basic> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animals-and-plants-hierarchies/taxon/basic> .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animals-and-plants-hierarchies/genus/broader> a browser:View ;
-  dct:title "Kingdom of a genus"@en ;
-  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animals-and-plants-hierarchies/genus/broader> ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animals-and-plants-hierarchies/plant-class/broader> a browser:View ;
+  dct:title "Kingdom of a class"@en ;
+  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animals-and-plants-hierarchies/plant-class/broader> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animals-and-plants-hierarchies/taxon/basic> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animals-and-plants-hierarchies/taxon/basic> .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animals-and-plants-hierarchies/genus/narrower> a browser:View ;
-  dct:title "Species of a genus"@en ;
-  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animals-and-plants-hierarchies/genus/narrower> ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animals-and-plants-hierarchies/plant-class/narrower> a browser:View ;
+  dct:title "Species of a class"@en ;
+  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animals-and-plants-hierarchies/plant-class/narrower> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animals-and-plants-hierarchies/taxon/basic> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animals-and-plants-hierarchies/taxon/basic> .
 
@@ -182,12 +183,40 @@ CONSTRUCT {
               wdt:P105 wd:Q37517 .
 
   VALUES ?classTaxon { wd:Q1390 wd:Q10908 wd:Q10811 wd:Q5113 wd:Q7377 wd:Q343460 wd:Q1358 wd:Q60712470 wd:Q25371 wd:Q4867740 wd:Q152 wd:Q128257 wd:Q182978 }
+  FILTER(lang(?classTaxonLabel) = "en")
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
 
 }""" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animals-and-plants-hierarchies/class/broader> a browser:ExpansionQuery ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animals-and-plants-hierarchies/plant-kingdom/narrower> a browser:ExpansionQuery ;
+  dct:title "Classes in a kingdom"@en ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> ;
+  browser:query """PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animals-and-plants-hierarchies/>
+PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+CONSTRUCT {
+  ?classTaxon a wdab:taxon ;
+    rdfs:label ?classTaxonLabel ;
+    wdab:broader ?node ;
+    browser:class "taxon", "class" .
+
+  wdab:broader browser:class "broader" .
+} WHERE {
+
+  ?classTaxon rdfs:label ?classTaxonLabel ;
+              wdt:P105 wd:Q37517 .
+
+  VALUES ?classTaxon { wd:Q838228 wd:Q5605610 wd:Q12967693 wd:Q1307404 wd:Q1147601 wd:Q16050271 wd:Q21004311 wd:Q9849989 wd:Q134677 wd:Q1329304 wd:Q1011212 wd:Q1149748 wd:Q10788836 wd:Q11818414 wd:Q132139 wd:Q373615 wd:Q12971539 wd:Q1051622 wd:Q1096274 wd:Q642852 wd:Q80619 wd:Q1372246 wd:Q147868 }
+  FILTER(lang(?classTaxonLabel) = "en")
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+}""" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animals-and-plants-hierarchies/animal-class/broader> a browser:ExpansionQuery ;
   dct:title "Kingdom of classes"@en ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> ;
   browser:query """PREFIX wd: <http://www.wikidata.org/entity/>
@@ -209,7 +238,57 @@ CONSTRUCT {
 
 }""" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animals-and-plants-hierarchies/class/narrower> a browser:ExpansionQuery ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animals-and-plants-hierarchies/animal-class/narrower> a browser:ExpansionQuery ;
+  dct:title "Species of a class"@en ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> ;
+  browser:query """PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animals-and-plants-hierarchies/>
+PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+CONSTRUCT {
+  ?species a wdab:taxon ;
+    rdfs:label ?speciesLabel ;
+    wdab:broader ?node ;
+    browser:class "taxon", "species" .
+
+  wdab:broader browser:class "broader" .
+} WHERE {
+
+  ?species wdt:P171* ?node ;
+    rdfs:label ?speciesLabel ;
+    wdt:P1034 ?foodSource ;
+    wdt:P105 wd:Q7432 .
+
+  FILTER(lang(?speciesLabel) = "en")
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+}""" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animals-and-plants-hierarchies/plant-class/broader> a browser:ExpansionQuery ;
+  dct:title "Kingdom of classes"@en ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> ;
+  browser:query """PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animals/>
+PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+CONSTRUCT {
+  wd:Q756 a wdab:taxon ;
+    rdfs:label "plant"@en ;
+    browser:class "taxon", "kingdom" .
+
+  ?node wdab:broader wd:Q756 .
+
+  wdab:broader browser:class "broader" .
+} WHERE {
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+}""" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animals-and-plants-hierarchies/plant-class/narrower> a browser:ExpansionQuery ;
   dct:title "Species of a class"@en ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> ;
   browser:query """PREFIX wd: <http://www.wikidata.org/entity/>
@@ -268,78 +347,6 @@ CONSTRUCT {
 
 }""" .
 
-
-
-
-
-
-
-
-# <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animals-and-plants-hierarchies/taxon/broader> a browser:ExpansionQuery ;
-#   dct:title "Parent taxons"@en ;
-#   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> ;
-#   browser:query """PREFIX wd: <http://www.wikidata.org/entity/>
-# PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-# PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-# PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-# PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animals-and-plants-hierarchies/>
-# PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
-# CONSTRUCT {
-#   ?parentTaxon a wdab:taxon ;
-#     rdfs:label ?parentTaxonLabel ;
-#     browser:class "taxon", ?parentTaxonClass .
-#
-#   ?node wdab:broader ?parentTaxon .
-#
-#   wdab:broader browser:class "broader" .
-# } WHERE {
-#
-#   ?node wdt:P171 ?parentTaxon .
-#
-#   OPTIONAL {
-#     ?parentTaxon wdt:P105 ?parentTaxonRank .
-#     ?parentTaxonRank rdfs:label ?parentTaxonRankLabel .
-#     FILTER(lang(?parentTaxonRankLabel) = "en")
-#     BIND(IF(?parentTaxonRank IN (wd:Q7432, wd:Q34740, wd:Q35409, wd:Q36602, wd:Q37517, wd:Q38348, wd:Q36732, wd:Q146481), ?parentTaxonRankLabel, "unsupportedTaxon") AS ?parentTaxonClass)
-#   }
-#
-#   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
-#
-# }""" .
-#
-# <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animals-and-plants-hierarchies/taxon/narrower> a browser:ExpansionQuery ;
-#   dct:title "Child taxons"@en ;
-#   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> ;
-#   browser:query """PREFIX wd: <http://www.wikidata.org/entity/>
-# PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-# PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-# PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-# PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animals-and-plants-hierarchies/>
-# PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
-# CONSTRUCT {
-#   ?childTaxon a wdab:taxon ;
-#     rdfs:label ?childTaxonLabel ;
-#     wdab:broader ?node ;
-#     browser:class "taxon", ?childTaxonClass .
-#
-#   wdab:broader browser:class "broader" .
-# } WHERE {
-#
-#   ?childTaxon wdt:P171 ?node .
-#
-#   OPTIONAL {
-#     ?childTaxon wdt:P105 ?childTaxonRank .
-#     ?childTaxonRank rdfs:label ?childTaxonRankLabel .
-#     FILTER(lang(?childTaxonRankLabel) = "en")
-#     BIND(IF(?childTaxonRank IN (wd:Q7432, wd:Q37517, wd:Q36732), ?childTaxonRankLabel, "unsupportedTaxon") AS ?childTaxonClass)
-#   }
-#
-#   #FILTER(?childTaxonRank IN (wd:Q7432, wd:Q34740, wd:Q35409, wd:Q36602, wd:Q37517, wd:Q38348, wd:Q36732, wd:Q146481))
-#
-#   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
-#
-# }""" .
-
 #####################################
 # Preview example
 #
@@ -363,7 +370,7 @@ CONSTRUCT {
   ?taxonRank rdfs:label ?taxonRankLabel .
   FILTER(lang(?taxonRankLabel) = "en")
 
-  BIND(IF(?childTaxonRank IN (wd:Q7432, wd:Q37517, wd:Q36732), ?childTaxonRankLabel, "unsupportedTaxon") AS ?TaxonClass)
+  BIND(IF(?taxonRank IN (wd:Q7432, wd:Q37517, wd:Q36732), ?taxonRankLabel, "unsupportedTaxon") AS ?TaxonClass)
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
 
@@ -426,6 +433,38 @@ CONSTRUCT {
   rdfs:range wdab:taxon .
 
 #####################################
+# Layout Constraints
+# A layout constraint is a constraint which can be applied on a node.
+# For example: set a constant position of a node of a certain type relative to nodes of other types.
+# Examples of constraint pairs: left/right, top/bottom.
+#####################################
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/wikidata/animals-and-plants-hierarchies> a browser:LayoutConstraintSet ;
+  browser:hasConstraint <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/visual-groups/wikidata/animals-and-plants-hierarchies/country> ,
+                        <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-groups-to-cluster/wikidata/animals-and-plants-hierarchies/animal> ,
+                        <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-groups-to-cluster/wikidata/animals-and-plants-hierarchies/plant> ,
+                        <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-groups-to-cluster/wikidata/animals-and-plants-hierarchies/country> ,
+                        <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/child-parent-relation/wikidata/animals-and-plants-hierarchies/pracoviste> .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/visual-groups/wikidata/animals-and-plants-hierarchies/country> a browser:VisualGroupLayoutConstraint ;
+  browser:clusteringSelector ".countryVisualGroup" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-groups-to-cluster/wikidata/animals-and-plants-hierarchies/animal> a browser:HierarchicalGroupToClusterLayoutConstraint ;
+  browser:clusteringSelector ".animalVisualGroup" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-groups-to-cluster/wikidata/animals-and-plants-hierarchies/plant> a browser:HierarchicalGroupToClusterLayoutConstraint ;
+  browser:clusteringSelector ".plantVisualGroup" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/child-parent-relation/wikidata/animals-and-plants-hierarchies/animal> a browser:ChildParentLayoutConstraint ;
+  browser:childNodeSelector ".animalVisualGroup" ;
+  browser:hierarchicalEdgeSelector ".broader" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/child-parent-relation/wikidata/animals-and-plants-hierarchies/plant> a browser:ChildParentLayoutConstraint ;
+  browser:childNodeSelector ".plantVisualGroup" ;
+  browser:hierarchicalEdgeSelector ".broader" .
+
+
+#####################################
 # Visual styles
 #
 # Style sheet is the entry point which defines the visual look. Individual styles define how nodes and edges in the graph matching a given selector should look like. The power of Cytoscape.js styles is used here.
@@ -434,11 +473,8 @@ CONSTRUCT {
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals-and-plants-hierarchies/style-sheet> a browser:VisualStyleSheet ;
   browser:hasVisualStyle <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals-and-plants-hierarchies/style/taxon>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals-and-plants-hierarchies/style/species>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals-and-plants-hierarchies/style/genus>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals-and-plants-hierarchies/style/family>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals-and-plants-hierarchies/style/order>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals-and-plants-hierarchies/style/class>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals-and-plants-hierarchies/style/phylum>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals-and-plants-hierarchies/style/plant-class>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals-and-plants-hierarchies/style/animal-class>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals-and-plants-hierarchies/style/kingdom>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals-and-plants-hierarchies/style/domain>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals-and-plants-hierarchies/style/unsupported-taxon>,
@@ -463,25 +499,9 @@ CONSTRUCT {
   browser:background-color "#ff8000" ;
   browser:hasSelector ".species" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals-and-plants-hierarchies/style/genus> a browser:VisualStyle ;
-  browser:background-color "#ffbf00" ;
-  browser:hasSelector ".genus" .
-
-<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals-and-plants-hierarchies/style/family> a browser:VisualStyle ;
-  browser:background-color "#bfff00" ;
-  browser:hasSelector ".family" .
-
-<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals-and-plants-hierarchies/style/order> a browser:VisualStyle ;
-  browser:background-color "#00ff40" ;
-  browser:hasSelector ".order" .
-
-<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals-and-plants-hierarchies/style/class> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals-and-plants-hierarchies/style/animal-class> a browser:VisualStyle ;
   browser:background-color "#00ffbf" ;
   browser:hasSelector ".class" .
-
-<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals-and-plants-hierarchies/style/phylum> a browser:VisualStyle ;
-  browser:background-color "#00bfff" ;
-  browser:hasSelector ".phylum" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals-and-plants-hierarchies/style/kingdom> a browser:VisualStyle ;
   browser:background-color "#8000ff" ;
@@ -523,103 +543,3 @@ CONSTRUCT {
   browser:width "1";
   browser:line-color "red";
   browser:hasSelector "edge" .
-
-#https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/wikidata/animals
-#https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals-and-plants-hierarchies/style-sheet
-
-#http://www.wikidata.org/entity/Q135022
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
-SELECT distinct ?item ?itemLabel ?class #(GROUP_CONCAT(DISTINCT ?class; SEPARATOR=", ") AS ?classes)
-WHERE {
-    ?class wdt:P171 ?superclass ;
-           wdt:P105 wd:Q37517 ;
-           wdt:P31 wd:Q16521 .
-    ?superclass wdt:P171* ?item ;
-                wdt:P105 ?superclassitem .
-    SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
-    VALUES ?item { wd:Q729 }
-    VALUES ?superclassitem { wd:Q3504061 }
-#   FILTER(?class IN (wd:Q7377, wd:Q5113, wd:Q152))
-}
-# GROUP BY ?item ?itemLabel
-
-# select distinct ?class where {
-# #   hint:Query hint:optimizer "None".
-# #     ?a wdt:P171 wd:Q19159 .
-# #   ?class wdt:P105 wd:Q37517 .
-# #   ?class wdt:P171* wd:Q729 .
-#
-# #
-# #   FILTER(?class IN (wd:Q7377, wd:Q5113, wd:Q152, wd:Q10811, wd:Q10908, wd:Q1390, wd:Q1358, wd:Q25326, wd:Q25522, wd:Q25364, wd:Q44631, wd:Q101274))
-#
-#
-# #     ?b wdt:P171 wd:Q756 .
-# #            rdfs:label ?classlabel ;
-#
-# #     ?species wdt:P171* ?class ;
-# #              rdfs:label ?label ;
-# #              wdt:P1034 ?foodsource ;
-# #              wdt:P105 wd:Q7432 .
-# #     ?foodsource wdt:P171* ?parentFoodSource ;
-# #                 rdfs:label ?foodlabel .
-# #     ?parentFoodSource wdt:P105 wd:Q37517 ;
-# #                       rdfs:label ?parentfoodclasslabel .
-#   #filter not exists {?d wdt:P171 ?a .}
-# #   FILTER(?parentFoodSource IN (wd:Q7377, wd:Q5113, wd:Q152, wd:Q10811, wd:Q10908, wd:Q1390, wd:Q1358, wd:Q25326, wd:Q25522, wd:Q25364, wd:Q44631, wd:Q101274))
-# #   FILTER(lang(?label) = "en")
-# #   FILTER(lang(?classlabel) = "en")
-# #   FILTER(lang(?foodlabel) = "en")
-# #   FILTER(lang(?parentfoodclasslabel) = "en")
-# }
-
-
-
-
-
-
-
-
-
-PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
-select distinct ?class ?species ?label ?foodsource ?foodlabel ?parentFoodSource ?parentfoodclasslabel where {
-    ?class wdt:P171 ?superclass ;
-          rdfs:label ?classlabel ;
-           wdt:P105 wd:Q37517 .
-    ?superclass wdt:P171* ?kingdom ;
-                wdt:P105 wd:Q3504061 .
-#     ?species wdt:P171* ?class ;
-#              rdfs:label ?label ;
-#              wdt:P1034 ?foodsource .
-#     ?foodsource wdt:P171* ?parentFoodSource ;
-#                 rdfs:label ?foodlabel .
-#     ?parentFoodSource wdt:P105 wd:Q37517 ;
-#                       rdfs:label ?parentfoodclasslabel .
-  #filter not exists {?d wdt:P171 ?a .}
-#   FILTER(?parentFoodSource IN (wd:Q7377, wd:Q5113, wd:Q152))
-  VALUES ?kingdom { wd:Q729 }
-#   FILTER(lang(?label) = "en")
-#   FILTER(lang(?classlabel) = "en")
-#   FILTER(lang(?foodlabel) = "en")
-#   FILTER(lang(?parentfoodclasslabel) = "en")
-
-}
