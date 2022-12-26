@@ -249,7 +249,7 @@ ASK {
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/taxon/basic> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/taxon/studiedby> a browser:View ;
-  dct:title "The branch of science that studies the taxon"@en ;
+  dct:title "The branch of science studies the taxon"@en ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/common/studiedby> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animal-classification/taxon/basic> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/taxon/basic> .
@@ -864,11 +864,11 @@ PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-bro
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
   ?node wdab:habitat ?habitat .
-  ?habitat a wdab:Habitat ;
+  ?habitat a wdab:Region ;
     rdfs:label ?habitatLabel ;
-    browser:class "habitat", "habitatVisualGroup" .
+    browser:class "region", "regionVisualGroup" .
 
-  wdab:habitat browser:class "livingIn" .
+  wdab:habitat browser:class "habitat" .
 } WHERE {
   ?node wdt:P2974 ?habitat .
 
@@ -881,7 +881,7 @@ CONSTRUCT {
 }""" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/common/studiedby> a browser:ExpansionQuery ;
-  dct:title "The branch of science that studies the subject"@en ;
+  dct:title "The branch of science studies the subject"@en ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> ;
   browser:query """PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
@@ -889,12 +889,12 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?node wdab:studiedby ?branch .
+  ?node wdab:studiedBy ?branch .
   ?branch a wdab:ScienceBranch ;
     rdfs:label ?branchLabel ;
     browser:class "scienceBranchVisualGroup", "branch", "science" .
 
-  wdab:studiedby browser:class "studiedBy" .
+  wdab:studiedBy browser:class "studiedBy" .
 } WHERE {
   ?node wdt:P2579 ?branch .
 
@@ -920,7 +920,7 @@ CONSTRUCT {
     wdab:habitat ?node ;
     browser:class "taxon", "animalVisualGroup", ?taxonClass .
 
-  wdab:habitat browser:class "livingIn" .
+  wdab:habitat browser:class "habitat" .
 } WHERE {
 
   ?taxon rdfs:label ?taxonLabel ;
@@ -945,10 +945,10 @@ PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
   ?taxon a wdab:Taxon ;
     rdfs:label ?taxonLabel ;
-    wdab:studiedby ?node ;
+    wdab:studiedBy ?node ;
     browser:class "taxon", "animalVisualGroup", ?taxonClass .
 
-  wdab:studiedby browser:class "studiedBy" .
+  wdab:studiedBy browser:class "studiedBy" .
 } WHERE {
 
   ?taxon rdfs:label ?taxonLabel ;
@@ -971,12 +971,12 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?habitat a wdab:Habitat ;
+  ?habitat a wdab:Region ;
     rdfs:label ?habitatLabel ;
-    wdab:studiedby ?node ;
-    browser:class "habitat", "habitatVisualGroup" .
+    wdab:studiedBy ?node ;
+    browser:class "region", "regionVisualGroup" .
 
-  wdab:studiedby browser:class "studiedBy" .
+  wdab:studiedBy browser:class "studiedBy" .
 } WHERE {
 
   ?habitat rdfs:label ?habitatLabel ;
@@ -1028,9 +1028,9 @@ PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-bro
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
 
-  ?node a wdab:Habitat ;
+  ?node a wdab:Region ;
     rdfs:label ?nodeLabel ;
-    browser:class "habitat", "habitatVisualGroup" .
+    browser:class "region", "regionVisualGroup" .
 
 } WHERE {
   ?node rdfs:label ?nodeLabel .
@@ -1179,24 +1179,24 @@ CONSTRUCT {
   rdfs:label "Taxon"@en .
 
 <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/broader> a owl:ObjectProperty ;
-  rdfs:label "Parent taxon"@en ;
+  rdfs:label "parent taxon"@en ;
   rdfs:domain wdab:Taxon ;
   rdfs:range wdab:Taxon .
 
-<https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Habitat> a owl:Class ;
-  rdfs:label "Habitat"@en .
+<https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Region> a owl:Class ;
+  rdfs:label "Region"@en .
 
 <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/habitat> a owl:ObjectProperty ;
-  rdfs:label "Habitat of taxon"@en ;
+  rdfs:label "lives in"@en ;
   rdfs:domain wdab:Taxon ;
-  rdfs:range wdab:Habitat .
+  rdfs:range wdab:Region .
 
 <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/ScienceBranch> a owl:Class ;
   rdfs:label "Branch of science"@en .
 
 <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/studiedby> a owl:ObjectProperty ;
-  rdfs:label "Branch of science that studies the subject"@en ;
-  rdfs:domain wdab:Taxon, wdab:Habitat ;
+  rdfs:label "studied by"@en ;
+  rdfs:domain wdab:Taxon, wdab:Region ;
   rdfs:range wdab:ScienceBranch .
 
 #####################################
@@ -1207,13 +1207,13 @@ CONSTRUCT {
 #####################################
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/wikidata/animal-classification> a browser:LayoutConstraintSet ;
-  browser:hasConstraint <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/visual-groups/wikidata/animal-classification/habitat> ,
+  browser:hasConstraint <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/visual-groups/wikidata/animal-classification/region> ,
                         <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/visual-groups/wikidata/animal-classification/science-branch> ,
                         <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-groups-to-cluster/wikidata/animal-classification/animal> ,
                         <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/child-parent-relation/wikidata/animal-classification/animal> .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/visual-groups/wikidata/animal-classification/habitat> a browser:VisualGroupLayoutConstraint ;
-  browser:clusteringSelector ".habitatVisualGroup" .
+<https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/visual-groups/wikidata/animal-classification/region> a browser:VisualGroupLayoutConstraint ;
+  browser:clusteringSelector ".regionVisualGroup" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/visual-groups/wikidata/animal-classification/science-branch> a browser:VisualGroupLayoutConstraint ;
   browser:clusteringSelector ".scienceBranchVisualGroup" .
