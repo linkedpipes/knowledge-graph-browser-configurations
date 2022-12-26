@@ -26,7 +26,9 @@
                       <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animal-classification/order> ,
                       <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animal-classification/family> ,
                       <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animal-classification/genus> ,
-                      <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animal-classification/species> .
+                      <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animal-classification/species> ,
+                      <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animal-classification/habitat> ,
+                      <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animal-classification/science-branch> .
 
 #####################################
 # ViewSets
@@ -46,8 +48,7 @@
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 ASK {
-  ?node wdt:P31 wd:Q16521 ;
-        wdt:P105 wd:Q36732 ;
+  ?node wdt:P105 wd:Q36732 ;
         rdfs:label "animal"@en .
 }""" ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> .
@@ -60,8 +61,7 @@ ASK {
   browser:hasCondition """PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 ASK {
-  ?node wdt:P31 wd:Q16521 ;
-        wdt:P105 wd:Q38348 .
+  ?node wdt:P105 wd:Q38348 .
 }""" ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> .
 
@@ -75,8 +75,7 @@ ASK {
   browser:hasCondition """PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 ASK {
-  ?node wdt:P31 wd:Q16521 ;
-        wdt:P105 wd:Q37517 .
+  ?node wdt:P105 wd:Q37517 .
 }""" ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> .
 
@@ -90,8 +89,7 @@ ASK {
   browser:hasCondition """PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 ASK {
-  ?node wdt:P31 wd:Q16521 ;
-        wdt:P105 wd:Q36602 .
+  ?node wdt:P105 wd:Q36602 .
 }""" ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> .
 
@@ -105,8 +103,7 @@ ASK {
   browser:hasCondition """PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 ASK {
-  ?node wdt:P31 wd:Q16521 ;
-        wdt:P105 wd:Q35409 .
+  ?node wdt:P105 wd:Q35409 .
 }""" ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> .
 
@@ -120,8 +117,7 @@ ASK {
   browser:hasCondition """PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 ASK {
-  ?node wdt:P31 wd:Q16521 ;
-        wdt:P105 wd:Q34740 .
+  ?node wdt:P105 wd:Q34740 .
 }""" ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> .
 
@@ -134,8 +130,7 @@ ASK {
   browser:hasCondition """PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 ASK {
-  ?node wdt:P31 wd:Q16521 ;
-        wdt:P105 wd:Q7432 .
+  ?node wdt:P105 wd:Q7432 .
 }""" ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> .
 
@@ -164,6 +159,7 @@ ASK {
   ?node wdt:P31 wd:Q11862829 .
 }""" ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> .
+
 #####################################
 # Views
 #
@@ -870,9 +866,9 @@ CONSTRUCT {
   ?node wdab:habitat ?habitat .
   ?habitat a wdab:Habitat ;
     rdfs:label ?habitatLabel ;
-    browser:class "Habitat" .
+    browser:class "habitat", "habitatVisualGroup" .
 
-  wdab:habitat browser:class "habitat" .
+  wdab:habitat browser:class "livingIn" .
 } WHERE {
   ?node wdt:P2974 ?habitat .
 
@@ -896,7 +892,7 @@ CONSTRUCT {
   ?node wdab:studiedby ?branch .
   ?branch a wdab:ScienceBranch ;
     rdfs:label ?branchLabel ;
-    browser:class "branch", "science" .
+    browser:class "scienceBranchVisualGroup", "branch", "science" .
 
   wdab:studiedby browser:class "studiedBy" .
 } WHERE {
@@ -924,7 +920,7 @@ CONSTRUCT {
     wdab:habitat ?node ;
     browser:class "taxon", "animalVisualGroup", ?taxonClass .
 
-  wdab:habitat browser:class "habitat" .
+  wdab:habitat browser:class "livingIn" .
 } WHERE {
 
   ?taxon rdfs:label ?taxonLabel ;
@@ -978,7 +974,7 @@ CONSTRUCT {
   ?habitat a wdab:Habitat ;
     rdfs:label ?habitatLabel ;
     wdab:studiedby ?node ;
-    browser:class "Habitat" .
+    browser:class "habitat", "habitatVisualGroup" .
 
   wdab:studiedby browser:class "studiedBy" .
 } WHERE {
@@ -1034,7 +1030,7 @@ CONSTRUCT {
 
   ?node a wdab:Habitat ;
     rdfs:label ?nodeLabel ;
-    browser:class "habitat" .
+    browser:class "habitat", "habitatVisualGroup" .
 
 } WHERE {
   ?node rdfs:label ?nodeLabel .
@@ -1057,7 +1053,7 @@ CONSTRUCT {
 
   ?node a wdab:ScienceBranch ;
     rdfs:label ?nodeLabel ;
-    browser:class "branch", "science" .
+    browser:class "scienceBranchVisualGroup", "branch", "science" .
 
 } WHERE {
   ?node rdfs:label ?nodeLabel .
@@ -1187,6 +1183,22 @@ CONSTRUCT {
   rdfs:domain wdab:Taxon ;
   rdfs:range wdab:Taxon .
 
+<https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Habitat> a owl:Class ;
+  rdfs:label "Habitat"@en .
+
+<https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/habitat> a owl:ObjectProperty ;
+  rdfs:label "Habitat of taxon"@en ;
+  rdfs:domain wdab:Taxon ;
+  rdfs:range wdab:Habitat .
+
+<https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/ScienceBranch> a owl:Class ;
+  rdfs:label "Branch of science"@en .
+
+<https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/studiedby> a owl:ObjectProperty ;
+  rdfs:label "Branch of science that studies the subject"@en ;
+  rdfs:domain wdab:Taxon, wdab:Habitat ;
+  rdfs:range wdab:ScienceBranch .
+
 #####################################
 # Layout Constraints
 # A layout constraint is a constraint which can be applied on a node.
@@ -1196,12 +1208,15 @@ CONSTRUCT {
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/wikidata/animal-classification> a browser:LayoutConstraintSet ;
   browser:hasConstraint <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/visual-groups/wikidata/animal-classification/habitat> ,
+                        <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/visual-groups/wikidata/animal-classification/science-branch> ,
                         <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-groups-to-cluster/wikidata/animal-classification/animal> ,
-                        <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-groups-to-cluster/wikidata/animal-classification/habitat> ,
                         <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/child-parent-relation/wikidata/animal-classification/animal> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/visual-groups/wikidata/animal-classification/habitat> a browser:VisualGroupLayoutConstraint ;
   browser:clusteringSelector ".habitatVisualGroup" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/visual-groups/wikidata/animal-classification/science-branch> a browser:VisualGroupLayoutConstraint ;
+  browser:clusteringSelector ".scienceBranchVisualGroup" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-groups-to-cluster/wikidata/animal-classification/animal> a browser:HierarchicalGroupToClusterLayoutConstraint ;
   browser:clusteringSelector ".animalVisualGroup" .
