@@ -147,7 +147,7 @@ ASK {
   browser:hasCondition """PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 ASK {
-  ?node wdt:P31? / wdt:279* ?region .
+  ?node wdt:P31? / wdt:P279* ?region .
 
   VALUES ?region { wd:Q107425 wd:Q271669 wd:Q82794 }
 }""" ;
@@ -876,7 +876,7 @@ CONSTRUCT {
 } WHERE {
   ?node wdt:P2974 ?habitat .
 
-  ?habitat wdt:P31? / wdt:279* ?region ;
+  ?habitat wdt:P31? / wdt:P279* ?region ;
           rdfs:label ?habitatLabel .
 
   VALUES ?region { wd:Q107425 wd:Q271669 wd:Q82794 }
@@ -985,7 +985,7 @@ CONSTRUCT {
 
   ?habitat rdfs:label ?habitatLabel ;
     wdt:P2579 ?node ;
-    wdt:P31? / wdt:279* ?region .
+    wdt:P31? / wdt:P279* ?region .
 
   VALUES ?region { wd:Q107425 wd:Q271669 wd:Q82794 }
   FILTER (lang(?habitatLabel) = "en")
