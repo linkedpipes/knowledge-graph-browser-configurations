@@ -1085,17 +1085,19 @@ CONSTRUCT {
 } WHERE {
   ?node rdfs:label ?nodeLabel .
 
-  {
+  optional {
     ?node wdt:P225 ?p225 .
-  } UNION {
+  } 
+  
+  optional {
     ?node wdt:P181 ?p181 .
-  } UNION {
+  } 
+
+  optional {
     ?node wdt:P18 ?p18 .
   }
 
   FILTER(lang(?nodeLabel) = "en")
-
-  
 
 }""" .
 
@@ -1114,17 +1116,10 @@ CONSTRUCT {
     wdt:P18 ?p18 .
 } WHERE {
   ?node rdfs:label ?nodeLabel .
-
-  {
-    ?node schema:description ?nodeDescription ;
-  } UNION {
-    ?node wdt:P18 ?p18 .
-  }
+  optional { ?node schema:description ?nodeDescription . FILTER (lang(?nodeDescription) = "en")}
+  optional { ?node wdt:P18 ?p18 . }
 
   FILTER(lang(?nodeLabel) = "en")
-  FILTER (lang(?nodeDescription) = "en")
-
-  
 
 }""" .
 
@@ -1145,18 +1140,11 @@ CONSTRUCT {
 } WHERE {
   ?node rdfs:label ?nodeLabel .
 
-  {
-    ?node schema:description ?nodeDescription ;
-  } UNION {
-    ?node wdt:P18 ?p18 .
-  } UNION {
-    ?node wdt:P10 ?p10 .
-  }
+  optional { ?node schema:description ?nodeDescription . FILTER (lang(?nodeDescription) = "en")}
+  optional { ?node wdt:P18 ?p18 . }
+  optional { ?node wdt:P10 ?p10 . }
 
   FILTER(lang(?nodeLabel) = "en")
-  FILTER (lang(?nodeDescription) = "en")
-
-  
 
 }""" .
 
