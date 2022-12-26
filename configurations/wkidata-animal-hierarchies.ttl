@@ -40,7 +40,7 @@
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animal-classification/kingdom> a browser:ViewSet ;
   dct:title "Views of the Animal kingdom"@en ;
-  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/kingdom/narrower> ;
+  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/kingdom/narrower>  ;
   browser:hasDefaultView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/kingdom/narrower> ;
   browser:hasCondition """PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
@@ -54,7 +54,8 @@ ASK {
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animal-classification/phylum> a browser:ViewSet ;
   dct:title "Views of phylum"@en ;
-  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/phylum/broader>, <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/phylum/narrower> ;
+  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/phylum/broader>, 
+                  <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/phylum/narrower> ;
   browser:hasDefaultView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/phylum/narrower> ;
   browser:hasCondition """PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
@@ -66,7 +67,10 @@ ASK {
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animal-classification/class> a browser:ViewSet ;
   dct:title "Views of class"@en ;
-  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/class/broader>, <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/class/narrower> ;
+  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/class/broader>, 
+                  <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/class/narrower> ,
+                  <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/taxon/habitat> ,
+                  <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/taxon/studiedby> ;
   browser:hasDefaultView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/class/narrower> ;
   browser:hasCondition """PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
@@ -78,7 +82,10 @@ ASK {
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animal-classification/order> a browser:ViewSet ;
   dct:title "Views of order"@en ;
-  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/order/broader>, <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/order/narrower> ;
+  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/order/broader> ,
+                  <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/order/narrower> ,
+                  <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/taxon/habitat> ,
+                  <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/taxon/studiedby> ;
   browser:hasDefaultView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/order/narrower> ;
   browser:hasCondition """PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
@@ -90,7 +97,10 @@ ASK {
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animal-classification/family> a browser:ViewSet ;
   dct:title "Views of family"@en ;
-  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/family/broader>, <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/family/narrower> ;
+  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/family/broader>, 
+                  <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/family/narrower> ,
+                  <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/taxon/habitat> ,
+                  <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/taxon/studiedby> ;
   browser:hasDefaultView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/family/narrower> ;
   browser:hasCondition """PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
@@ -102,7 +112,10 @@ ASK {
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animal-classification/genus> a browser:ViewSet ;
   dct:title "Views of genus"@en ;
-  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/genus/broader>, <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/genus/narrower> ;
+  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/genus/broader>, 
+                  <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/genus/narrower> ,
+                  <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/taxon/habitat> ,
+                  <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/taxon/studiedby> ;
   browser:hasDefaultView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/genus/narrower> ;
   browser:hasCondition """PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
@@ -114,7 +127,9 @@ ASK {
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animal-classification/species> a browser:ViewSet ;
   dct:title "Views of class"@en ;
-  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/species/broader> ;
+  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/species/broader> ,
+                  <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/taxon/habitat> ,
+                  <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/taxon/studiedby> ;
   browser:hasDefaultView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/species/broader> ;
   browser:hasCondition """PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
@@ -124,6 +139,31 @@ ASK {
 }""" ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> .
 
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animal-classification/habitat> a browser:ViewSet ;
+  dct:title "Habitat of taxon"@en ;
+  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/habitat/taxon> ,
+                  <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/habitat/studiedby> ;
+  browser:hasDefaultView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/habitat/taxon> ;
+  browser:hasCondition """PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+ASK {
+  ?node wdt:P31? / wdt:279* ?region .
+
+  VALUES ?region { wd:Q107425 wd:Q271669 wd:Q82794 }
+}""" ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animal-classification/science-branch> a browser:ViewSet ;
+  dct:title "Branch of science"@en ;
+  browser:hasView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/science-branch/taxon> ,
+                  <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/science-branch/habitat> ;
+  browser:hasDefaultView <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/science-branch/taxon> ;
+  browser:hasCondition """PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+ASK {
+  ?node wdt:P31 wd:Q11862829 .
+}""" ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> .
 #####################################
 # Views
 #
@@ -206,6 +246,42 @@ ASK {
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animal-classification/taxon/basic> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/taxon/basic> .
 
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/taxon/habitat> a browser:View ;
+  dct:title "Habitat of the taxon"@en ;
+  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/taxon/habitat> ;
+  browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animal-classification/taxon/basic> ;
+  browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/taxon/basic> .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/taxon/studiedby> a browser:View ;
+  dct:title "The branch of science that studies the taxon"@en ;
+  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/common/studiedby> ;
+  browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animal-classification/taxon/basic> ;
+  browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/taxon/basic> .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/habitat/taxon> a browser:View ;
+  dct:title "Taxa living in the habitat"@en ;
+  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/habitat/taxon> ;
+  browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animal-classification/habitat/basic> ;
+  browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/habitat/basic> .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/habitat/studiedby> a browser:View ;
+  dct:title "Branch of science studying the habitat"@en ;
+  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/common/studiedby> ;
+  browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animal-classification/habitat/basic> ;
+  browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/habitat/basic> .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/science-branch/taxon> a browser:View ;
+  dct:title "Taxa stadied by branch of science"@en ;
+  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/science-branch/taxon> ;
+  browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animal-classification/science-branch/basic> ;
+  browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/science-branch/basic> .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/science-branch/habitat> a browser:View ;
+  dct:title "Habitats studied by branch of science"@en ;
+  browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/science-branch/habitat> ;
+  browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animal-classification/science-branch/basic> ;
+  browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/science-branch/basic> .
+  
 #####################################
 # Queries
 #####################################
@@ -225,7 +301,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?childTaxon a wdab:taxon ;
+  ?childTaxon a wdab:Taxon ;
     rdfs:label ?childTaxonLabel ;
     wdab:broader ?node ;
     browser:class "taxon", "animalVisualGroup", ?childTaxonClass .
@@ -256,7 +332,7 @@ CONSTRUCT {
   filter (lang(?childTaxonLabel) = "en")
   filter (lang(?childTaxonClass) = "en")
 
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+  
 
 }""" .
 
@@ -269,7 +345,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?parentTaxon a wdab:taxon ;
+  ?parentTaxon a wdab:Taxon ;
     rdfs:label ?parentTaxonLabel ;
     browser:class "taxon", "animalVisualGroup", ?parentTaxonClass .
 
@@ -288,7 +364,7 @@ CONSTRUCT {
   filter (lang(?parentTaxonLabel) = "en")
   filter (lang(?parentTaxonClass) = "en")
 
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+  
 
 }""" .
 
@@ -301,7 +377,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?childTaxon a wdab:taxon ;
+  ?childTaxon a wdab:Taxon ;
     rdfs:label ?childTaxonLabel ;
     wdab:broader ?node ;
     browser:class "taxon", "animalVisualGroup", ?childTaxonClass .
@@ -382,7 +458,7 @@ CONSTRUCT {
       filter (lang(?childTaxonLabel) = "en")
       filter (lang(?childTaxonClass) = "en")
 
-      SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+      
     }
 
   }
@@ -397,7 +473,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?parentTaxon a wdab:taxon ;
+  ?parentTaxon a wdab:Taxon ;
     rdfs:label ?parentTaxonLabel ;
     browser:class "taxon", "animalVisualGroup", ?parentTaxonClass .
 
@@ -416,7 +492,7 @@ CONSTRUCT {
   filter (lang(?parentTaxonLabel) = "en")
   filter (lang(?parentTaxonClass) = "en")
 
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+  
 
 }""" .
 
@@ -429,7 +505,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?childTaxon a wdab:taxon ;
+  ?childTaxon a wdab:Taxon ;
     rdfs:label ?childTaxonLabel ;
     wdab:broader ?node ;
     browser:class "taxon", "animalVisualGroup", ?childTaxonClass .
@@ -492,7 +568,7 @@ CONSTRUCT {
       filter (lang(?childTaxonLabel) = "en")
       filter (lang(?childTaxonClass) = "en")
 
-      SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+      
     }
 
   }
@@ -507,7 +583,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?parentTaxon a wdab:taxon ;
+  ?parentTaxon a wdab:Taxon ;
     rdfs:label ?parentTaxonLabel ;
     browser:class "taxon", "animalVisualGroup", ?parentTaxonClass .
 
@@ -526,7 +602,7 @@ CONSTRUCT {
   filter (lang(?parentTaxonLabel) = "en")
   filter (lang(?parentTaxonClass) = "en")
 
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+  
 
 }""" .
 
@@ -539,7 +615,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?childTaxon a wdab:taxon ;
+  ?childTaxon a wdab:Taxon ;
     rdfs:label ?childTaxonLabel ;
     wdab:broader ?node ;
     browser:class "taxon", "animalVisualGroup", ?childTaxonClass .
@@ -581,7 +657,7 @@ CONSTRUCT {
       filter (lang(?childTaxonLabel) = "en")
       filter (lang(?childTaxonClass) = "en")
 
-      SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+      
     }
 
   }
@@ -596,7 +672,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?parentTaxon a wdab:taxon ;
+  ?parentTaxon a wdab:Taxon ;
     rdfs:label ?parentTaxonLabel ;
     browser:class "taxon", "animalVisualGroup", ?parentTaxonClass .
 
@@ -615,7 +691,7 @@ CONSTRUCT {
   filter (lang(?parentTaxonLabel) = "en")
   filter (lang(?parentTaxonClass) = "en")
 
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+  
 
 }""" .
 
@@ -628,7 +704,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?childTaxon a wdab:taxon ;
+  ?childTaxon a wdab:Taxon ;
     rdfs:label ?childTaxonLabel ;
     wdab:broader ?node ;
     browser:class "taxon", "animalVisualGroup", ?childTaxonClass .
@@ -664,7 +740,7 @@ CONSTRUCT {
       filter (lang(?childTaxonLabel) = "en")
       filter (lang(?childTaxonClass) = "en")
 
-      SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+      
     }
 
   }
@@ -679,7 +755,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?parentTaxon a wdab:taxon ;
+  ?parentTaxon a wdab:Taxon ;
     rdfs:label ?parentTaxonLabel ;
     browser:class "taxon", "animalVisualGroup", ?parentTaxonClass .
 
@@ -698,11 +774,11 @@ CONSTRUCT {
   filter (lang(?parentTaxonLabel) = "en")
   filter (lang(?parentTaxonClass) = "en")
 
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+  
 
 }""" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/family/narrower> a browser:ExpansionQuery ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/genus/narrower> a browser:ExpansionQuery ;
   dct:title "Species of a genus"@en ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> ;
   browser:query """PREFIX wd: <http://www.wikidata.org/entity/>
@@ -711,7 +787,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?childTaxon a wdab:taxon ;
+  ?childTaxon a wdab:Taxon ;
     rdfs:label ?childTaxonLabel ;
     wdab:broader ?node ;
     browser:class "taxon", "animalVisualGroup", ?childTaxonClass .
@@ -744,13 +820,13 @@ CONSTRUCT {
       filter (lang(?childTaxonLabel) = "en")
       filter (lang(?childTaxonClass) = "en")
 
-      SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+      
     }
 
   }
 }""" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/family/broader> a browser:ExpansionQuery ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/species/broader> a browser:ExpansionQuery ;
   dct:title "Genus of a species"@en ;
   browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> ;
   browser:query """PREFIX wd: <http://www.wikidata.org/entity/>
@@ -759,7 +835,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?parentTaxon a wdab:taxon ;
+  ?parentTaxon a wdab:Taxon ;
     rdfs:label ?parentTaxonLabel ;
     browser:class "taxon", "animalVisualGroup", ?parentTaxonClass .
 
@@ -778,9 +854,143 @@ CONSTRUCT {
   filter (lang(?parentTaxonLabel) = "en")
   filter (lang(?parentTaxonClass) = "en")
 
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+  
 
 }""" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/taxon/habitat> a browser:ExpansionQuery ;
+  dct:title "Habitat of the taxon"@en ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> ;
+  browser:query """PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
+PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+CONSTRUCT {
+  ?node wdab:habitat ?habitat .
+  ?habitat a wdab:Habitat ;
+    rdfs:label ?habitatLabel ;
+    browser:class "Habitat" .
+
+  wdab:habitat browser:class "habitat" .
+} WHERE {
+  ?node wdt:P2974 ?habitat .
+
+  ?habitat wdt:P31? / wdt:279* ?region ;
+          rdfs:label ?habitatLabel .
+
+  VALUES ?region { wd:Q107425 wd:Q271669 wd:Q82794 }
+  FILTER (lang(?habitatLabel) = "en")
+  
+}""" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/common/studiedby> a browser:ExpansionQuery ;
+  dct:title "The branch of science that studies the subject"@en ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> ;
+  browser:query """PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
+PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+CONSTRUCT {
+  ?node wdab:studiedby ?branch .
+  ?branch a wdab:ScienceBranch ;
+    rdfs:label ?branchLabel ;
+    browser:class "branch", "science" .
+
+  wdab:studiedby browser:class "studiedBy" .
+} WHERE {
+  ?node wdt:P2579 ?branch .
+
+  ?branch wdt:P31 wd:Q11862829 ;
+    rdfs:label ?branchLabel .
+
+  FILTER (lang(?branchLabel) = "en")
+  
+}
+  """ .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/habitat/taxon> a browser:ExpansionQuery ;
+  dct:title "Taxa living in the habitat"@en ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> ;
+  browser:query """PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
+PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+CONSTRUCT {
+  ?taxon a wdab:Taxon ;
+    rdfs:label ?taxonLabel ;
+    wdab:habitat ?node ;
+    browser:class "taxon", "animalVisualGroup", ?taxonClass .
+
+  wdab:habitat browser:class "habitat" .
+} WHERE {
+
+  ?taxon rdfs:label ?taxonLabel ;
+    wdt:P2974 ?node ;
+    wdt:P105/rdfs:label ?taxonClass .
+
+  FILTER ( exists { ?taxon wdt:P171* wd:Q7377 . } || exists { ?taxon wdt:P171* wd:Q5113 . } || exists { ?taxon wdt:P171* wd:Q10811 . } || exists { ?taxon wdt:P171* wd:Q194257 . } || exists { ?taxon wdt:P171* wd:Q74083 . } || exists { ?taxon wdt:P171* wd:Q152 . } || exists { ?taxon wdt:P171* wd:Q144462 . } || exists { ?taxon wdt:P171* wd:Q15244338 . } || exists { ?taxon wdt:P171* wd:Q10908 . } || exists { ?taxon wdt:P171* wd:Q25371 . } || exists { ?taxon wdt:P171* wd:Q343460 . })
+
+  FILTER (lang(?taxonLabel) = "en")
+  FILTER (lang(?taxonClass) = "en")
+}
+  """ .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/science-branch/taxon> a browser:ExpansionQuery ;
+  dct:title "Taxa stadied by branch of science"@en ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> ;
+  browser:query """PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
+PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+CONSTRUCT {
+  ?taxon a wdab:Taxon ;
+    rdfs:label ?taxonLabel ;
+    wdab:studiedby ?node ;
+    browser:class "taxon", "animalVisualGroup", ?taxonClass .
+
+  wdab:studiedby browser:class "studiedBy" .
+} WHERE {
+
+  ?taxon rdfs:label ?taxonLabel ;
+    wdt:P2579 ?node ;
+    wdt:P105/rdfs:label ?taxonClass .
+
+  FILTER ( exists { ?taxon wdt:P171* wd:Q7377 . } || exists { ?taxon wdt:P171* wd:Q5113 . } || exists { ?taxon wdt:P171* wd:Q10811 . } || exists { ?taxon wdt:P171* wd:Q194257 . } || exists { ?taxon wdt:P171* wd:Q74083 . } || exists { ?taxon wdt:P171* wd:Q152 . } || exists { ?taxon wdt:P171* wd:Q144462 . } || exists { ?taxon wdt:P171* wd:Q15244338 . } || exists { ?taxon wdt:P171* wd:Q10908 . } || exists { ?taxon wdt:P171* wd:Q25371 . } || exists { ?taxon wdt:P171* wd:Q343460 . })
+
+  FILTER (lang(?taxonLabel) = "en")
+  FILTER (lang(?taxonClass) = "en")
+}
+  """ .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/science-branch/habitat>  a browser:ExpansionQuery ;
+  dct:title "Habitats studied by branch of science"@en ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> ;
+  browser:query """PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
+PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+CONSTRUCT {
+  ?habitat a wdab:Habitat ;
+    rdfs:label ?habitatLabel ;
+    wdab:studiedby ?node ;
+    browser:class "Habitat" .
+
+  wdab:studiedby browser:class "studiedBy" .
+} WHERE {
+
+  ?habitat rdfs:label ?habitatLabel ;
+    wdt:P2579 ?node ;
+    wdt:P31? / wdt:279* ?region .
+
+  VALUES ?region { wd:Q107425 wd:Q271669 wd:Q82794 }
+  FILTER (lang(?habitatLabel) = "en")
+}
+  """ .
 
 #####################################
 # Preview example
@@ -796,12 +1006,11 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?node a wdab:taxon ;
+  ?node a wdab:Taxon ;
     rdfs:label ?nodeLabel ;
     browser:class "taxon", "animalVisualGroup", ?taxonRankLabel .
 } WHERE {
   ?node wdt:P105 ?taxonRank ;
-        wdt:P31 wd:Q16521 ;
         rdfs:label ?nodeLabel .
 
   ?taxonRank rdfs:label ?taxonRankLabel .
@@ -809,7 +1018,53 @@ CONSTRUCT {
   FILTER(lang(?nodeLabel) = "en")
   FILTER(lang(?taxonRankLabel) = "en")
 
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+  
+
+}""" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animal-classification/habitat/basic> a browser:PreviewQuery ;
+  dct:title "Habitat basic overview"@en ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> ;
+  browser:query """PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
+PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+CONSTRUCT {
+
+  ?node a wdab:Habitat ;
+    rdfs:label ?nodeLabel ;
+    browser:class "habitat" .
+
+} WHERE {
+  ?node rdfs:label ?nodeLabel .
+
+  FILTER(lang(?nodeLabel) = "en")
+
+  
+
+}""" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animal-classification/science-branch/basic> a browser:PreviewQuery ;
+  dct:title "Branch of science basic overview"@en ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> ;
+  browser:query """PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
+PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+CONSTRUCT {
+
+  ?node a wdab:ScienceBranch ;
+    rdfs:label ?nodeLabel ;
+    browser:class "branch", "science" .
+
+} WHERE {
+  ?node rdfs:label ?nodeLabel .
+
+  FILTER(lang(?nodeLabel) = "en")
+
+  
 
 }""" .
 
@@ -832,8 +1087,7 @@ CONSTRUCT {
     wdt:P181 ?p181 ;
     wdt:P18 ?p18 .
 } WHERE {
-  ?node wdt:P31 wd:Q16521 ;
-        rdfs:label ?nodeLabel .
+  ?node rdfs:label ?nodeLabel .
 
   {
     ?node wdt:P225 ?p225 .
@@ -845,7 +1099,68 @@ CONSTRUCT {
 
   FILTER(lang(?nodeLabel) = "en")
 
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+  
+
+}""" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/habitat/basic> a browser:DetailQuery ;
+  dct:title "Habitat basic detail"@en ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> ;
+  browser:query """PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/> 
+PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
+PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+CONSTRUCT {
+  ?node rdfs:label ?nodeLabel ;
+    schema:description ?nodeDescription ;
+    wdt:P18 ?p18 .
+} WHERE {
+  ?node rdfs:label ?nodeLabel .
+
+  {
+    ?node schema:description ?nodeDescription ;
+  } UNION {
+    ?node wdt:P18 ?p18 .
+  }
+
+  FILTER(lang(?nodeLabel) = "en")
+  FILTER (lang(?nodeDescription) = "en")
+
+  
+
+}""" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/science-branch/basic>  a browser:DetailQuery ;
+  dct:title "Branch of science basic detail"@en ;
+  browser:hasDataset <https://linked.opendata.cz/resource/knowledge-graph-browser/dataset/wikidata> ;
+  browser:query """PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/> 
+PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
+PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
+CONSTRUCT {
+  ?node rdfs:label ?nodeLabel ;
+    schema:description ?nodeDescription ;
+    wdt:P18 ?p18 ;
+    wdt:P10 ?p10 .
+} WHERE {
+  ?node rdfs:label ?nodeLabel .
+
+  {
+    ?node schema:description ?nodeDescription ;
+  } UNION {
+    ?node wdt:P18 ?p18 .
+  } UNION {
+    ?node wdt:P10 ?p10 .
+  }
+
+  FILTER(lang(?nodeLabel) = "en")
+  FILTER (lang(?nodeDescription) = "en")
+
+  
 
 }""" .
 
@@ -864,13 +1179,13 @@ CONSTRUCT {
 # View vocabularies
 #####################################
 
-<https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/taxon> a owl:Class ;
-  rdfs:label "taxon"@en .
+<https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Taxon> a owl:Class ;
+  rdfs:label "Taxon"@en .
 
 <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/broader> a owl:ObjectProperty ;
-  rdfs:label "parent taxon"@en ;
-  rdfs:domain wdab:taxon ;
-  rdfs:range wdab:taxon .
+  rdfs:label "Parent taxon"@en ;
+  rdfs:domain wdab:Taxon ;
+  rdfs:range wdab:Taxon .
 
 #####################################
 # Layout Constraints
