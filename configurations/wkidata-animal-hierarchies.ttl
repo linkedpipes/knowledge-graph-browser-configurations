@@ -1215,7 +1215,7 @@ CONSTRUCT {
                         <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/groups-to-cluster/wikidata/animal-classification/animal> ,
                         <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/groups-to-cluster/wikidata/animal-classification/region> ,
                         <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/groups-to-cluster/wikidata/animal-classification/science-branch> ,
-                        <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-group/wikidata/animal-classification/animal> .
+                        <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-groups/wikidata/animal-classification/animal> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/visual-groups/wikidata/animal-classification/region> a browser:VisualGroupLayoutConstraint ;
   browser:clusteringSelector ".regionVisualGroup" .
@@ -1232,7 +1232,7 @@ CONSTRUCT {
 <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/groups-to-cluster/wikidata/animal-classification/science-branch> a browser:GroupToClusterLayoutConstraint ;
   browser:clusteringSelector ".scienceBranchVisualGroup" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-group/wikidata/animal-classification/animal> a browser:ChildParentLayoutConstraint ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-groups/wikidata/animal-classification/animal> a browser:HierarchicalGroupLayoutConstraint ;
   browser:nodeSelector ".animalHierarchicalGroup" ;
   browser:hierarchicalEdgeSelector ".broader" .
 
