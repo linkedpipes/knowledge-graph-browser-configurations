@@ -925,20 +925,21 @@ CONSTRUCT {
 
   wdab:habitat browser:class "habitat" .
 } WHERE {
+  {
+    select distinct ?taxon ?taxonLabel ?taxonClass ?node where {
+      ?taxon rdfs:label ?taxonLabel ;
+             wdt:P2974 ?node ;
+             wdt:P105 ?taxonRank .
 
-  ?taxon rdfs:label ?taxonLabel ;
-    wdt:P2974 ?node ;
-    wdt:P105 ?taxonRank .
+      ?taxonRank rdfs:label ?taxonClass .
+      values ?taxonRank { wd:Q37517 wd:Q36602 wd:Q8436 wd:Q34740 wd:Q7432 }
 
-  ?taxonRank rdfs:label ?taxonClass .
-  values ?taxonRank { wd:Q37517 wd:Q36602 wd:Q8436 wd:Q34740 wd:Q7432 }
+      values ?class { wd:Q7377 wd:Q5113 wd:Q10811 wd:Q194257 wd:Q74083 wd:Q152 wd:Q144462 wd:Q15244338 wd:Q10908 wd:Q25371 wd:Q343460 }
 
-#   FILTER ( exists { ?taxon wdt:P171* wd:Q7377 . } || exists { ?taxon wdt:P171* wd:Q5113 . } || exists { ?taxon wdt:P171* wd:Q10811 . } || exists { ?taxon wdt:P171* wd:Q194257 . } || exists { ?taxon wdt:P171* wd:Q74083 . } || exists { ?taxon wdt:P171* wd:Q152 . } || exists { ?taxon wdt:P171* wd:Q144462 . } || exists { ?taxon wdt:P171* wd:Q15244338 . } || exists { ?taxon wdt:P171* wd:Q10908 . } || exists { ?taxon wdt:P171* wd:Q25371 . } || exists { ?taxon wdt:P171* wd:Q343460 . })
-
-  values ?class { wd:Q7377 wd:Q5113 wd:Q10811 wd:Q194257 wd:Q74083 wd:Q152 wd:Q144462 wd:Q15244338 wd:Q10908 wd:Q25371 wd:Q343460 }
-
-  FILTER (lang(?taxonLabel) = "en")
-  FILTER (lang(?taxonClass) = "en")
+      FILTER (lang(?taxonLabel) = "en")
+      FILTER (lang(?taxonClass) = "en")
+    }
+  }
 }
   """ .
 
@@ -958,20 +959,21 @@ CONSTRUCT {
 
   wdab:studiedBy browser:class "studiedBy" .
 } WHERE {
+  {
+    select distinct ?taxon ?taxonLabel ?taxonClass ?node where {
+      ?taxon rdfs:label ?taxonLabel ;
+             wdt:P2579 ?node ;
+             wdt:P105 ?taxonRank .
 
-  ?taxon rdfs:label ?taxonLabel ;
-    wdt:P2579 ?node ;
-    wdt:P105 ?taxonRank .
+      ?taxonRank rdfs:label ?taxonClass .
+      values ?taxonRank { wd:Q37517 wd:Q36602 wd:Q8436 wd:Q34740 wd:Q7432 }
 
-  ?taxonRank rdfs:label ?taxonClass .
-  values ?taxonRank { wd:Q37517 wd:Q36602 wd:Q8436 wd:Q34740 wd:Q7432 }
+      values ?class { wd:Q7377 wd:Q5113 wd:Q10811 wd:Q194257 wd:Q74083 wd:Q152 wd:Q144462 wd:Q15244338 wd:Q10908 wd:Q25371 wd:Q343460 }
 
-#   FILTER ( exists { ?taxon wdt:P171* wd:Q7377 . } || exists { ?taxon wdt:P171* wd:Q5113 . } || exists { ?taxon wdt:P171* wd:Q10811 . } || exists { ?taxon wdt:P171* wd:Q194257 . } || exists { ?taxon wdt:P171* wd:Q74083 . } || exists { ?taxon wdt:P171* wd:Q152 . } || exists { ?taxon wdt:P171* wd:Q144462 . } || exists { ?taxon wdt:P171* wd:Q15244338 . } || exists { ?taxon wdt:P171* wd:Q10908 . } || exists { ?taxon wdt:P171* wd:Q25371 . } || exists { ?taxon wdt:P171* wd:Q343460 . })
-
-  values ?class { wd:Q7377 wd:Q5113 wd:Q10811 wd:Q194257 wd:Q74083 wd:Q152 wd:Q144462 wd:Q15244338 wd:Q10908 wd:Q25371 wd:Q343460 }
-
-  FILTER (lang(?taxonLabel) = "en")
-  FILTER (lang(?taxonClass) = "en")
+      FILTER (lang(?taxonLabel) = "en")
+      FILTER (lang(?taxonClass) = "en")
+    }
+  }
 }
   """ .
 
