@@ -300,7 +300,7 @@ CONSTRUCT {
   ?childTaxon a wdab:Taxon ;
     rdfs:label ?childTaxonLabel ;
     wdab:broader ?node ;
-    browser:class "taxon", "animalVisualGroup", ?childTaxonClass .
+    browser:class "taxon", "animalHierarchicalGroup", ?childTaxonClass .
 
   wdab:broader browser:class "broader" .
 } WHERE {
@@ -344,7 +344,7 @@ PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
   ?parentTaxon a wdab:Taxon ;
     rdfs:label ?parentTaxonLabel ;
-    browser:class "taxon", "animalVisualGroup", ?parentTaxonClass .
+    browser:class "taxon", "animalHierarchicalGroup", ?parentTaxonClass .
 
   ?node wdab:broader ?parentTaxon .
 
@@ -377,7 +377,7 @@ CONSTRUCT {
   ?childTaxon a wdab:Taxon ;
     rdfs:label ?childTaxonLabel ;
     wdab:broader ?node ;
-    browser:class "taxon", "animalVisualGroup", ?childTaxonClass .
+    browser:class "taxon", "animalHierarchicalGroup", ?childTaxonClass .
 
   wdab:broader browser:class "broader" .
 } WHERE {
@@ -472,7 +472,7 @@ PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
   ?parentTaxon a wdab:Taxon ;
     rdfs:label ?parentTaxonLabel ;
-    browser:class "taxon", "animalVisualGroup", ?parentTaxonClass .
+    browser:class "taxon", "animalHierarchicalGroup", ?parentTaxonClass .
 
   ?node wdab:broader ?parentTaxon .
 
@@ -505,7 +505,7 @@ CONSTRUCT {
   ?childTaxon a wdab:Taxon ;
     rdfs:label ?childTaxonLabel ;
     wdab:broader ?node ;
-    browser:class "taxon", "animalVisualGroup", ?childTaxonClass .
+    browser:class "taxon", "animalHierarchicalGroup", ?childTaxonClass .
 
   wdab:broader browser:class "broader" .
 } WHERE {
@@ -584,7 +584,7 @@ PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
   ?parentTaxon a wdab:Taxon ;
     rdfs:label ?parentTaxonLabel ;
-    browser:class "taxon", "animalVisualGroup", ?parentTaxonClass .
+    browser:class "taxon", "animalHierarchicalGroup", ?parentTaxonClass .
 
   ?node wdab:broader ?parentTaxon .
 
@@ -617,7 +617,7 @@ CONSTRUCT {
   ?childTaxon a wdab:Taxon ;
     rdfs:label ?childTaxonLabel ;
     wdab:broader ?node ;
-    browser:class "taxon", "animalVisualGroup", ?childTaxonClass .
+    browser:class "taxon", "animalHierarchicalGroup", ?childTaxonClass .
 
   wdab:broader browser:class "broader" .
 } WHERE {
@@ -673,7 +673,7 @@ PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
   ?parentTaxon a wdab:Taxon ;
     rdfs:label ?parentTaxonLabel ;
-    browser:class "taxon", "animalVisualGroup", ?parentTaxonClass .
+    browser:class "taxon", "animalHierarchicalGroup", ?parentTaxonClass .
 
   ?node wdab:broader ?parentTaxon .
 
@@ -706,7 +706,7 @@ CONSTRUCT {
   ?childTaxon a wdab:Taxon ;
     rdfs:label ?childTaxonLabel ;
     wdab:broader ?node ;
-    browser:class "taxon", "animalVisualGroup", ?childTaxonClass .
+    browser:class "taxon", "animalHierarchicalGroup", ?childTaxonClass .
 
   wdab:broader browser:class "broader" .
 } WHERE {
@@ -756,7 +756,7 @@ PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
   ?parentTaxon a wdab:Taxon ;
     rdfs:label ?parentTaxonLabel ;
-    browser:class "taxon", "animalVisualGroup", ?parentTaxonClass .
+    browser:class "taxon", "animalHierarchicalGroup", ?parentTaxonClass .
 
   ?node wdab:broader ?parentTaxon .
 
@@ -789,7 +789,7 @@ CONSTRUCT {
   ?childTaxon a wdab:Taxon ;
     rdfs:label ?childTaxonLabel ;
     wdab:broader ?node ;
-    browser:class "taxon", "animalVisualGroup", ?childTaxonClass .
+    browser:class "taxon", "animalHierarchicalGroup", ?childTaxonClass .
 
   wdab:broader browser:class "broader" .
 } WHERE {
@@ -836,7 +836,7 @@ PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
   ?parentTaxon a wdab:Taxon ;
     rdfs:label ?parentTaxonLabel ;
-    browser:class "taxon", "animalVisualGroup", ?parentTaxonClass .
+    browser:class "taxon", "animalHierarchicalGroup", ?parentTaxonClass .
 
   ?node wdab:broader ?parentTaxon .
 
@@ -921,7 +921,7 @@ CONSTRUCT {
   ?taxon a wdab:Taxon ;
     rdfs:label ?taxonLabel ;
     wdab:habitat ?node ;
-    browser:class "taxon", "animalVisualGroup", ?taxonClass .
+    browser:class "taxon", "animalHierarchicalGroup", ?taxonClass .
 
   wdab:habitat browser:class "habitat" .
 } WHERE {
@@ -955,7 +955,7 @@ CONSTRUCT {
   ?taxon a wdab:Taxon ;
     rdfs:label ?taxonLabel ;
     wdab:studiedBy ?node ;
-    browser:class "taxon", "animalVisualGroup", ?taxonClass .
+    browser:class "taxon", "animalHierarchicalGroup", ?taxonClass .
 
   wdab:studiedBy browser:class "studiedBy" .
 } WHERE {
@@ -1019,7 +1019,7 @@ PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
   ?node a wdab:Taxon ;
     rdfs:label ?nodeLabel ;
-    browser:class "taxon", "animalVisualGroup", ?taxonRankLabel .
+    browser:class "taxon", "animalHierarchicalGroup", ?taxonRankLabel .
 } WHERE {
   ?node wdt:P105 ?taxonRank ;
         rdfs:label ?nodeLabel .
@@ -1212,8 +1212,10 @@ CONSTRUCT {
 <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/wikidata/animal-classification> a browser:LayoutConstraintSet ;
   browser:hasConstraint <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/visual-groups/wikidata/animal-classification/region> ,
                         <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/visual-groups/wikidata/animal-classification/science-branch> ,
-                        <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-groups-to-cluster/wikidata/animal-classification/animal> ,
-                        <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/child-parent-relation/wikidata/animal-classification/animal> .
+                        <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/groups-to-cluster/wikidata/animal-classification/animal> ,
+                        <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/groups-to-cluster/wikidata/animal-classification/region> ,
+                        <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/groups-to-cluster/wikidata/animal-classification/science-branch> ,
+                        <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-group/wikidata/animal-classification/animal> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/visual-groups/wikidata/animal-classification/region> a browser:VisualGroupLayoutConstraint ;
   browser:clusteringSelector ".regionVisualGroup" .
@@ -1221,11 +1223,17 @@ CONSTRUCT {
 <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/visual-groups/wikidata/animal-classification/science-branch> a browser:VisualGroupLayoutConstraint ;
   browser:clusteringSelector ".scienceBranchVisualGroup" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-groups-to-cluster/wikidata/animal-classification/animal> a browser:HierarchicalGroupToClusterLayoutConstraint ;
-  browser:clusteringSelector ".animalVisualGroup" .
+<https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/groups-to-cluster/wikidata/animal-classification/animal> a browser:GroupToClusterLayoutConstraint ;
+  browser:clusteringSelector ".animalHierarchicalGroup" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/child-parent-relation/wikidata/animal-classification/animal> a browser:ChildParentLayoutConstraint ;
-  browser:childNodeSelector ".animalVisualGroup" ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/groups-to-cluster/wikidata/animal-classification/region> a browser:GroupToClusterLayoutConstraint ;
+  browser:clusteringSelector ".regionVisualGroup" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/groups-to-cluster/wikidata/animal-classification/science-branch> a browser:GroupToClusterLayoutConstraint ;
+  browser:clusteringSelector ".scienceBranchVisualGroup" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-group/wikidata/animal-classification/animal> a browser:ChildParentLayoutConstraint ;
+  browser:nodeSelector ".animalHierarchicalGroup" ;
   browser:hierarchicalEdgeSelector ".broader" .
 
 
