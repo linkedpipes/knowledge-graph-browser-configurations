@@ -65,9 +65,9 @@
   browser:nodeSelector ".pracovisteVisualGroup" ;
   browser:hierarchicalEdgeSelector ".broader" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-groups/uk/témata-s-omezeními/tema> a browser:HierarchicalGroupLayoutConstraint ;
-  browser:nodeSelector ".tema" ;
-  browser:hierarchicalEdgeSelector ".broader" .
+# <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/hierarchical-groups/uk/témata-s-omezeními/tema> a browser:HierarchicalGroupLayoutConstraint ;
+#   browser:nodeSelector ".tema" ;
+#   browser:hierarchicalEdgeSelector ".broader" .
 
 # <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/parent-child-relation/uk/témata-s-omezeními/pracoviste> a browser:ParentChildLayoutConstraint ;
 #   browser:parentNodeSelector ".pracovisteVisualGroup" ;
