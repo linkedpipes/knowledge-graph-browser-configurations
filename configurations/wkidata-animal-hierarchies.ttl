@@ -1296,7 +1296,7 @@ CONSTRUCT {
   browser:hasSelector ".phylum" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/kingdom> a browser:VisualStyle ;
-  browser:background-color "#dfd3c3" ;  
+  browser:background-color "#eae5d7" ;  
   browser:hasSelector ".kingdom" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/region> a browser:VisualStyle ;
