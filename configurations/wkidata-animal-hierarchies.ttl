@@ -300,12 +300,12 @@ CONSTRUCT {
   ?childTaxon a wdab:Taxon ;
     rdfs:label ?childTaxonLabel ;
     wdab:broader ?node ;
-    browser:class "taxon", "animalHierarchicalGroup", ?childTaxonClass .
+    browser:class "taxon", "animalHierarchicalGroup", ?childTaxonRankLabel .
 
   wdab:broader browser:class "broader" .
 } WHERE {
   {
-    select distinct ?childTaxon ?childTaxonLabel ?childTaxonClass ?node where {
+    select distinct ?childTaxon ?childTaxonLabel ?childTaxonRankLabel ?node where {
       {
         ?childTaxon wdt:P105 wd:Q38348 ;
                     wdt:P171 ?node ;
@@ -324,11 +324,11 @@ CONSTRUCT {
                     rdfs:label ?childTaxonLabel .
       }
 
-      wd:Q38348 rdfs:label ?childTaxonClass .
+      wd:Q38348 rdfs:label ?childTaxonRankLabel .
       ?childTaxon ^wdt:P171 / ^wdt:P171? / ^wdt:P171? / ^wdt:P171? / ^wdt:P171? / ^wdt:P171? / wdt:P105 wd:Q37517 .
 
       filter (lang(?childTaxonLabel) = "en")
-      filter (lang(?childTaxonClass) = "en")
+      filter (lang(?childTaxonRankLabel) = "en")
     }
   }
 }""" .
@@ -344,7 +344,7 @@ PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
   ?parentTaxon a wdab:Taxon ;
     rdfs:label ?parentTaxonLabel ;
-    browser:class "taxon", "animalHierarchicalGroup", ?parentTaxonClass .
+    browser:class "taxon", "animalHierarchicalGroup", ?parentTaxonRankLabel .
 
   ?node wdab:broader ?parentTaxon .
 
@@ -356,10 +356,10 @@ CONSTRUCT {
   ?parentTaxon wdt:P105 wd:Q36732 ;
               rdfs:label ?parentTaxonLabel .
 
-  wd:Q36732 rdfs:label ?parentTaxonClass .
+  wd:Q36732 rdfs:label ?parentTaxonRankLabel .
 
   filter (lang(?parentTaxonLabel) = "en")
-  filter (lang(?parentTaxonClass) = "en")
+  filter (lang(?parentTaxonRankLabel) = "en")
 
   
 
@@ -377,13 +377,13 @@ CONSTRUCT {
   ?childTaxon a wdab:Taxon ;
     rdfs:label ?childTaxonLabel ;
     wdab:broader ?node ;
-    browser:class "taxon", "animalHierarchicalGroup", ?childTaxonClass .
+    browser:class "taxon", "animalHierarchicalGroup", ?childTaxonRankLabel .
 
   wdab:broader browser:class "broader" .
 } WHERE {
 
   {
-    select distinct ?childTaxon ?childTaxonLabel ?childTaxonClass ?node where {
+    select distinct ?childTaxon ?childTaxonLabel ?childTaxonRankLabel ?node where {
       {
         ?childTaxon wdt:P105 wd:Q37517 ;
                     wdt:P171 ?node ;
@@ -450,10 +450,10 @@ CONSTRUCT {
                     rdfs:label ?childTaxonLabel .
       }
 
-      wd:Q37517 rdfs:label ?childTaxonClass .
+      wd:Q37517 rdfs:label ?childTaxonRankLabel .
 
       filter (lang(?childTaxonLabel) = "en")
-      filter (lang(?childTaxonClass) = "en")
+      filter (lang(?childTaxonRankLabel) = "en")
 
       
     }
@@ -472,7 +472,7 @@ PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
   ?parentTaxon a wdab:Taxon ;
     rdfs:label ?parentTaxonLabel ;
-    browser:class "taxon", "animalHierarchicalGroup", ?parentTaxonClass .
+    browser:class "taxon", "animalHierarchicalGroup", ?parentTaxonRankLabel .
 
   ?node wdab:broader ?parentTaxon .
 
@@ -484,10 +484,10 @@ CONSTRUCT {
   ?parentTaxon wdt:P105 wd:Q38348 ;
               rdfs:label ?parentTaxonLabel .
 
-  wd:Q38348 rdfs:label ?parentTaxonClass .
+  wd:Q38348 rdfs:label ?parentTaxonRankLabel .
 
   filter (lang(?parentTaxonLabel) = "en")
-  filter (lang(?parentTaxonClass) = "en")
+  filter (lang(?parentTaxonRankLabel) = "en")
 
   
 
@@ -505,13 +505,13 @@ CONSTRUCT {
   ?childTaxon a wdab:Taxon ;
     rdfs:label ?childTaxonLabel ;
     wdab:broader ?node ;
-    browser:class "taxon", "animalHierarchicalGroup", ?childTaxonClass .
+    browser:class "taxon", "animalHierarchicalGroup", ?childTaxonRankLabel .
 
   wdab:broader browser:class "broader" .
 } WHERE {
 
   {
-    select distinct ?childTaxon ?childTaxonLabel ?childTaxonClass ?node where {
+    select distinct ?childTaxon ?childTaxonLabel ?childTaxonRankLabel ?node where {
       {
         ?childTaxon wdt:P105 wd:Q36602 ;
                     wdt:P171 ?node ;
@@ -560,12 +560,12 @@ CONSTRUCT {
                     rdfs:label ?childTaxonLabel .
       }
 
-      wd:Q36602 rdfs:label ?childTaxonClass .
+      wd:Q36602 rdfs:label ?childTaxonRankLabel .
 
       ?childTaxon ^wdt:P171 / ^wdt:P171? / wdt:P105 wd:Q35409 .
 
       filter (lang(?childTaxonLabel) = "en")
-      filter (lang(?childTaxonClass) = "en")
+      filter (lang(?childTaxonRankLabel) = "en")
 
       
     }
@@ -584,7 +584,7 @@ PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
   ?parentTaxon a wdab:Taxon ;
     rdfs:label ?parentTaxonLabel ;
-    browser:class "taxon", "animalHierarchicalGroup", ?parentTaxonClass .
+    browser:class "taxon", "animalHierarchicalGroup", ?parentTaxonRankLabel .
 
   ?node wdab:broader ?parentTaxon .
 
@@ -596,10 +596,10 @@ CONSTRUCT {
   ?parentTaxon wdt:P105 wd:Q37517 ;
               rdfs:label ?parentTaxonLabel .
 
-  wd:Q37517 rdfs:label ?parentTaxonClass .
+  wd:Q37517 rdfs:label ?parentTaxonRankLabel .
 
   filter (lang(?parentTaxonLabel) = "en")
-  filter (lang(?parentTaxonClass) = "en")
+  filter (lang(?parentTaxonRankLabel) = "en")
 
   
 
@@ -617,13 +617,13 @@ CONSTRUCT {
   ?childTaxon a wdab:Taxon ;
     rdfs:label ?childTaxonLabel ;
     wdab:broader ?node ;
-    browser:class "taxon", "animalHierarchicalGroup", ?childTaxonClass .
+    browser:class "taxon", "animalHierarchicalGroup", ?childTaxonRankLabel .
 
   wdab:broader browser:class "broader" .
 } WHERE {
 
   {
-    select distinct ?childTaxon ?childTaxonLabel ?childTaxonClass ?node where {
+    select distinct ?childTaxon ?childTaxonLabel ?childTaxonRankLabel ?node where {
       {
         ?childTaxon wdt:P105 wd:Q35409 ;
                     wdt:P171 ?node ;
@@ -648,13 +648,13 @@ CONSTRUCT {
                     rdfs:label ?childTaxonLabel .
       }
 
-      wd:Q35409 rdfs:label ?childTaxonClass .
+      wd:Q35409 rdfs:label ?childTaxonRankLabel .
 
       ?species wdt:P171* ?childTaxon ;
           wdt:P105 wd:Q7432 .
 
       filter (lang(?childTaxonLabel) = "en")
-      filter (lang(?childTaxonClass) = "en")
+      filter (lang(?childTaxonRankLabel) = "en")
 
       
     }
@@ -673,7 +673,7 @@ PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
   ?parentTaxon a wdab:Taxon ;
     rdfs:label ?parentTaxonLabel ;
-    browser:class "taxon", "animalHierarchicalGroup", ?parentTaxonClass .
+    browser:class "taxon", "animalHierarchicalGroup", ?parentTaxonRankLabel .
 
   ?node wdab:broader ?parentTaxon .
 
@@ -685,10 +685,10 @@ CONSTRUCT {
   ?parentTaxon wdt:P105 wd:Q36602 ;
               rdfs:label ?parentTaxonLabel .
 
-  wd:Q36602 rdfs:label ?parentTaxonClass .
+  wd:Q36602 rdfs:label ?parentTaxonRankLabel .
 
   filter (lang(?parentTaxonLabel) = "en")
-  filter (lang(?parentTaxonClass) = "en")
+  filter (lang(?parentTaxonRankLabel) = "en")
 
   
 
@@ -706,13 +706,13 @@ CONSTRUCT {
   ?childTaxon a wdab:Taxon ;
     rdfs:label ?childTaxonLabel ;
     wdab:broader ?node ;
-    browser:class "taxon", "animalHierarchicalGroup", ?childTaxonClass .
+    browser:class "taxon", "animalHierarchicalGroup", ?childTaxonRankLabel .
 
   wdab:broader browser:class "broader" .
 } WHERE {
 
   {
-    select distinct ?childTaxon ?childTaxonLabel ?childTaxonClass ?node where {
+    select distinct ?childTaxon ?childTaxonLabel ?childTaxonRankLabel ?node where {
       {
         ?childTaxon wdt:P105 wd:Q34740 ;
                     wdt:P171 ?node ;
@@ -731,13 +731,13 @@ CONSTRUCT {
                     rdfs:label ?childTaxonLabel .
       }
 
-      wd:Q34740 rdfs:label ?childTaxonClass .
+      wd:Q34740 rdfs:label ?childTaxonRankLabel .
 
       ?species wdt:P171* ?childTaxon ;
           wdt:P105 wd:Q7432 .
 
       filter (lang(?childTaxonLabel) = "en")
-      filter (lang(?childTaxonClass) = "en")
+      filter (lang(?childTaxonRankLabel) = "en")
 
       
     }
@@ -756,7 +756,7 @@ PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
   ?parentTaxon a wdab:Taxon ;
     rdfs:label ?parentTaxonLabel ;
-    browser:class "taxon", "animalHierarchicalGroup", ?parentTaxonClass .
+    browser:class "taxon", "animalHierarchicalGroup", ?parentTaxonRankLabel .
 
   ?node wdab:broader ?parentTaxon .
 
@@ -768,10 +768,10 @@ CONSTRUCT {
   ?parentTaxon wdt:P105 wd:Q35409 ;
               rdfs:label ?parentTaxonLabel .
 
-  wd:Q35409 rdfs:label ?parentTaxonClass .
+  wd:Q35409 rdfs:label ?parentTaxonRankLabel .
 
   filter (lang(?parentTaxonLabel) = "en")
-  filter (lang(?parentTaxonClass) = "en")
+  filter (lang(?parentTaxonRankLabel) = "en")
 
   
 
@@ -789,13 +789,13 @@ CONSTRUCT {
   ?childTaxon a wdab:Taxon ;
     rdfs:label ?childTaxonLabel ;
     wdab:broader ?node ;
-    browser:class "taxon", "animalHierarchicalGroup", ?childTaxonClass .
+    browser:class "taxon", "animalHierarchicalGroup", ?childTaxonRankLabel .
 
   wdab:broader browser:class "broader" .
 } WHERE {
 
   {
-    select distinct ?childTaxon ?childTaxonLabel ?childTaxonClass ?node where {
+    select distinct ?childTaxon ?childTaxonLabel ?childTaxonRankLabel ?node where {
       {
         ?childTaxon wdt:P105 wd:Q7432 ;
                     wdt:P171 ?node ;
@@ -814,10 +814,10 @@ CONSTRUCT {
                     rdfs:label ?childTaxonLabel .
       }
 
-      wd:Q7432 rdfs:label ?childTaxonClass .
+      wd:Q7432 rdfs:label ?childTaxonRankLabel .
 
       filter (lang(?childTaxonLabel) = "en")
-      filter (lang(?childTaxonClass) = "en")
+      filter (lang(?childTaxonRankLabel) = "en")
 
       
     }
@@ -836,7 +836,7 @@ PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
   ?parentTaxon a wdab:Taxon ;
     rdfs:label ?parentTaxonLabel ;
-    browser:class "taxon", "animalHierarchicalGroup", ?parentTaxonClass .
+    browser:class "taxon", "animalHierarchicalGroup", ?parentTaxonRankLabel .
 
   ?node wdab:broader ?parentTaxon .
 
@@ -848,10 +848,10 @@ CONSTRUCT {
   ?parentTaxon wdt:P105 wd:Q34740 ;
               rdfs:label ?parentTaxonLabel .
 
-  wd:Q34740 rdfs:label ?parentTaxonClass .
+  wd:Q34740 rdfs:label ?parentTaxonRankLabel .
 
   filter (lang(?parentTaxonLabel) = "en")
-  filter (lang(?parentTaxonClass) = "en")
+  filter (lang(?parentTaxonRankLabel) = "en")
 
   
 
@@ -901,8 +901,10 @@ CONSTRUCT {
 } WHERE {
   ?node wdt:P2579 ?branch .
 
-  ?branch wdt:P31 wd:Q11862829 ;
+  ?branch wdt:P31 ?instance ;
     rdfs:label ?branchLabel .
+
+  values ?instance { wd:Q11862829 wd:Q99397804 wd:Q17002728 wd:Q2465832 wd:Q19935939 wd:Q87058424 }
 
   FILTER (lang(?branchLabel) = "en")
   
@@ -921,23 +923,24 @@ CONSTRUCT {
   ?taxon a wdab:Taxon ;
     rdfs:label ?taxonLabel ;
     wdab:habitat ?node ;
-    browser:class "taxon", "animalHierarchicalGroup", ?taxonClass .
+    browser:class "taxon", "animalHierarchicalGroup", ?taxonRankLabel .
 
   wdab:habitat browser:class "habitat" .
 } WHERE {
   {
-    select distinct ?taxon ?taxonLabel ?taxonClass ?node where {
+    select distinct ?taxon ?taxonLabel ?taxonRankLabel ?node where {
       ?taxon rdfs:label ?taxonLabel ;
              wdt:P2974 ?node ;
-             wdt:P105 ?taxonRank .
+             wdt:P105 ?taxonRank ;
+             wdt:P171* ?class .
 
-      ?taxonRank rdfs:label ?taxonClass .
+      ?taxonRank rdfs:label ?taxonRankLabel .
       values ?taxonRank { wd:Q37517 wd:Q36602 wd:Q8436 wd:Q34740 wd:Q7432 }
 
       values ?class { wd:Q7377 wd:Q5113 wd:Q10811 wd:Q194257 wd:Q74083 wd:Q152 wd:Q144462 wd:Q15244338 wd:Q10908 wd:Q25371 wd:Q343460 }
 
       FILTER (lang(?taxonLabel) = "en")
-      FILTER (lang(?taxonClass) = "en")
+      FILTER (lang(?taxonRankLabel) = "en")
     }
   }
 }
@@ -955,23 +958,24 @@ CONSTRUCT {
   ?taxon a wdab:Taxon ;
     rdfs:label ?taxonLabel ;
     wdab:studiedBy ?node ;
-    browser:class "taxon", "animalHierarchicalGroup", ?taxonClass .
+    browser:class "taxon", "animalHierarchicalGroup", ?taxonRankLabel .
 
   wdab:studiedBy browser:class "studiedBy" .
 } WHERE {
   {
-    select distinct ?taxon ?taxonLabel ?taxonClass ?node where {
+    select distinct ?taxon ?taxonLabel ?taxonRankLabel ?node where {
       ?taxon rdfs:label ?taxonLabel ;
              wdt:P2579 ?node ;
-             wdt:P105 ?taxonRank .
+             wdt:P105 ?taxonRank ;
+             wdt:P171* ?class .
 
-      ?taxonRank rdfs:label ?taxonClass .
+      ?taxonRank rdfs:label ?taxonRankLabel .
       values ?taxonRank { wd:Q37517 wd:Q36602 wd:Q8436 wd:Q34740 wd:Q7432 }
 
       values ?class { wd:Q7377 wd:Q5113 wd:Q10811 wd:Q194257 wd:Q74083 wd:Q152 wd:Q144462 wd:Q15244338 wd:Q10908 wd:Q25371 wd:Q343460 }
 
       FILTER (lang(?taxonLabel) = "en")
-      FILTER (lang(?taxonClass) = "en")
+      FILTER (lang(?taxonRankLabel) = "en")
     }
   }
 }
