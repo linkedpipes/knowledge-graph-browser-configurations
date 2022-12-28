@@ -1327,9 +1327,9 @@ CONSTRUCT {
   browser:shape "pentagon" ;
   browser:label 'data(label)' ;
   browser:text-valign "center" ;
-  browser:text-halign "left" ;
-  browser:width "18" ;
-  browser:height "18" ;
+  browser:text-halign "bottom" ;
+  browser:width "20" ;
+  browser:height "20" ;
   browser:hasSelector "node" .
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/edge> a browser:VisualStyle ;
