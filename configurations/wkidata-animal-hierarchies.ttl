@@ -1273,23 +1273,23 @@ CONSTRUCT {
   browser:hasSelector ".taxon" .
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/species> a browser:VisualStyle ;
-  browser:background-color "#cddc39" ;  
+  browser:background-color "#c9d9ad" ;  
   browser:hasSelector ".species" .
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/genus> a browser:VisualStyle ;
-  browser:background-color "#cddc93" ;  
+  browser:background-color "#c0d14b" ;  
   browser:hasSelector ".genus" .
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/family> a browser:VisualStyle ;
-  browser:background-color "#e2f3c6" ;  
+  browser:background-color "#cddc93" ;  
   browser:hasSelector ".family" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/order> a browser:VisualStyle ;
-  browser:background-color "#dcc836" ;  
+  browser:background-color "#eeda89" ;  
   browser:hasSelector ".order" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/class> a browser:VisualStyle ;
-  browser:background-color "#cfbf36" ;  
+  browser:background-color "#cfbf8b" ;  
   browser:hasSelector ".class" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/phylum> a browser:VisualStyle ;
