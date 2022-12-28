@@ -1253,6 +1253,8 @@ CONSTRUCT {
     <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/class>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/phylum>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/kingdom>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/region>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/science>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/broader>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/node>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/edge> .
@@ -1291,11 +1293,11 @@ CONSTRUCT {
   browser:hasSelector ".class" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/phylum> a browser:VisualStyle ;
-  browser:background-color "#6f76c9" ;  
+  browser:background-color "#3e76c9" ;  
   browser:hasSelector ".phylum" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/kingdom> a browser:VisualStyle ;
-  browser:background-color "#3e76c9" ;  
+  browser:background-color "#6f76c9" ;  
   browser:hasSelector ".kingdom" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/region> a browser:VisualStyle ;
@@ -1322,7 +1324,7 @@ CONSTRUCT {
   browser:border-color "#544B50" ;
   browser:border-width "2px" ;
   browser:color "black" ;
-  browser:shape "rectangle" ;
+  browser:shape "diamond" ;
   browser:label 'data(label)' ;
   browser:text-valign "center" ;
   browser:text-halign "left" ;
@@ -1332,5 +1334,5 @@ CONSTRUCT {
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/edge> a browser:VisualStyle ;
   browser:width "1";
-  browser:line-color "red";
+  browser:line-color "black";
   browser:hasSelector "edge" .
