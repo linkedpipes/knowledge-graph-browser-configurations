@@ -1284,7 +1284,7 @@ CONSTRUCT {
   browser:hasSelector ".family" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/order> a browser:VisualStyle ;
-  browser:background-color "#f6f6ac" ;  
+  browser:background-color "#efefb3" ;  
   browser:hasSelector ".order" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/class> a browser:VisualStyle ;
