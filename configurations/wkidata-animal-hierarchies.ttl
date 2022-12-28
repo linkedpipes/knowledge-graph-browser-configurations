@@ -17,7 +17,8 @@
   dct:description "A classification of animals, their habitats and subjects studying them"@en ;
   browser:hasVisualStyleSheet <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style-sheet>;
   browser:startingNode <http://www.wikidata.org/entity/Q7377>,
-   <http://www.wikidata.org/entity/Q729>;
+   <http://www.wikidata.org/entity/Q729>,
+   <https://www.wikidata.org/wiki/Q34706>;
   browser:resourceIriPattern "^http://www\\.wikidata\\.org/entity/Q[1-9][0-9]*$";
   browser:hasLayoutConstraintSet <https://linked.opendata.cz/resource/knowledge-graph-browser/layout-constraints/wikidata/animal-classification> ;
   browser:hasViewSet <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animal-classification/kingdom> ,
@@ -1243,21 +1244,21 @@ CONSTRUCT {
 # Style sheet is the entry point which defines the visual look. Individual styles define how nodes and edges in the graph matching a given selector should look like. The power of Cytoscape.js styles is used here.
 #####################################
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals/style-sheet> a browser:VisualStyleSheet ;
-  browser:hasVisualStyle <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals/style/taxon>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals/style/species>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals/style/genus>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals/style/family>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals/style/order>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals/style/class>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals/style/phylum>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals/style/kingdom>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals/style/broader>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals/style/node>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals/style/edge> .
+<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style-sheet> a browser:VisualStyleSheet ;
+  browser:hasVisualStyle <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/taxon>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/species>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/genus>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/family>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/order>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/class>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/phylum>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/kingdom>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/broader>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/node>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/edge> .
     
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals/style/taxon> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/taxon> a browser:VisualStyle ;
   browser:border-width "2px" ;
   browser:shape "octagon" ;
   browser:label "data(label)" ;
@@ -1269,35 +1270,35 @@ CONSTRUCT {
   browser:text-margin-y "2px" ;
   browser:hasSelector ".taxon" .
   
-<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals/style/species> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/species> a browser:VisualStyle ;
   browser:background-color "#ff8000" ;  
   browser:hasSelector ".species" .
   
-<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals/style/genus> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/genus> a browser:VisualStyle ;
   browser:background-color "#ffbf00" ;  
   browser:hasSelector ".genus" .
   
-<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals/style/family> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/family> a browser:VisualStyle ;
   browser:background-color "#bfff00" ;  
   browser:hasSelector ".family" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals/style/order> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/order> a browser:VisualStyle ;
   browser:background-color "#00ff40" ;  
   browser:hasSelector ".order" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals/style/class> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/class> a browser:VisualStyle ;
   browser:background-color "#00ffbf" ;  
   browser:hasSelector ".class" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals/style/phylum> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/phylum> a browser:VisualStyle ;
   browser:background-color "#00bfff" ;  
   browser:hasSelector ".phylum" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals/style/kingdom> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/kingdom> a browser:VisualStyle ;
   browser:background-color "#8000ff" ;  
   browser:hasSelector ".kingdom" .
   
-<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals/style/broader> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/broader> a browser:VisualStyle ;
   browser:width "1";
   browser:curve-style "straight" ;
   browser:line-color "#7dd181" ;
@@ -1308,7 +1309,7 @@ CONSTRUCT {
   browser:curve-style "straight" ;
   browser:hasSelector ".broader" .
   
-<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals/style/node> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/node> a browser:VisualStyle ;
   browser:background-color "#A9A5A7" ;
   browser:border-color "#544B50" ;
   browser:border-width "2px" ;
@@ -1321,7 +1322,7 @@ CONSTRUCT {
   browser:height "16" ;
   browser:hasSelector "node" .
   
-<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animals/style/edge> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/edge> a browser:VisualStyle ;
   browser:width "1";
   browser:line-color "red";
   browser:hasSelector "edge" .
