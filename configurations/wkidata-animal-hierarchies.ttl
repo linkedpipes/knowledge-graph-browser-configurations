@@ -1320,16 +1320,16 @@ CONSTRUCT {
   browser:hasSelector ".broader" .
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/node> a browser:VisualStyle ;
-  browser:background-color "#A9A5A7" ;
+  browser:background-color "#e1e1e1" ;
   browser:border-color "#544B50" ;
   browser:border-width "2px" ;
   browser:color "black" ;
-  browser:shape "diamond" ;
+  browser:shape "pentagon" ;
   browser:label 'data(label)' ;
   browser:text-valign "center" ;
   browser:text-halign "left" ;
-  browser:width "16" ;
-  browser:height "16" ;
+  browser:width "18" ;
+  browser:height "18" ;
   browser:hasSelector "node" .
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/edge> a browser:VisualStyle ;
