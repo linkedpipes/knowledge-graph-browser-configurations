@@ -1326,8 +1326,8 @@ CONSTRUCT {
   browser:color "black" ;
   browser:shape "pentagon" ;
   browser:label 'data(label)' ;
-  browser:text-valign "center" ;
-  browser:text-halign "bottom" ;
+  browser:text-valign "bottom" ;
+  browser:text-halign "center" ;
   browser:width "20" ;
   browser:height "20" ;
   browser:hasSelector "node" .
