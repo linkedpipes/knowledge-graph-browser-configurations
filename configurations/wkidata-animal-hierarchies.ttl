@@ -172,108 +172,126 @@ ASK {
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/kingdom/narrower> a browser:View ;
   dct:title "Phyla of the Animal Kingdom"@en ;
+  dct:description "Hierarchical view"@en ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/kingdom/narrower> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animal-classification/taxon/basic> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/taxon/basic> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/phylum/broader> a browser:View ;
   dct:title "Kingdom of a phylum"@en ;
+  dct:description "Hierarchical view"@en ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/phylum/broader> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animal-classification/taxon/basic> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/taxon/basic> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/phylum/narrower> a browser:View ;
   dct:title "Classes of a phylum"@en ;
+  dct:description "Hierarchical view"@en ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/phylum/narrower> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animal-classification/taxon/basic> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/taxon/basic> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/class/broader> a browser:View ;
   dct:title "Phylum of a class"@en ;
+  dct:description "Hierarchical view"@en ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/class/broader> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animal-classification/taxon/basic> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/taxon/basic> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/class/narrower> a browser:View ;
   dct:title "Orders of a class"@en ;
+  dct:description "Hierarchical view"@en ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/class/narrower> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animal-classification/taxon/basic> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/taxon/basic> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/order/broader> a browser:View ;
   dct:title "Class of an order"@en ;
+  dct:description "Hierarchical view"@en ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/order/broader> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animal-classification/taxon/basic> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/taxon/basic> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/order/narrower> a browser:View ;
   dct:title "Families of an order"@en ;
+  dct:description "Hierarchical view"@en ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/order/narrower> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animal-classification/taxon/basic> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/taxon/basic> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/family/broader> a browser:View ;
   dct:title "Order of a family"@en ;
+  dct:description "Hierarchical view"@en ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/family/broader> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animal-classification/taxon/basic> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/taxon/basic> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/family/narrower> a browser:View ;
   dct:title "Genera of a family"@en ;
+  dct:description "Hierarchical view"@en ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/family/narrower> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animal-classification/taxon/basic> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/taxon/basic> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/genus/broader> a browser:View ;
   dct:title "Family of a genus"@en ;
+  dct:description "Hierarchical view"@en ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/genus/broader> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animal-classification/taxon/basic> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/taxon/basic> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/genus/narrower> a browser:View ;
   dct:title "Species of a genus"@en ;
+  dct:description "Hierarchical view"@en ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/genus/narrower> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animal-classification/taxon/basic> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/taxon/basic> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/species/broader> a browser:View ;
   dct:title "Genus of a species"@en ;
+  dct:description "Hierarchical view"@en ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/species/broader> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animal-classification/taxon/basic> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/taxon/basic> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/taxon/habitat> a browser:View ;
   dct:title "Habitat of the taxon"@en ;
+  dct:description "Non-Hierarchical view"@en ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/taxon/habitat> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animal-classification/taxon/basic> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/taxon/basic> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/taxon/studiedby> a browser:View ;
   dct:title "The branch of science studies the taxon"@en ;
+  dct:description "Non-Hierarchical view"@en ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/common/studiedby> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animal-classification/taxon/basic> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/taxon/basic> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/habitat/taxon> a browser:View ;
   dct:title "Taxa living in the habitat"@en ;
+  dct:description "Non-Hierarchical view"@en ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/habitat/taxon> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animal-classification/habitat/basic> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/habitat/basic> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/habitat/studiedby> a browser:View ;
   dct:title "Branch of science studying the habitat"@en ;
+  dct:description "Non-Hierarchical view"@en ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/common/studiedby> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animal-classification/habitat/basic> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/habitat/basic> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/science-branch/taxon> a browser:View ;
   dct:title "Taxa stadied by branch of science"@en ;
+  dct:description "Non-Hierarchical view"@en ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/science-branch/taxon> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animal-classification/science-branch/basic> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/science-branch/basic> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/view/wikidata/animal-classification/science-branch/habitat> a browser:View ;
   dct:title "Habitats studied by branch of science"@en ;
+  dct:description "Non-Hierarchical view"@en ;
   browser:hasExpansion <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/science-branch/habitat> ;
   browser:hasPreview <https://linked.opendata.cz/resource/knowledge-graph-browser/preview-query/animal-classification/science-branch/basic> ;
   browser:hasDetail <https://linked.opendata.cz/resource/knowledge-graph-browser/detail-query/animal-classification/science-branch/basic> .
