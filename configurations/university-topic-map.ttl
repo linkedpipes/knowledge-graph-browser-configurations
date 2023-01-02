@@ -1003,7 +1003,7 @@ CONSTRUCT {
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/téma> a browser:VisualStyle ;
   browser:shape "ellipse" ;
   browser:background-color "#FFFFFF" ;
-  browser:border-color "#000000" ;
+  browser:border-color "#5B5B5B" ;
   browser:color "#000000" ;
   browser:text-wrap "wrap";
   browser:text-max-width "90px";
@@ -1018,7 +1018,7 @@ CONSTRUCT {
   browser:hasSelector ".broader" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/zabývá-se-tématem> a browser:VisualStyle ;
-  browser:line-color "#000000" ;
+  browser:line-color "#606060" ;
   browser:line-style "solid" ;
   browser:color "#000000" ;
   browser:target-arrow-shape "none" ;
@@ -1043,7 +1043,7 @@ CONSTRUCT {
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/edge> a browser:VisualStyle ;
   browser:width "1px" ;
-  browser:font-size "6px" ;
+  browser:font-size "10px" ;
   browser:line-color "black" ;
   browser:line-style "solid" ;
   browser:curve-style "straight" ;
