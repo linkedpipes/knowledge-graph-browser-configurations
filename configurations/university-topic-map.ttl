@@ -1018,9 +1018,9 @@ CONSTRUCT {
   browser:hasSelector ".broader" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/zabývá-se-tématem> a browser:VisualStyle ;
-  browser:line-color "#FFFFFF" ;
+  browser:line-color "#000000" ;
   browser:line-style "solid" ;
-  browser:color "#FFFFFF" ;
+  browser:color "#000000" ;
   browser:target-arrow-shape "none" ;
   browser:hasSelector ".zabyvaSeTematem" .
   
