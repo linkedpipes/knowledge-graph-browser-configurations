@@ -762,7 +762,7 @@ CONSTRUCT {
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/pvf/fakulta> a browser:VisualStyle ;
   browser:background-color "#5d99c6" ;
   browser:border-color "#5d99c6" ;
-  browser:color "#ffffff" ;
+  browser:color "#000000" ;
   browser:text-wrap "wrap";
   browser:text-max-width "100px";
   browser:width "120px" ;
@@ -772,7 +772,7 @@ CONSTRUCT {
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/pvf/pracoviště> a browser:VisualStyle ;
   browser:background-color "#90caf9" ;
   browser:border-color "#5d99c6" ;
-  browser:color "#e3f2fd" ;
+  browser:color "#000000" ;
   browser:text-wrap "wrap";
   browser:text-max-width "100px";
   browser:width "120px" ;
@@ -1003,7 +1003,7 @@ CONSTRUCT {
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/téma> a browser:VisualStyle ;
   browser:shape "ellipse" ;
   browser:background-color "#FFFFFF" ;
-  browser:border-color "#5B5B5B" ;
+  browser:border-color "#000000" ;
   browser:color "#000000" ;
   browser:text-wrap "wrap";
   browser:text-max-width "90px";
@@ -1018,7 +1018,7 @@ CONSTRUCT {
   browser:hasSelector ".broader" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/zabývá-se-tématem> a browser:VisualStyle ;
-  browser:line-color "#606060" ;
+  browser:line-color "#000000" ;
   browser:line-style "solid" ;
   browser:color "#000000" ;
   browser:target-arrow-shape "none" ;
