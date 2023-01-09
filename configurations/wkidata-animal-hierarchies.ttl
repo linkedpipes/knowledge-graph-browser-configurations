@@ -315,10 +315,10 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?childTaxon a wdab:Taxon ;
+  ?childTaxon a wdab:Phylum ;
     rdfs:label ?childTaxonLabel ;
     wdab:broader ?node ;
-    browser:class "animalHierarchicalGroup", ?childTaxonRankLabel .
+    browser:class "taxon", "animalHierarchicalGroup", ?childTaxonRankLabel .
 
   wdab:broader browser:class "broader" .
 } WHERE {
@@ -360,9 +360,9 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?parentTaxon a wdab:Taxon ;
+  ?parentTaxon a wdab:Kingdom ;
     rdfs:label ?parentTaxonLabel ;
-    browser:class "animalHierarchicalGroup", ?parentTaxonRankLabel .
+    browser:class "taxon", "animalHierarchicalGroup", ?parentTaxonRankLabel .
 
   ?node wdab:broader ?parentTaxon .
 
@@ -392,10 +392,10 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?childTaxon a wdab:Taxon ;
+  ?childTaxon a wdab:Class ;
     rdfs:label ?childTaxonLabel ;
     wdab:broader ?node ;
-    browser:class "animalHierarchicalGroup", ?childTaxonRankLabel .
+    browser:class "taxon", "animalHierarchicalGroup", ?childTaxonRankLabel .
 
   wdab:broader browser:class "broader" .
 } WHERE {
@@ -488,9 +488,9 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?parentTaxon a wdab:Taxon ;
+  ?parentTaxon a wdab:Phylum ;
     rdfs:label ?parentTaxonLabel ;
-    browser:class "animalHierarchicalGroup", ?parentTaxonRankLabel .
+    browser:class "taxon", "animalHierarchicalGroup", ?parentTaxonRankLabel .
 
   ?node wdab:broader ?parentTaxon .
 
@@ -520,10 +520,10 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?childTaxon a wdab:Taxon ;
+  ?childTaxon a wdab:Order ;
     rdfs:label ?childTaxonLabel ;
     wdab:broader ?node ;
-    browser:class "animalHierarchicalGroup", ?childTaxonRankLabel .
+    browser:class "taxon", "animalHierarchicalGroup", ?childTaxonRankLabel .
 
   wdab:broader browser:class "broader" .
 } WHERE {
@@ -600,9 +600,9 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?parentTaxon a wdab:Taxon ;
+  ?parentTaxon a wdab:Class ;
     rdfs:label ?parentTaxonLabel ;
-    browser:class "animalHierarchicalGroup", ?parentTaxonRankLabel .
+    browser:class "taxon", "animalHierarchicalGroup", ?parentTaxonRankLabel .
 
   ?node wdab:broader ?parentTaxon .
 
@@ -632,10 +632,10 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?childTaxon a wdab:Taxon ;
+  ?childTaxon a wdab:Family ;
     rdfs:label ?childTaxonLabel ;
     wdab:broader ?node ;
-    browser:class "animalHierarchicalGroup", ?childTaxonRankLabel .
+    browser:class "taxon", "animalHierarchicalGroup", ?childTaxonRankLabel .
 
   wdab:broader browser:class "broader" .
 } WHERE {
@@ -689,9 +689,9 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?parentTaxon a wdab:Taxon ;
+  ?parentTaxon a wdab:Order ;
     rdfs:label ?parentTaxonLabel ;
-    browser:class "animalHierarchicalGroup", ?parentTaxonRankLabel .
+    browser:class "taxon", "animalHierarchicalGroup", ?parentTaxonRankLabel .
 
   ?node wdab:broader ?parentTaxon .
 
@@ -721,10 +721,10 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?childTaxon a wdab:Taxon ;
+  ?childTaxon a wdab:Genus ;
     rdfs:label ?childTaxonLabel ;
     wdab:broader ?node ;
-    browser:class "animalHierarchicalGroup", ?childTaxonRankLabel .
+    browser:class "taxon", "animalHierarchicalGroup", ?childTaxonRankLabel .
 
   wdab:broader browser:class "broader" .
 } WHERE {
@@ -772,9 +772,9 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?parentTaxon a wdab:Taxon ;
+  ?parentTaxon a wdab:Family ;
     rdfs:label ?parentTaxonLabel ;
-    browser:class "animalHierarchicalGroup", ?parentTaxonRankLabel .
+    browser:class "taxon", "animalHierarchicalGroup", ?parentTaxonRankLabel .
 
   ?node wdab:broader ?parentTaxon .
 
@@ -804,10 +804,10 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?childTaxon a wdab:Taxon ;
+  ?childTaxon a wdab:Species ;
     rdfs:label ?childTaxonLabel ;
     wdab:broader ?node ;
-    browser:class "animalHierarchicalGroup", ?childTaxonRankLabel .
+    browser:class "taxon", "animalHierarchicalGroup", ?childTaxonRankLabel .
 
   wdab:broader browser:class "broader" .
 } WHERE {
@@ -852,9 +852,9 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?parentTaxon a wdab:Taxon ;
+  ?parentTaxon a wdab:Genus ;
     rdfs:label ?parentTaxonLabel ;
-    browser:class "animalHierarchicalGroup", ?parentTaxonRankLabel .
+    browser:class "taxon", "animalHierarchicalGroup", ?parentTaxonRankLabel .
 
   ?node wdab:broader ?parentTaxon .
 
@@ -938,15 +938,15 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?taxon a wdab:Taxon ;
+  ?taxon a ?animalClass ;
     rdfs:label ?taxonLabel ;
     wdab:habitat ?node ;
-    browser:class "animalHierarchicalGroup", ?taxonRankLabel .
+    browser:class "taxon", "animalHierarchicalGroup", ?taxonRankLabel .
 
   wdab:habitat browser:class "habitat" .
 } WHERE {
   {
-    select distinct ?taxon ?taxonLabel ?taxonRankLabel ?node where {
+    select distinct ?taxon ?taxonLabel ?taxonRankLabel ?node ?animalClass where {
       ?taxon rdfs:label ?taxonLabel ;
              wdt:P2974 ?node ;
              wdt:P105 ?taxonRank ;
@@ -956,6 +956,7 @@ CONSTRUCT {
       values ?taxonRank { wd:Q37517 wd:Q36602 wd:Q8436 wd:Q34740 wd:Q7432 }
 
       values ?class { wd:Q7377 wd:Q5113 wd:Q10811 wd:Q194257 wd:Q74083 wd:Q152 wd:Q144462 wd:Q15244338 wd:Q10908 wd:Q25371 wd:Q343460 }
+      BIND(CONCAT("https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/", UCASE(SUBSTR(?taxonRankLabel, 1, 1)), SUBSTR(?taxonRankLabel, 2)) as ?animalClass)
 
       FILTER (lang(?taxonLabel) = "en")
       FILTER (lang(?taxonRankLabel) = "en")
@@ -973,15 +974,15 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?taxon a wdab:Taxon ;
+  ?taxon a ?animalClass ;
     rdfs:label ?taxonLabel ;
     wdab:studiedBy ?node ;
-    browser:class "animalHierarchicalGroup", ?taxonRankLabel .
+    browser:class "taxon", "animalHierarchicalGroup", ?taxonRankLabel .
 
   wdab:studiedBy browser:class "studiedBy" .
 } WHERE {
   {
-    select distinct ?taxon ?taxonLabel ?taxonRankLabel ?node where {
+    select distinct ?taxon ?taxonLabel ?taxonRankLabel ?node ?animalClass where {
       ?taxon rdfs:label ?taxonLabel ;
              wdt:P2579 ?node ;
              wdt:P105 ?taxonRank ;
@@ -991,6 +992,7 @@ CONSTRUCT {
       values ?taxonRank { wd:Q37517 wd:Q36602 wd:Q8436 wd:Q34740 wd:Q7432 }
 
       values ?class { wd:Q7377 wd:Q5113 wd:Q10811 wd:Q194257 wd:Q74083 wd:Q152 wd:Q144462 wd:Q15244338 wd:Q10908 wd:Q25371 wd:Q343460 }
+      BIND(CONCAT("https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/", UCASE(SUBSTR(?taxonRankLabel, 1, 1)), SUBSTR(?taxonRankLabel, 2)) as ?animalClass)
 
       FILTER (lang(?taxonLabel) = "en")
       FILTER (lang(?taxonRankLabel) = "en")
@@ -1039,14 +1041,16 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdab: <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/>
 PREFIX browser: <https://linked.opendata.cz/ontology/knowledge-graph-browser/>
 CONSTRUCT {
-  ?node a wdab:Taxon ;
+  ?node a ?animalClass ;
     rdfs:label ?nodeLabel ;
-    browser:class "animalHierarchicalGroup", ?taxonRankLabel .
+    browser:class "taxon", "animalHierarchicalGroup", ?taxonRankLabel .
 } WHERE {
   ?node wdt:P105 ?taxonRank ;
         rdfs:label ?nodeLabel .
 
   ?taxonRank rdfs:label ?taxonRankLabel .
+
+  BIND(CONCAT("https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/", UCASE(SUBSTR(?taxonRankLabel, 1, 1)), SUBSTR(?taxonRankLabel, 2)) as ?animalClass)
 
   FILTER(lang(?nodeLabel) = "en")
   FILTER(lang(?taxonRankLabel) = "en")
@@ -1202,6 +1206,27 @@ CONSTRUCT {
 
 <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Taxon> a owl:Class ;
   rdfs:label "Taxon"@en .
+
+<https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Kingdom> a owl:Class ;
+  rdfs:label "Kingdom"@en .
+
+<https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Phylum> a owl:Class ;
+  rdfs:label "Phylum"@en .
+
+<https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Class> a owl:Class ;
+  rdfs:label "Class"@en .
+
+<https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Order> a owl:Class ;
+  rdfs:label "Order"@en .
+
+<https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Family> a owl:Class ;
+  rdfs:label "Family"@en .
+
+<https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Genus> a owl:Class ;
+  rdfs:label "Genus"@en .
+
+<https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Species> a owl:Class ;
+  rdfs:label "Species"@en .
 
 <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/broader> a owl:ObjectProperty ;
   rdfs:label "parent taxon"@en ;
