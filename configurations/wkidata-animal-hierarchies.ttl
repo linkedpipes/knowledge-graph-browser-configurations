@@ -956,7 +956,14 @@ CONSTRUCT {
       values ?taxonRank { wd:Q37517 wd:Q36602 wd:Q8436 wd:Q34740 wd:Q7432 }
 
       values ?class { wd:Q7377 wd:Q5113 wd:Q10811 wd:Q194257 wd:Q74083 wd:Q152 wd:Q144462 wd:Q15244338 wd:Q10908 wd:Q25371 wd:Q343460 }
-      BIND(CONCAT("https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/", UCASE(SUBSTR(?taxonRankLabel, 1, 1)), SUBSTR(?taxonRankLabel, 2)) as ?animalClass)
+#       BIND(CONCAT("https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/", UCASE(SUBSTR(?taxonRankLabel, 1, 1)), SUBSTR(?taxonRankLabel, 2)) as ?animalClass)
+       BIND( if (?taxonRankLabel = "kingdom", <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Kingdom>,
+        if (?taxonRankLabel = "phylum", <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Phylum>,
+        if (?taxonRankLabel = "class", <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Class>,
+        if (?taxonRankLabel = "order", <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Order>,
+        if (?taxonRankLabel = "family", <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Family>,
+        if (?taxonRankLabel = "genus", <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Genus>,
+        if (?taxonRankLabel = "species", <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Species>, ""))))))) as ?animalClass)
 
       FILTER (lang(?taxonLabel) = "en")
       FILTER (lang(?taxonRankLabel) = "en")
@@ -992,7 +999,14 @@ CONSTRUCT {
       values ?taxonRank { wd:Q37517 wd:Q36602 wd:Q8436 wd:Q34740 wd:Q7432 }
 
       values ?class { wd:Q7377 wd:Q5113 wd:Q10811 wd:Q194257 wd:Q74083 wd:Q152 wd:Q144462 wd:Q15244338 wd:Q10908 wd:Q25371 wd:Q343460 }
-      BIND(CONCAT("https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/", UCASE(SUBSTR(?taxonRankLabel, 1, 1)), SUBSTR(?taxonRankLabel, 2)) as ?animalClass)
+#       BIND(CONCAT("https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/", UCASE(SUBSTR(?taxonRankLabel, 1, 1)), SUBSTR(?taxonRankLabel, 2)) as ?animalClass)
+      BIND( if (?taxonRankLabel = "kingdom", <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Kingdom>,
+        if (?taxonRankLabel = "phylum", <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Phylum>,
+        if (?taxonRankLabel = "class", <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Class>,
+        if (?taxonRankLabel = "order", <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Order>,
+        if (?taxonRankLabel = "family", <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Family>,
+        if (?taxonRankLabel = "genus", <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Genus>,
+        if (?taxonRankLabel = "species", <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Species>, ""))))))) as ?animalClass)
 
       FILTER (lang(?taxonLabel) = "en")
       FILTER (lang(?taxonRankLabel) = "en")
@@ -1050,7 +1064,14 @@ CONSTRUCT {
 
   ?taxonRank rdfs:label ?taxonRankLabel .
 
-  BIND(CONCAT("https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/", UCASE(SUBSTR(?taxonRankLabel, 1, 1)), SUBSTR(?taxonRankLabel, 2)) as ?animalClass)
+#   BIND(CONCAT(https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/", UCASE(SUBSTR(?taxonRankLabel, 1, 1)), SUBSTR(?taxonRankLabel, 2)) as ?animalClass)
+  BIND( if (?taxonRankLabel = "kingdom", <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Kingdom>,
+        if (?taxonRankLabel = "phylum", <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Phylum>,
+        if (?taxonRankLabel = "class", <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Class>,
+        if (?taxonRankLabel = "order", <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Order>,
+        if (?taxonRankLabel = "family", <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Family>,
+        if (?taxonRankLabel = "genus", <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Genus>,
+        if (?taxonRankLabel = "species", <https://linked.opendata.cz/resource/vocabulary/knowledge-graph-browser/wikidata/animal-classification/Species>, ""))))))) as ?animalClass)
 
   FILTER(lang(?nodeLabel) = "en")
   FILTER(lang(?taxonRankLabel) = "en")
