@@ -53,6 +53,7 @@
   browser:hasConfiguration
     <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/wikidata/animals>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/wikidata/animal-classification>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/wikidata/animal-classification-without-constraints>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/wikidata/personalities>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/people-by-groups>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/ukparliament>,
