@@ -379,9 +379,8 @@ CONSTRUCT {
   filter (lang(?parentTaxonLabel) = "en")
   filter (lang(?parentTaxonRankLabel) = "en")
 
-  
-
-}""" .
+}
+limit 1""" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/phylum/narrower> a browser:ExpansionQuery ;
   dct:title "Classes of a phylum"@en ;
@@ -509,7 +508,8 @@ CONSTRUCT {
 
   
 
-}""" .
+}
+limit 1""" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/class/narrower> a browser:ExpansionQuery ;
   dct:title "Orders of a class"@en ;
@@ -621,7 +621,8 @@ CONSTRUCT {
 
   
 
-}""" .
+}
+limit 1""" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/order/narrower> a browser:ExpansionQuery ;
   dct:title "Families of an order"@en ;
@@ -710,7 +711,8 @@ CONSTRUCT {
 
   
 
-}""" .
+}
+limit 1""" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/family/narrower> a browser:ExpansionQuery ;
   dct:title "Genera of a family"@en ;
@@ -793,7 +795,8 @@ CONSTRUCT {
 
   
 
-}""" .
+}
+limit 1""" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/genus/narrower> a browser:ExpansionQuery ;
   dct:title "Species of a genus"@en ;
@@ -873,7 +876,8 @@ CONSTRUCT {
 
   
 
-}""" .
+}
+limit 1""" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/expansion-query/animal-classification/taxon/habitat> a browser:ExpansionQuery ;
   dct:title "Habitat of the taxon"@en ;
