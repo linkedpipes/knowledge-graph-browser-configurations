@@ -1012,13 +1012,13 @@ CONSTRUCT {
   browser:hasSelector ".tema" .
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/www.w3.org/2004/02/skos/core/broader> a browser:VisualStyle ;
-  browser:line-color "#6F6F6F" ;
+  browser:line-color "#000000" ;
   browser:line-style "solid" ;
   browser:color "#000000" ;
   browser:hasSelector ".broader" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/zabývá-se-tématem> a browser:VisualStyle ;
-  browser:line-color "#6F6F6F" ;
+  browser:line-color "#000000" ;
   browser:line-style "solid" ;
   browser:color "#000000" ;
   browser:target-arrow-shape "none" ;
