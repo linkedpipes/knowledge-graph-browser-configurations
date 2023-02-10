@@ -1403,11 +1403,13 @@ CONSTRUCT {
   browser:hasSelector ".kingdom" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/region> a browser:VisualStyle ;
-  browser:background-color "#c59896" ;  
+  # browser:background-color "#c59896" ;
+  browser:background-color "#e6e6e6" ;
   browser:hasSelector ".region" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/science> a browser:VisualStyle ;
-  browser:background-color "#9a96c5" ;  
+  # browser:background-color "#9a96c5" ; 
+  browser:background-color "#e6e6e6" ;
   browser:hasSelector ".science" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/broader> a browser:VisualStyle ;
@@ -1422,7 +1424,8 @@ CONSTRUCT {
   browser:hasSelector ".broader" .
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/node> a browser:VisualStyle ;
-  browser:background-color "#f2f2f2" ;
+  browser:background-color "#39b48e" ;
+  # browser:background-color "#f2f2f2" ;
   browser:border-color "#544B50" ;
   browser:border-width "2px" ;
   browser:color "black" ;
@@ -1436,5 +1439,6 @@ CONSTRUCT {
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/edge> a browser:VisualStyle ;
   browser:width "1";
-  browser:line-color "black";
+  # browser:line-color "black";
+  browser:line-color "#fafa6e";
   browser:hasSelector "edge" .
