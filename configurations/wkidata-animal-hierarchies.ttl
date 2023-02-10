@@ -1385,7 +1385,7 @@ CONSTRUCT {
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/class> a browser:VisualStyle ;
   # browser:background-color "#efefb3" ;  
-  browser:background-color "##215d6e" ;  
+  browser:background-color "#215d6e" ;  
   browser:hasSelector ".class" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/phylum> a browser:VisualStyle ;
