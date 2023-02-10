@@ -1366,6 +1366,7 @@ CONSTRUCT {
   # browser:background-color "#b6eb7a" ; 
   # browser:background-color "#7BCF51" ;
   browser:background-color "#00898a" ;  
+  browser:color "#ffffff" ;
   browser:hasSelector ".species" .
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/genus> a browser:VisualStyle ;
@@ -1376,6 +1377,7 @@ CONSTRUCT {
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/family> a browser:VisualStyle ;
   # browser:background-color "#dceeb4" ;
   browser:background-color "#08737f" ;  
+  browser:color "#ffffff" ;
   browser:hasSelector ".family" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/order> a browser:VisualStyle ;
@@ -1386,6 +1388,7 @@ CONSTRUCT {
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/class> a browser:VisualStyle ;
   # browser:background-color "#efefb3" ;  
   browser:background-color "#215d6e" ;  
+  browser:color "#ffffff" ;
   browser:hasSelector ".class" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/phylum> a browser:VisualStyle ;
@@ -1397,6 +1400,7 @@ CONSTRUCT {
   # browser:background-color "#eae5d7" ;  
   # browser:background-color "#E6BB83" ;  
   browser:background-color "#2a4858" ;  
+  browser:color "#ffffff" ;
   browser:hasSelector ".kingdom" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/region> a browser:VisualStyle ;
