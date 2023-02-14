@@ -15,7 +15,7 @@
 <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/wikidata/animal-classification-without-constraints> a browser:Configuration ;
   dct:title "Animal classification (without hierarchical structure)"@en ;
   dct:description "A classification of animals, their habitats and subjects studying them"@en ;
-  browser:hasVisualStyleSheet <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style-sheet>;
+  browser:hasVisualStyleSheet <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification-without-constraints/style-sheet>;
   browser:startingNode <http://www.wikidata.org/entity/Q7377>,
    <http://www.wikidata.org/entity/Q729>;
   browser:resourceIriPattern "^http://www\\.wikidata\\.org/entity/Q[1-9][0-9]*$";
@@ -28,3 +28,39 @@
                       <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animal-classification/species> ,
                       <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animal-classification/habitat> ,
                       <https://linked.opendata.cz/resource/knowledge-graph-browser/view-set/wikidata/animal-classification/science-branch> .
+
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification-without-constraints/style-sheet> a browser:VisualStyleSheet ;
+  browser:hasVisualStyle <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/taxon>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/species>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification-without-constraints/style/genus>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/family>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification-without-constraints/style/order>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/class>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification-without-constraints/style/phylum>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/kingdom>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification-without-constraints/style/region>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification-without-constraints/style/science>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/broader>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/node>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/edge> .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification-without-constraints/style/genus> a browser:VisualStyle ;
+  browser:background-color "#e6e6e6" ;
+  browser:hasSelector ".genus" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification-without-constraints/style/order> a browser:VisualStyle ;
+  browser:background-color "#e6e6e6" ;
+  browser:hasSelector ".order" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification-without-constraints/style/phylum> a browser:VisualStyle ;
+  browser:background-color "#e6e6e6" ;
+  browser:hasSelector ".phylum" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification-without-constraints/style/region> a browser:VisualStyle ;
+  browser:background-color "#e6e6e6" ;
+  browser:hasSelector ".region" .
+
+<https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification-without-constraints/style/science> a browser:VisualStyle ;
+  browser:background-color "#e6e6e6" ;
+  browser:hasSelector ".science" .
