@@ -46,27 +46,27 @@
     <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/edge> .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification-without-constraints/style/species> a browser:VisualStyle ;
-  browser:background-color "#ffc600" ;  
+  browser:background-color "#ff7200" ;  
   browser:hasSelector ".species" .
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification-without-constraints/style/genus> a browser:VisualStyle ;
-  browser:background-color "#fafa6e" ;
+  browser:background-color "#ffc600" ;
   browser:hasSelector ".genus" .
   
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification-without-constraints/style/family> a browser:VisualStyle ;
-  browser:background-color "#c4ec74" ;  
+  browser:background-color "#fafa6e" ;  
   browser:hasSelector ".family" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification-without-constraints/style/order> a browser:VisualStyle ;
-  browser:background-color "#64c987" ;
+  browser:background-color "#c4ec74" ;
   browser:hasSelector ".order" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification-without-constraints/style/class> a browser:VisualStyle ;
-  browser:background-color "#089f8f" ;  
+  browser:background-color "#64c987" ;  
   browser:hasSelector ".class" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification-without-constraints/style/phylum> a browser:VisualStyle ;
-  browser:background-color "#08737f" ;
+  browser:background-color "#089f8f" ;
   browser:hasSelector ".phylum" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification-without-constraints/style/kingdom> a browser:VisualStyle ;
