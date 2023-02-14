@@ -39,8 +39,8 @@
     <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification-without-constraints/style/class>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification-without-constraints/style/phylum>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification-without-constraints/style/kingdom>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification-without-constraints/style/region>,
-    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification-without-constraints/style/science>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/region>,
+    <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/science>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/broader>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/node>,
     <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style/edge> .
