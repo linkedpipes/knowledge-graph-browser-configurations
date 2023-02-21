@@ -1018,7 +1018,7 @@ CONSTRUCT {
   browser:hasSelector ".broader" .
 
 <https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/zabývá-se-tématem> a browser:VisualStyle ;
-  browser:line-color "#003077" ;
+  browser:line-color "#093500" ;
   browser:line-style "solid" ;
   browser:color "#000000" ;
   browser:target-arrow-shape "none" ;
