@@ -779,7 +779,7 @@ CONSTRUCT {
   browser:height "40px" ;
   browser:hasSelector ".pracoviste115" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/mff/fakulta> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/lf2/fakulta> a browser:VisualStyle ;
   browser:background-color "#005b9f" ;
   browser:border-color "#005b9f" ;
   browser:color "#ffffff" ;
@@ -789,7 +789,7 @@ CONSTRUCT {
   browser:height "40px" ;
   browser:hasSelector ".fakulta116" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/mff/pracoviště> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/lf2/pracoviště> a browser:VisualStyle ;
   browser:background-color "#0288d1" ;
   browser:border-color "#005b9f" ;
   browser:color "#e1f5fe" ;
@@ -819,7 +819,7 @@ CONSTRUCT {
   browser:height "40px" ;
   browser:hasSelector ".pracoviste108" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/lf2/fakulta> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/mff/fakulta> a browser:VisualStyle ;
   browser:background-color "#005b4f" ;
   browser:border-color "#005b4f" ;
   browser:color "#ffffff" ;
@@ -829,7 +829,7 @@ CONSTRUCT {
   browser:height "40px" ;
   browser:hasSelector ".fakulta109" .
 
-<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/lf2/pracoviště> a browser:VisualStyle ;
+<https://linked.opendata.cz/resource/knowledge-graph-browser/uk/style/mff/pracoviště> a browser:VisualStyle ;
   browser:background-color "#b2dfdb" ;
   browser:border-color "#005b4f" ;
   browser:color "#005b4f" ;
