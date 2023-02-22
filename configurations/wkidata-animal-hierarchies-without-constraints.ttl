@@ -15,7 +15,7 @@
 <https://linked.opendata.cz/resource/knowledge-graph-browser/configuration/wikidata/animal-classification-without-constraints> a browser:Configuration ;
   dct:title "Animal classification (without hierarchical structure)"@en ;
   dct:description "A classification of animals, their habitats and subjects studying them"@en ;
-  browser:hasVisualStyleSheet <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification-without-constraints/style-sheet>;
+  browser:hasVisualStyleSheet <https://linked.opendata.cz/resource/knowledge-graph-browser/wikidata/animal-classification/style-sheet>;
   browser:startingNode <http://www.wikidata.org/entity/Q7377>,
    <http://www.wikidata.org/entity/Q729>;
   browser:resourceIriPattern "^http://www\\.wikidata\\.org/entity/Q[1-9][0-9]*$";
